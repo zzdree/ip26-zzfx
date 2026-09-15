@@ -1132,7 +1132,7 @@ def build_zz_wiper():
         "name": "Move Beam",
         "thumbnail_visible": True
     }
-    conn(27, "shape", 28, "input")
+    conn(27, "output", 28, "input")
     conn(24, "output", 28, "translation")
 
     # Render Beam
@@ -1178,7 +1178,7 @@ def build_zz_wiper():
     # Video Mixer (Add Mode 11)
     nodes["31"] = node_video_mixer(31, 11, 830, 0)
     conn(0, "output", 31, "input1")
-    conn(29, "output", 31, "input2")
+    conn(29, "output0", 31, "input2")
     conn(30, "output0", 31, "opacity2")
 
     # Texture Out
