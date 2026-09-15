@@ -8,11 +8,101 @@
     "connections": [
       {
         "from": [
+          13,
+          "output"
+        ],
+        "to": [
+          19,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          19,
+          "output0"
+        ],
+        "to": [
           20,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          12,
           "output"
         ],
         "to": [
           21,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          12,
+          "output"
+        ],
+        "to": [
+          21,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          12,
+          "output"
+        ],
+        "to": [
+          21,
+          "input2"
+        ]
+      },
+      {
+        "from": [
+          12,
+          "output"
+        ],
+        "to": [
+          21,
+          "input3"
+        ]
+      },
+      {
+        "from": [
+          20,
+          "output0"
+        ],
+        "to": [
+          22,
+          "width"
+        ]
+      },
+      {
+        "from": [
+          20,
+          "output0"
+        ],
+        "to": [
+          22,
+          "height"
+        ]
+      },
+      {
+        "from": [
+          21,
+          "output"
+        ],
+        "to": [
+          22,
+          "round"
+        ]
+      },
+      {
+        "from": [
+          22,
+          "output"
+        ],
+        "to": [
+          23,
           "input"
         ]
       },
@@ -22,68 +112,8 @@
           "output"
         ],
         "to": [
-          21,
+          23,
           "thickness"
-        ]
-      },
-      {
-        "from": [
-          21,
-          "output"
-        ],
-        "to": [
-          22,
-          "shape"
-        ]
-      },
-      {
-        "from": [
-          12,
-          "output"
-        ],
-        "to": [
-          24,
-          "frequency"
-        ]
-      },
-      {
-        "from": [
-          24,
-          "output"
-        ],
-        "to": [
-          25,
-          "input0"
-        ]
-      },
-      {
-        "from": [
-          13,
-          "output"
-        ],
-        "to": [
-          26,
-          "selection"
-        ]
-      },
-      {
-        "from": [
-          24,
-          "output"
-        ],
-        "to": [
-          26,
-          "input0"
-        ]
-      },
-      {
-        "from": [
-          25,
-          "output0"
-        ],
-        "to": [
-          26,
-          "input1"
         ]
       },
       {
@@ -92,8 +122,18 @@
           "output"
         ],
         "to": [
-          27,
-          "input"
+          24,
+          "shape"
+        ]
+      },
+      {
+        "from": [
+          14,
+          "output"
+        ],
+        "to": [
+          26,
+          "frequency"
         ]
       },
       {
@@ -103,66 +143,6 @@
         ],
         "to": [
           27,
-          "rotation"
-        ]
-      },
-      {
-        "from": [
-          22,
-          "output0"
-        ],
-        "to": [
-          28,
-          "input1"
-        ]
-      },
-      {
-        "from": [
-          27,
-          "output0"
-        ],
-        "to": [
-          28,
-          "input2"
-        ]
-      },
-      {
-        "from": [
-          14,
-          "output"
-        ],
-        "to": [
-          29,
-          "color"
-        ]
-      },
-      {
-        "from": [
-          28,
-          "output"
-        ],
-        "to": [
-          30,
-          "input1"
-        ]
-      },
-      {
-        "from": [
-          29,
-          "output"
-        ],
-        "to": [
-          30,
-          "input2"
-        ]
-      },
-      {
-        "from": [
-          10,
-          "output"
-        ],
-        "to": [
-          31,
           "input0"
         ]
       },
@@ -172,57 +152,67 @@
           "output"
         ],
         "to": [
-          31,
-          "input1"
+          28,
+          "selection"
         ]
       },
       {
         "from": [
-          0,
+          26,
           "output"
         ],
         "to": [
-          32,
-          "input1"
+          28,
+          "input0"
         ]
       },
       {
         "from": [
-          30,
-          "output"
-        ],
-        "to": [
-          32,
-          "input2"
-        ]
-      },
-      {
-        "from": [
-          31,
+          27,
           "output0"
         ],
         "to": [
-          32,
-          "opacity2"
-        ]
-      },
-      {
-        "from": [
-          32,
-          "output"
-        ],
-        "to": [
-          33,
+          28,
           "input1"
         ]
       },
       {
         "from": [
-          0,
+          25,
           "output"
         ],
         "to": [
-          33,
+          29,
+          "input"
+        ]
+      },
+      {
+        "from": [
+          28,
+          "output"
+        ],
+        "to": [
+          29,
+          "rotation"
+        ]
+      },
+      {
+        "from": [
+          24,
+          "output0"
+        ],
+        "to": [
+          30,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          29,
+          "output0"
+        ],
+        "to": [
+          30,
           "input2"
         ]
       },
@@ -232,13 +222,113 @@
           "output"
         ],
         "to": [
+          31,
+          "color"
+        ]
+      },
+      {
+        "from": [
+          30,
+          "output"
+        ],
+        "to": [
+          32,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          31,
+          "output"
+        ],
+        "to": [
+          32,
+          "input2"
+        ]
+      },
+      {
+        "from": [
+          10,
+          "output"
+        ],
+        "to": [
           33,
-          "opacity2"
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          17,
+          "output"
+        ],
+        "to": [
+          33,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          0,
+          "output"
+        ],
+        "to": [
+          34,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          32,
+          "output"
+        ],
+        "to": [
+          34,
+          "input2"
         ]
       },
       {
         "from": [
           33,
+          "output0"
+        ],
+        "to": [
+          34,
+          "opacity2"
+        ]
+      },
+      {
+        "from": [
+          34,
+          "output"
+        ],
+        "to": [
+          35,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          0,
+          "output"
+        ],
+        "to": [
+          35,
+          "input2"
+        ]
+      },
+      {
+        "from": [
+          18,
+          "output"
+        ],
+        "to": [
+          35,
+          "opacity2"
+        ]
+      },
+      {
+        "from": [
+          35,
           "output"
         ],
         "to": [
@@ -255,12 +345,14 @@
       13,
       14,
       15,
-      16
+      16,
+      17,
+      18
     ],
     "meta": {
       "author": "Andreas - IP26 Production",
       "category": "effect",
-      "description": "IP26 Modular Suite: Animated Snake Border Running Around Screen Perimeter with Fading Tail (Piano Mode).",
+      "description": "IP26 Modular Suite: Animated Snake Border Running Around Screen Perimeter with Fading Tail & Full Flexibility.",
       "displayName": "zz-stroke",
       "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e260",
       "license": "MIT",
@@ -279,7 +371,7 @@
       "type": "effect",
       "url": "https://github.com/zzdree/ip26-zzfx",
       "vendor": "IP26 Production",
-      "version": "1.0.0"
+      "version": "2.0.0"
     },
     "nextNodeId": 300,
     "nodes": {
@@ -449,11 +541,11 @@
           },
           "max": {
             "type": "float",
-            "value": 4.0
+            "value": 0.5
           },
           "min": {
             "type": "float",
-            "value": 0.1
+            "value": 0.0
           },
           "options-count": {
             "type": "integer",
@@ -483,7 +575,151 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 1.0
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "input",
+          "instances",
+          "flow",
+          "has-min",
+          "min",
+          "has-max",
+          "max",
+          "options-count",
+          "widget",
+          "unit"
+        ],
+        "name": "Corner Radius",
+        "thumbnail_visible": true
+      },
+      "13": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "event"
+          },
+          "has-max": {
+            "type": "bool",
+            "value": true
+          },
+          "has-min": {
+            "type": "bool",
+            "value": true
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "max": {
+            "type": "float",
+            "value": 0.2
+          },
+          "min": {
+            "type": "float",
+            "value": 0.0
+          },
+          "options-count": {
+            "type": "integer",
+            "value": 0
+          },
+          "unit": {
+            "type": "integer",
+            "value": 0
+          },
+          "widget": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 140,
+          "x": -600,
+          "y": 400
+        },
+        "class": {
+          "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ff20c7bb",
+        "constants": {
+          "input": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "input",
+          "instances",
+          "flow",
+          "has-min",
+          "min",
+          "has-max",
+          "max",
+          "options-count",
+          "widget",
+          "unit"
+        ],
+        "name": "Border Inset",
+        "thumbnail_visible": true
+      },
+      "14": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "event"
+          },
+          "has-max": {
+            "type": "bool",
+            "value": true
+          },
+          "has-min": {
+            "type": "bool",
+            "value": true
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "max": {
+            "type": "float",
+            "value": 4.0
+          },
+          "min": {
+            "type": "float",
+            "value": 0.1
+          },
+          "options-count": {
+            "type": "integer",
+            "value": 0
+          },
+          "unit": {
+            "type": "integer",
+            "value": 0
+          },
+          "widget": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 140,
+          "x": -600,
+          "y": 500
+        },
+        "class": {
+          "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ff20c7bb",
+        "constants": {
+          "input": {
+            "type": "float",
+            "value": 1.2
           }
         },
         "hidden": [
@@ -501,7 +737,7 @@
         "name": "Snake Speed",
         "thumbnail_visible": true
       },
-      "13": {
+      "15": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -544,7 +780,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 400
+          "y": 600
         },
         "class": {
           "id": "77697265-2649-4abb-b38f-4e1005183415",
@@ -573,7 +809,7 @@
         "name": "Direction",
         "thumbnail_visible": true
       },
-      "14": {
+      "16": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -582,28 +818,20 @@
           "instances": {
             "type": "integer",
             "value": 1
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
           }
         },
         "bounds": {
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 500
+          "y": 700
         },
         "class": {
           "id": "77697265-4C9E-4F75-B4F0-5415B713EA1B",
           "version": 3
         },
         "clock": "video",
-        "color": "ffea1f48",
+        "color": "ffff6a00",
         "constants": {
           "input": {
             "type": "color",
@@ -625,7 +853,7 @@
         "name": "Stroke Color",
         "thumbnail_visible": true
       },
-      "15": {
+      "17": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -668,7 +896,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 600
+          "y": 800
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -697,7 +925,7 @@
         "name": "Stroke Intensity",
         "thumbnail_visible": true
       },
-      "16": {
+      "18": {
         "attributes": {
           "bool-view": {
             "type": "integer",
@@ -716,7 +944,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 700
+          "y": 900
         },
         "class": {
           "id": "77697265-999C-4F8B-8B9D-3646DC68AA69",
@@ -739,7 +967,195 @@
         "name": "Bypass",
         "thumbnail_visible": true
       },
+      "19": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": -400,
+          "y": 400
+        },
+        "class": {
+          "id": "77697265-A0D8-429A-A558-69BC58D0D425",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 2.0
+          }
+        },
+        "name": "Inset Mult 2",
+        "thumbnail_visible": false,
+        "hidden": [
+          "flow",
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
+        ]
+      },
       "20": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": -260,
+          "y": 400
+        },
+        "class": {
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 2.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Rect Size Calc",
+        "thumbnail_visible": false,
+        "hidden": [
+          "flow",
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
+        ]
+      },
+      "21": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "input1-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "input2-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "input3-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 130,
+          "width": 195,
+          "x": -260,
+          "y": 250
+        },
+        "class": {
+          "id": "77697265-19E0-4717-BD17-6C7D4A9252C4",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input2": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input3": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Corner Radius Float4",
+        "thumbnail_visible": false,
+        "hidden": [
+          "input0-type",
+          "input1-type",
+          "input2-type",
+          "input3-type",
+          "flow",
+          "instances"
+        ]
+      },
+      "22": {
         "attributes": {
           "instances": {
             "type": "integer",
@@ -749,8 +1165,8 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": -350,
-          "y": 200
+          "x": -50,
+          "y": 250
         },
         "class": {
           "id": "77697265-4db6-4573-8aa7-42362bc44931",
@@ -784,7 +1200,7 @@
           "round"
         ]
       },
-      "21": {
+      "23": {
         "attributes": {
           "instances": {
             "type": "integer",
@@ -798,8 +1214,8 @@
         "bounds": {
           "height": 58,
           "width": 195,
-          "x": -100,
-          "y": 200
+          "x": 160,
+          "y": 250
         },
         "class": {
           "id": "77697265-ab950887-37ee-4fd2-9487-c856b6b75c83",
@@ -824,7 +1240,7 @@
           "instances"
         ]
       },
-      "22": {
+      "24": {
         "attributes": {
           "antialising-direction": {
             "type": "integer",
@@ -868,8 +1284,8 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": 150,
-          "y": 200
+          "x": 380,
+          "y": 250
         },
         "class": {
           "id": "77697265-EA26-47D6-985A-B4D5DC314BF7",
@@ -905,7 +1321,7 @@
           "bitdepth"
         ]
       },
-      "23": {
+      "25": {
         "attributes": {
           "bitdepth": {
             "type": "integer",
@@ -945,7 +1361,7 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": -100,
+          "x": 160,
           "y": 450
         },
         "class": {
@@ -996,7 +1412,7 @@
           "mode"
         ]
       },
-      "24": {
+      "26": {
         "attributes": {
           "anti-alias": {
             "type": "bool",
@@ -1014,7 +1430,7 @@
         "bounds": {
           "height": 130,
           "width": 195,
-          "x": -350,
+          "x": -100,
           "y": 600
         },
         "class": {
@@ -1030,7 +1446,7 @@
           },
           "frequency": {
             "type": "float",
-            "value": 1.0
+            "value": 1.2
           },
           "offset": {
             "type": "float",
@@ -1057,7 +1473,7 @@
           "phase-offset"
         ]
       },
-      "25": {
+      "27": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -1087,7 +1503,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": -100,
+          "x": 160,
           "y": 650
         },
         "class": {
@@ -1109,15 +1525,15 @@
         "name": "Invert Rotation",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
-      "26": {
+      "28": {
         "attributes": {
           "case-type": {
             "type": "type",
@@ -1143,7 +1559,7 @@
         "bounds": {
           "height": 100,
           "width": 195,
-          "x": 100,
+          "x": 380,
           "y": 600
         },
         "class": {
@@ -1176,7 +1592,7 @@
           "instances"
         ]
       },
-      "27": {
+      "29": {
         "attributes": {
           "anchor-type": {
             "type": "type",
@@ -1210,7 +1626,7 @@
         "bounds": {
           "height": 130,
           "width": 195,
-          "x": 150,
+          "x": 380,
           "y": 450
         },
         "class": {
@@ -1262,156 +1678,6 @@
           "instances"
         ]
       },
-      "28": {
-        "attributes": {
-          "bitdepth": {
-            "type": "integer",
-            "value": 0
-          },
-          "input-count": {
-            "type": "integer",
-            "value": 2
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          },
-          "resolution-absolute": {
-            "type": "float2",
-            "value": [
-              1920,
-              1080
-            ]
-          },
-          "resolution-mode": {
-            "type": "integer",
-            "value": 0
-          },
-          "resolution-relative": {
-            "type": "float2",
-            "value": [
-              1,
-              1
-            ]
-          }
-        },
-        "bounds": {
-          "height": 154,
-          "width": 195,
-          "x": 420,
-          "y": 300
-        },
-        "class": {
-          "id": "77697265-A270-4D60-911C-A88B1BE6369A",
-          "version": 3
-        },
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-          "bypass": {
-            "type": "bool",
-            "value": false
-          },
-          "input1": {
-            "type": "texture2d",
-            "value": null
-          },
-          "input2": {
-            "type": "texture2d",
-            "value": null
-          },
-          "mode": {
-            "type": "integer",
-            "value": 0
-          },
-          "opacity1": {
-            "type": "float",
-            "value": 1.0
-          },
-          "opacity2": {
-            "type": "float",
-            "value": 0.0
-          }
-        },
-        "hidden": [
-          "bypass",
-          "input-count",
-          "bitdepth",
-          "resolution-absolute",
-          "resolution-relative",
-          "resolution-mode",
-          "instances"
-        ],
-        "name": "Video Mixer",
-        "thumbnail_visible": true
-      },
-      "29": {
-        "attributes": {
-          "bitdepth": {
-            "type": "integer",
-            "value": 0
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          },
-          "resolution-absolute": {
-            "type": "float2",
-            "value": [
-              1920,
-              1080
-            ]
-          },
-          "resolution-mode": {
-            "type": "integer",
-            "value": 0
-          },
-          "resolution-relative": {
-            "type": "float2",
-            "value": [
-              1,
-              1
-            ]
-          }
-        },
-        "bounds": {
-          "height": 58,
-          "width": 195,
-          "x": 420,
-          "y": 550
-        },
-        "class": {
-          "id": "77697265-E8EC-4F1B-901A-CFFC104D3B07",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-          "bypass": {
-            "type": "bool",
-            "value": false
-          },
-          "color": {
-            "type": "color",
-            "value": [
-              0.0,
-              0.9,
-              1.0,
-              1.0
-            ]
-          }
-        },
-        "name": "Neon Color Source",
-        "thumbnail_visible": true,
-        "hidden": [
-          "instances",
-          "bypass",
-          "bitdepth",
-          "resolution-absolute",
-          "resolution-relative",
-          "resolution-mode"
-        ]
-      },
       "30": {
         "attributes": {
           "bitdepth": {
@@ -1448,7 +1714,7 @@
         "bounds": {
           "height": 154,
           "width": 195,
-          "x": 680,
+          "x": 640,
           "y": 300
         },
         "class": {
@@ -1480,7 +1746,7 @@
           },
           "opacity2": {
             "type": "float",
-            "value": 0.0
+            "value": 1.0
           }
         },
         "hidden": [
@@ -1497,62 +1763,69 @@
       },
       "31": {
         "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
+          "bitdepth": {
+            "type": "integer",
+            "value": 0
           },
-          "input0-dimensions": {
+          "instances": {
             "type": "integer",
             "value": 1
           },
-          "input1-dimensions": {
+          "resolution-absolute": {
+            "type": "float2",
+            "value": [
+              1920,
+              1080
+            ]
+          },
+          "resolution-mode": {
             "type": "integer",
-            "value": 1
+            "value": 0
           },
-          "size": {
-            "type": "integer",
-            "value": 2
-          },
-          "type0": {
-            "type": "type",
-            "value": "float"
-          },
-          "type1": {
-            "type": "type",
-            "value": "float"
+          "resolution-relative": {
+            "type": "float2",
+            "value": [
+              1,
+              1
+            ]
           }
         },
         "bounds": {
-          "height": 82,
-          "width": 130,
-          "x": 680,
-          "y": 150
+          "height": 58,
+          "width": 195,
+          "x": 640,
+          "y": 550
         },
         "class": {
-          "id": "77697265-A0D8-429A-A558-69BC58D0D425",
+          "id": "77697265-E8EC-4F1B-901A-CFFC104D3B07",
           "version": 1
         },
         "clock": "video",
         "color": "ffff6a00",
         "constants": {
-          "input0": {
-            "type": "float",
-            "value": 0.0
+          "bypass": {
+            "type": "bool",
+            "value": false
           },
-          "input1": {
-            "type": "float",
-            "value": 0.0
+          "color": {
+            "type": "color",
+            "value": [
+              0.0,
+              0.9,
+              1.0,
+              1.0
+            ]
           }
         },
-        "name": "Stroke Gate",
+        "name": "Neon Color Source",
         "thumbnail_visible": true,
         "hidden": [
-          "size",
-          "input0-dimensions",
-          "input1-dimensions",
-          "type0",
-          "type1",
-          "flow"
+          "instances",
+          "bypass",
+          "bitdepth",
+          "resolution-absolute",
+          "resolution-relative",
+          "resolution-mode"
         ]
       },
       "32": {
@@ -1591,7 +1864,150 @@
         "bounds": {
           "height": 154,
           "width": 195,
-          "x": 950,
+          "x": 880,
+          "y": 300
+        },
+        "class": {
+          "id": "77697265-A270-4D60-911C-A88B1BE6369A",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "bypass": {
+            "type": "bool",
+            "value": false
+          },
+          "input1": {
+            "type": "texture2d",
+            "value": null
+          },
+          "input2": {
+            "type": "texture2d",
+            "value": null
+          },
+          "mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "opacity1": {
+            "type": "float",
+            "value": 1.0
+          },
+          "opacity2": {
+            "type": "float",
+            "value": 1.0
+          }
+        },
+        "hidden": [
+          "bypass",
+          "input-count",
+          "bitdepth",
+          "resolution-absolute",
+          "resolution-relative",
+          "resolution-mode",
+          "instances"
+        ],
+        "name": "Video Mixer",
+        "thumbnail_visible": true
+      },
+      "33": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 880,
+          "y": 150
+        },
+        "class": {
+          "id": "77697265-A0D8-429A-A558-69BC58D0D425",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Stroke Gate",
+        "thumbnail_visible": true,
+        "hidden": [
+          "flow",
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
+        ]
+      },
+      "34": {
+        "attributes": {
+          "bitdepth": {
+            "type": "integer",
+            "value": 0
+          },
+          "input-count": {
+            "type": "integer",
+            "value": 2
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "resolution-absolute": {
+            "type": "float2",
+            "value": [
+              1920,
+              1080
+            ]
+          },
+          "resolution-mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "resolution-relative": {
+            "type": "float2",
+            "value": [
+              1,
+              1
+            ]
+          }
+        },
+        "bounds": {
+          "height": 154,
+          "width": 195,
+          "x": 1120,
           "y": 0
         },
         "class": {
@@ -1638,7 +2054,7 @@
         "name": "Video Mixer",
         "thumbnail_visible": true
       },
-      "33": {
+      "35": {
         "attributes": {
           "bitdepth": {
             "type": "integer",
@@ -1674,7 +2090,7 @@
         "bounds": {
           "height": 154,
           "width": 195,
-          "x": 1200,
+          "x": 1360,
           "y": 0
         },
         "class": {
@@ -1731,7 +2147,7 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": 1450,
+          "x": 1600,
           "y": 0
         },
         "class": {

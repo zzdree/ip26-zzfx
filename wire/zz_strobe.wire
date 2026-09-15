@@ -48,7 +48,7 @@
       },
       {
         "from": [
-          14,
+          13,
           "output"
         ],
         "to": [
@@ -58,7 +58,7 @@
       },
       {
         "from": [
-          13,
+          12,
           "output"
         ],
         "to": [
@@ -118,7 +118,7 @@
       },
       {
         "from": [
-          15,
+          14,
           "output"
         ],
         "to": [
@@ -143,13 +143,12 @@
       11,
       12,
       13,
-      14,
-      15
+      14
     ],
     "meta": {
       "author": "Andreas - IP26 Production",
       "category": "effect",
-      "description": "IP26 Modular Suite: High-Speed Multi-Rate Flash Strobe (Piano Hold & Modes).",
+      "description": "IP26 Modular Suite: High-Speed Multi-Rate Flash Strobe (Piano Hold & Clean).",
       "displayName": "zz-strobe",
       "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e230",
       "license": "MIT",
@@ -161,13 +160,12 @@
         "flash",
         "speed",
         "pulse",
-        "blackout",
         "worship"
       ],
       "type": "effect",
       "url": "https://github.com/zzdree/ip26-zzfx",
       "vendor": "IP26 Production",
-      "version": "1.0.0"
+      "version": "2.0.0"
     },
     "nextNodeId": 300,
     "nodes": {
@@ -323,37 +321,9 @@
             "type": "flow",
             "value": "signal"
           },
-          "has-max": {
-            "type": "bool",
-            "value": true
-          },
-          "has-min": {
-            "type": "bool",
-            "value": true
-          },
           "instances": {
             "type": "integer",
             "value": 1
-          },
-          "max": {
-            "type": "integer",
-            "value": 2
-          },
-          "min": {
-            "type": "integer",
-            "value": 0
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "unit": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
           }
         },
         "bounds": {
@@ -363,63 +333,11 @@
           "y": 350
         },
         "class": {
-          "id": "77697265-2649-4abb-b38f-4e1005183415",
-          "version": 2
-        },
-        "clock": "video",
-        "color": "ff20c7bb",
-        "constants": {
-          "input": {
-            "type": "integer",
-            "value": 0
-          }
-        },
-        "hidden": [
-          "input",
-          "instances",
-          "flow",
-          "has-min",
-          "min",
-          "has-max",
-          "max",
-          "options-count",
-          "widget",
-          "unit"
-        ],
-        "name": "Strobe Mode",
-        "thumbnail_visible": true
-      },
-      "13": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
-          }
-        },
-        "bounds": {
-          "height": 82,
-          "width": 140,
-          "x": -600,
-          "y": 450
-        },
-        "class": {
           "id": "77697265-4C9E-4F75-B4F0-5415B713EA1B",
           "version": 3
         },
         "clock": "video",
-        "color": "ffea1f48",
+        "color": "ffff6a00",
         "constants": {
           "input": {
             "type": "color",
@@ -441,7 +359,7 @@
         "name": "Strobe Color",
         "thumbnail_visible": true
       },
-      "14": {
+      "13": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -484,7 +402,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 550
+          "y": 450
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -513,7 +431,7 @@
         "name": "Strobe Intensity",
         "thumbnail_visible": true
       },
-      "15": {
+      "14": {
         "attributes": {
           "bool-view": {
             "type": "integer",
@@ -532,7 +450,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 650
+          "y": 550
         },
         "class": {
           "id": "77697265-999C-4F8B-8B9D-3646DC68AA69",
@@ -673,12 +591,12 @@
         "name": "Gate Pulse",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
       "22": {
@@ -733,12 +651,12 @@
         "name": "Final Strobe Opacity",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
       "23": {

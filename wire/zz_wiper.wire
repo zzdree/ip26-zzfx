@@ -148,11 +148,21 @@
       },
       {
         "from": [
-          11,
+          15,
           "output"
         ],
         "to": [
           27,
+          "color1"
+        ]
+      },
+      {
+        "from": [
+          11,
+          "output"
+        ],
+        "to": [
+          28,
           "selection"
         ]
       },
@@ -162,7 +172,7 @@
           "output"
         ],
         "to": [
-          27,
+          28,
           "input0"
         ]
       },
@@ -172,28 +182,8 @@
           "output"
         ],
         "to": [
-          27,
+          28,
           "input1"
-        ]
-      },
-      {
-        "from": [
-          14,
-          "output"
-        ],
-        "to": [
-          27,
-          "input4"
-        ]
-      },
-      {
-        "from": [
-          14,
-          "output"
-        ],
-        "to": [
-          27,
-          "input5"
         ]
       },
       {
@@ -202,7 +192,7 @@
           "output"
         ],
         "to": [
-          28,
+          29,
           "selection"
         ]
       },
@@ -212,7 +202,7 @@
           "output"
         ],
         "to": [
-          28,
+          29,
           "input2"
         ]
       },
@@ -222,28 +212,18 @@
           "output"
         ],
         "to": [
-          28,
+          29,
           "input3"
         ]
       },
       {
         "from": [
-          27,
-          "output"
-        ],
-        "to": [
-          29,
-          "width"
-        ]
-      },
-      {
-        "from": [
           28,
           "output"
         ],
         "to": [
-          29,
-          "height"
+          30,
+          "input0"
         ]
       },
       {
@@ -253,6 +233,16 @@
         ],
         "to": [
           30,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          27,
+          "output"
+        ],
+        "to": [
+          31,
           "input"
         ]
       },
@@ -262,7 +252,7 @@
           "output"
         ],
         "to": [
-          30,
+          31,
           "translation"
         ]
       },
@@ -273,17 +263,7 @@
         ],
         "to": [
           31,
-          "shape"
-        ]
-      },
-      {
-        "from": [
-          15,
-          "output"
-        ],
-        "to": [
-          31,
-          "material"
+          "scale"
         ]
       },
       {
@@ -391,7 +371,7 @@
     "meta": {
       "author": "Andreas - IP26 Production",
       "category": "effect",
-      "description": "IP26 Modular Suite: Full-Screen Continuous Scanner Beam & Curtain Wipe (Piano Mode).",
+      "description": "IP26 Modular Suite: Real Smooth Gradient Curtain Wipe (Moving Gradient Light Beam).",
       "displayName": "zz-wiper",
       "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e250",
       "license": "MIT",
@@ -403,13 +383,13 @@
         "curtain",
         "scanner",
         "beam",
-        "continuous",
+        "gradient",
         "worship"
       ],
       "type": "effect",
       "url": "https://github.com/zzdree/ip26-zzfx",
       "vendor": "IP26 Production",
-      "version": "1.0.0"
+      "version": "2.0.0"
     },
     "nextNodeId": 300,
     "nodes": {
@@ -693,11 +673,11 @@
           },
           "max": {
             "type": "float",
-            "value": 1.0
+            "value": 3.0
           },
           "min": {
             "type": "float",
-            "value": 0.02
+            "value": 0.2
           },
           "options-count": {
             "type": "integer",
@@ -727,7 +707,7 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 0.35
+            "value": 1.0
           }
         },
         "hidden": [
@@ -742,7 +722,7 @@
           "widget",
           "unit"
         ],
-        "name": "Bar Width",
+        "name": "Gradient Width",
         "thumbnail_visible": true
       },
       "15": {
@@ -754,14 +734,6 @@
           "instances": {
             "type": "integer",
             "value": 1
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
           }
         },
         "bounds": {
@@ -775,7 +747,7 @@
           "version": 3
         },
         "clock": "video",
-        "color": "ffea1f48",
+        "color": "ffff6a00",
         "constants": {
           "input": {
             "type": "color",
@@ -794,7 +766,7 @@
           "options-count",
           "widget"
         ],
-        "name": "Bar Color",
+        "name": "Wipe Color",
         "thumbnail_visible": true
       },
       "16": {
@@ -941,7 +913,7 @@
         "constants": {
           "amplitude": {
             "type": "float",
-            "value": 1.0
+            "value": 1.5
           },
           "frequency": {
             "type": "float",
@@ -960,7 +932,7 @@
             "value": null
           }
         },
-        "name": "Saw Forward",
+        "name": "Saw Osc",
         "thumbnail_visible": true,
         "hidden": [
           "instances",
@@ -1002,7 +974,7 @@
         "constants": {
           "amplitude": {
             "type": "float",
-            "value": 1.0
+            "value": 1.5
           },
           "frequency": {
             "type": "float",
@@ -1141,15 +1113,15 @@
             "value": -1.0
           }
         },
-        "name": "Invert Direction",
+        "name": "Invert Movement",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
       "24": {
@@ -1336,81 +1308,105 @@
           }
         },
         "name": "Translation Vec2",
-        "thumbnail_visible": true
+        "thumbnail_visible": true,
+        "hidden": [
+          "flow",
+          "instances"
+        ]
       },
       "27": {
         "attributes": {
-          "case-type": {
-            "type": "type",
-            "value": "float"
-          },
-          "flow": {
-            "type": "flow",
-            "value": "signal"
+          "bitdepth": {
+            "type": "integer",
+            "value": 0
           },
           "instances": {
             "type": "integer",
             "value": 1
           },
-          "selection-type": {
-            "type": "type",
-            "value": "integer"
-          },
-          "size": {
+          "method": {
             "type": "integer",
-            "value": 6
+            "value": 0
+          },
+          "mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "resolution-absolute": {
+            "type": "float2",
+            "value": [
+              1920,
+              1080
+            ]
+          },
+          "resolution-mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "resolution-relative": {
+            "type": "float2",
+            "value": [
+              1,
+              1
+            ]
+          },
+          "type": {
+            "type": "integer",
+            "value": 1
           }
         },
         "bounds": {
-          "height": 150,
+          "height": 106,
           "width": 195,
           "x": 350,
-          "y": 550
+          "y": 600
         },
         "class": {
-          "id": "77697265-6899-4A9C-82AB-949346033440",
-          "version": 3
+          "id": "77697265-FCE2-4EBE-8C81-99C578524A24",
+          "version": 1
         },
         "clock": "video",
         "color": "ffff6a00",
         "constants": {
-          "input0": {
-            "type": "float",
-            "value": 0.35
+          "bypass": {
+            "type": "bool",
+            "value": false
           },
-          "input1": {
-            "type": "float",
-            "value": 0.35
+          "color1": {
+            "type": "float4",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
           },
-          "input2": {
-            "type": "float",
-            "value": 2.0
+          "color2": {
+            "type": "float4",
+            "value": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
           },
-          "input3": {
+          "dither": {
             "type": "float",
-            "value": 2.0
-          },
-          "input4": {
-            "type": "float",
-            "value": 0.35
-          },
-          "input5": {
-            "type": "float",
-            "value": 0.35
-          },
-          "selection": {
-            "type": "integer",
-            "value": 0
+            "value": 0.0
           }
         },
-        "name": "Switch Bar Width",
+        "name": "Radiant Gradient",
         "thumbnail_visible": true,
         "hidden": [
-          "selection-type",
-          "case-type",
-          "flow",
-          "size",
-          "instances"
+          "bypass",
+          "dither",
+          "resolution-mode",
+          "resolution-relative",
+          "resolution-absolute",
+          "bitdepth",
+          "method",
+          "type",
+          "mode"
         ]
       },
       "28": {
@@ -1439,8 +1435,8 @@
         "bounds": {
           "height": 150,
           "width": 195,
-          "x": 350,
-          "y": 750
+          "x": 580,
+          "y": 450
         },
         "class": {
           "id": "77697265-6899-4A9C-82AB-949346033440",
@@ -1451,19 +1447,19 @@
         "constants": {
           "input0": {
             "type": "float",
-            "value": 2.0
+            "value": 1.0
           },
           "input1": {
             "type": "float",
-            "value": 2.0
+            "value": 1.0
           },
           "input2": {
             "type": "float",
-            "value": 0.35
+            "value": 4.0
           },
           "input3": {
             "type": "float",
-            "value": 0.35
+            "value": 4.0
           },
           "input4": {
             "type": "float",
@@ -1478,8 +1474,8 @@
             "value": 0
           }
         },
-        "name": "Switch Bar Height",
-        "thumbnail_visible": true,
+        "name": "Switch Scale X",
+        "thumbnail_visible": false,
         "hidden": [
           "selection-type",
           "case-type",
@@ -1490,47 +1486,77 @@
       },
       "29": {
         "attributes": {
+          "case-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
           "instances": {
             "type": "integer",
             "value": 1
+          },
+          "selection-type": {
+            "type": "type",
+            "value": "integer"
+          },
+          "size": {
+            "type": "integer",
+            "value": 6
           }
         },
         "bounds": {
-          "height": 82,
+          "height": 150,
           "width": 195,
           "x": 580,
-          "y": 600
+          "y": 650
         },
         "class": {
-          "id": "77697265-4db6-4573-8aa7-42362bc44931",
-          "version": 2
+          "id": "77697265-6899-4A9C-82AB-949346033440",
+          "version": 3
         },
         "clock": "video",
         "color": "ffff6a00",
         "constants": {
-          "height": {
+          "input0": {
+            "type": "float",
+            "value": 4.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 4.0
+          },
+          "input2": {
+            "type": "float",
+            "value": 1.0
+          },
+          "input3": {
+            "type": "float",
+            "value": 1.0
+          },
+          "input4": {
             "type": "float",
             "value": 2.0
           },
-          "round": {
-            "type": "float4",
-            "value": [
-              0.0,
-              0.0,
-              0.0,
-              0.0
-            ]
-          },
-          "width": {
+          "input5": {
             "type": "float",
-            "value": 0.35
+            "value": 2.0
+          },
+          "selection": {
+            "type": "integer",
+            "value": 0
           }
         },
-        "name": "Wiper Bar Shape",
-        "thumbnail_visible": true,
+        "name": "Switch Scale Y",
+        "thumbnail_visible": false,
         "hidden": [
-          "instances",
-          "round"
+          "selection-type",
+          "case-type",
+          "flow",
+          "size",
+          "instances"
         ]
       },
       "30": {
@@ -1539,13 +1565,65 @@
             "type": "flow",
             "value": "signal"
           },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 800,
+          "y": 550
+        },
+        "class": {
+          "id": "77697265-E7EF-4944-8FC2-D808EE0433CB",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 1.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 4.0
+          }
+        },
+        "name": "Scale Vec2",
+        "thumbnail_visible": false,
+        "hidden": [
+          "flow",
+          "instances"
+        ]
+      },
+      "31": {
+        "attributes": {
+          "anchor-type": {
+            "type": "type",
+            "value": "float2"
+          },
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
           "input-type": {
             "type": "type",
-            "value": "procedural"
+            "value": "texture2d"
           },
           "instances": {
             "type": "integer",
             "value": 1
+          },
+          "rotation-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "scale-type": {
+            "type": "type",
+            "value": "float2"
           },
           "translation-type": {
             "type": "type",
@@ -1553,21 +1631,39 @@
           }
         },
         "bounds": {
-          "height": 58,
+          "height": 130,
           "width": 195,
-          "x": 800,
+          "x": 1050,
           "y": 450
         },
         "class": {
-          "id": "77697265-0e5a-4bfd-b136-e4f68P3cc463",
-          "version": 3
+          "id": "77697265-9225-4009-9D2D-5F898E94CC33",
+          "version": 2
         },
         "clock": "video",
-        "color": "ff02bbff",
+        "color": "ffff6a00",
         "constants": {
+          "anchor": {
+            "type": "float2",
+            "value": [
+              0.0,
+              0.0
+            ]
+          },
           "input": {
-            "type": "procedural",
+            "type": "texture2d",
             "value": null
+          },
+          "rotation": {
+            "type": "float",
+            "value": 0.0
+          },
+          "scale": {
+            "type": "float2",
+            "value": [
+              1.0,
+              4.0
+            ]
           },
           "translation": {
             "type": "float2",
@@ -1577,106 +1673,16 @@
             ]
           }
         },
-        "name": "Move Beam",
+        "name": "Shift Gradient",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "input-type",
           "translation-type",
-          "flow",
+          "rotation-type",
+          "scale-type",
+          "anchor-type",
           "instances"
-        ]
-      },
-      "31": {
-        "attributes": {
-          "aa-blend": {
-            "type": "bool",
-            "value": false
-          },
-          "bitdepth": {
-            "type": "integer",
-            "value": 0
-          },
-          "camera-type": {
-            "type": "type",
-            "value": "float"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          },
-          "material-dimensions": {
-            "type": "integer",
-            "value": 1
-          },
-          "material-type": {
-            "type": "type",
-            "value": "color"
-          },
-          "resolution-absolute": {
-            "type": "float2",
-            "value": [
-              1920,
-              1080
-            ]
-          },
-          "resolution-mode": {
-            "type": "integer",
-            "value": 0
-          },
-          "resolution-relative": {
-            "type": "float2",
-            "value": [
-              1,
-              1
-            ]
-          },
-          "shape-dimensions": {
-            "type": "integer",
-            "value": 1
-          },
-          "shape-type": {
-            "type": "type",
-            "value": "procedural"
-          }
-        },
-        "bounds": {
-          "height": 82,
-          "width": 195,
-          "x": 1050,
-          "y": 450
-        },
-        "class": {
-          "id": "77697265-EA26-47D6-985A-B4D5DC314BF7",
-          "version": 2
-        },
-        "clock": "video",
-        "color": "ff2dc18a",
-        "constants": {
-          "material": {
-            "type": "color",
-            "value": [
-              1.0,
-              1.0,
-              1.0,
-              1.0
-            ]
-          },
-          "shape": {
-            "type": "procedural",
-            "value": null
-          }
-        },
-        "name": "Render Beam",
-        "thumbnail_visible": true,
-        "hidden": [
-          "antialising-direction",
-          "antialiasing",
-          "shape-dimensions",
-          "material-dimensions",
-          "resolution-mode",
-          "resolution-relative",
-          "resolution-absolute",
-          "bitdepth"
         ]
       },
       "32": {
@@ -1731,12 +1737,12 @@
         "name": "Wiper Gate",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
       "33": {

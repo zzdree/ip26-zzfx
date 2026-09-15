@@ -33,6 +33,16 @@
         ],
         "to": [
           21,
+          "selection"
+        ]
+      },
+      {
+        "from": [
+          21,
+          "output"
+        ],
+        "to": [
+          22,
           "input0"
         ]
       },
@@ -42,7 +52,7 @@
           "output"
         ],
         "to": [
-          21,
+          22,
           "duration"
         ]
       },
@@ -52,37 +62,37 @@
           "output"
         ],
         "to": [
-          22,
+          23,
           "input0"
         ]
       },
       {
         "from": [
-          21,
+          22,
           "output0"
         ],
         "to": [
-          22,
+          23,
           "input1"
         ]
       },
       {
         "from": [
-          22,
+          23,
           "output0"
         ],
         "to": [
-          23,
+          24,
           "value"
         ]
       },
       {
         "from": [
-          23,
-          "output"
+          24,
+          "output0"
         ],
         "to": [
-          24,
+          25,
           "input0"
         ]
       },
@@ -92,16 +102,6 @@
           "output"
         ],
         "to": [
-          24,
-          "input1"
-        ]
-      },
-      {
-        "from": [
-          24,
-          "output0"
-        ],
-        "to": [
           25,
           "input1"
         ]
@@ -113,16 +113,26 @@
         ],
         "to": [
           26,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          26,
+          "output0"
+        ],
+        "to": [
+          27,
           "input0"
         ]
       },
       {
         "from": [
-          25,
+          26,
           "output0"
         ],
         "to": [
-          26,
+          27,
           "input1"
         ]
       },
@@ -132,17 +142,17 @@
           "output"
         ],
         "to": [
-          27,
+          28,
           "input"
         ]
       },
       {
         "from": [
-          26,
+          27,
           "output"
         ],
         "to": [
-          27,
+          28,
           "scale"
         ]
       },
@@ -152,17 +162,17 @@
           "output"
         ],
         "to": [
-          28,
+          29,
           "color"
         ]
       },
       {
         "from": [
-          23,
-          "output"
+          24,
+          "output0"
         ],
         "to": [
-          29,
+          30,
           "input0"
         ]
       },
@@ -172,16 +182,6 @@
           "output"
         ],
         "to": [
-          29,
-          "input1"
-        ]
-      },
-      {
-        "from": [
-          27,
-          "output0"
-        ],
-        "to": [
           30,
           "input1"
         ]
@@ -189,30 +189,40 @@
       {
         "from": [
           28,
-          "output"
+          "output0"
         ],
         "to": [
-          30,
-          "input2"
+          31,
+          "input1"
         ]
       },
       {
         "from": [
           29,
-          "output0"
+          "output"
         ],
         "to": [
-          30,
-          "opacity2"
+          31,
+          "input2"
         ]
       },
       {
         "from": [
           30,
-          "output"
+          "output0"
         ],
         "to": [
           31,
+          "opacity2"
+        ]
+      },
+      {
+        "from": [
+          31,
+          "output"
+        ],
+        "to": [
+          32,
           "input1"
         ]
       },
@@ -222,7 +232,7 @@
           "output"
         ],
         "to": [
-          31,
+          32,
           "input2"
         ]
       },
@@ -232,13 +242,13 @@
           "output"
         ],
         "to": [
-          31,
+          32,
           "opacity2"
         ]
       },
       {
         "from": [
-          31,
+          32,
           "output"
         ],
         "to": [
@@ -278,7 +288,7 @@
       "type": "effect",
       "url": "https://github.com/zzdree/ip26-zzfx",
       "vendor": "IP26 Production",
-      "version": "1.0.0"
+      "version": "2.0.0"
     },
     "nextNodeId": 300,
     "nodes": {
@@ -413,7 +423,7 @@
           },
           "max": {
             "type": "float",
-            "value": 1.0
+            "value": 1.5
           },
           "min": {
             "type": "float",
@@ -447,7 +457,7 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 0.35
+            "value": 0.45
           }
         },
         "hidden": [
@@ -485,11 +495,11 @@
           },
           "max": {
             "type": "float",
-            "value": 1.0
+            "value": 1.5
           },
           "min": {
             "type": "float",
-            "value": 0.02
+            "value": 0.05
           },
           "options-count": {
             "type": "integer",
@@ -519,7 +529,7 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 0.15
+            "value": 0.25
           }
         },
         "hidden": [
@@ -591,7 +601,7 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 0.4
+            "value": 0.5
           }
         },
         "hidden": [
@@ -618,14 +628,6 @@
           "instances": {
             "type": "integer",
             "value": 1
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
           }
         },
         "bounds": {
@@ -639,7 +641,7 @@
           "version": 3
         },
         "clock": "video",
-        "color": "ffea1f48",
+        "color": "ffff6a00",
         "constants": {
           "input": {
             "type": "color",
@@ -729,7 +731,7 @@
           },
           "linear": {
             "type": "bool",
-            "value": false
+            "value": true
           },
           "release": {
             "type": "trigger",
@@ -737,7 +739,7 @@
           },
           "release-time": {
             "type": "float",
-            "value": 0.15
+            "value": 0.25
           },
           "reset": {
             "type": "trigger",
@@ -745,7 +747,7 @@
           },
           "restart-at-zero": {
             "type": "bool",
-            "value": false
+            "value": true
           },
           "trigger": {
             "type": "trigger",
@@ -763,6 +765,65 @@
       },
       "21": {
         "attributes": {
+          "case-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "selection-type": {
+            "type": "type",
+            "value": "integer"
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          }
+        },
+        "bounds": {
+          "height": 80,
+          "width": 130,
+          "x": -350,
+          "y": 250
+        },
+        "class": {
+          "id": "77697265-6899-4A9C-82AB-949346033440",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 1.0
+          },
+          "selection": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "name": "Bool To Float",
+        "thumbnail_visible": false,
+        "hidden": [
+          "selection-type",
+          "case-type",
+          "flow",
+          "size",
+          "instances"
+        ]
+      },
+      "22": {
+        "attributes": {
           "input0-type": {
             "type": "type",
             "value": "float"
@@ -775,7 +836,7 @@
         "bounds": {
           "height": 58,
           "width": 195,
-          "x": -350,
+          "x": -200,
           "y": 250
         },
         "class": {
@@ -787,7 +848,7 @@
         "constants": {
           "duration": {
             "type": "float",
-            "value": 0.15
+            "value": 0.25
           },
           "input0": {
             "type": "float",
@@ -798,10 +859,11 @@
         "thumbnail_visible": true,
         "hidden": [
           "input0-type",
+          "flow",
           "instances"
         ]
       },
-      "22": {
+      "23": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -831,7 +893,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": -100,
+          "x": 0,
           "y": 150
         },
         "class": {
@@ -853,15 +915,15 @@
         "name": "Total Env Add",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
-      "23": {
+      "24": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -895,7 +957,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 80,
+          "x": 150,
           "y": 150
         },
         "class": {
@@ -921,16 +983,16 @@
         "name": "Clamp Env",
         "thumbnail_visible": true,
         "hidden": [
-          "value-type",
-          "min-type",
-          "max-type",
           "flow",
+          "value-type",
           "value-dimensions",
+          "min-type",
           "min-dimensions",
+          "max-type",
           "max-dimensions"
         ]
       },
-      "24": {
+      "25": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -960,7 +1022,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 260,
+          "x": 320,
           "y": 150
         },
         "class": {
@@ -979,18 +1041,18 @@
             "value": 0.0
           }
         },
-        "name": "Zoom Scale",
+        "name": "Zoom Mult",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
-      "25": {
+      "26": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -1020,7 +1082,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 440,
+          "x": 480,
           "y": 150
         },
         "class": {
@@ -1039,18 +1101,18 @@
             "value": 0.0
           }
         },
-        "name": "Total Scale",
+        "name": "Total Scale Add",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
-      "26": {
+      "27": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -1064,7 +1126,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 620,
+          "x": 640,
           "y": 150
         },
         "class": {
@@ -1084,9 +1146,13 @@
           }
         },
         "name": "Scale Vec2",
-        "thumbnail_visible": true
+        "thumbnail_visible": true,
+        "hidden": [
+          "flow",
+          "instances"
+        ]
       },
-      "27": {
+      "28": {
         "attributes": {
           "anchor-type": {
             "type": "type",
@@ -1172,7 +1238,7 @@
           "instances"
         ]
       },
-      "28": {
+      "29": {
         "attributes": {
           "bitdepth": {
             "type": "integer",
@@ -1239,7 +1305,7 @@
           "resolution-mode"
         ]
       },
-      "29": {
+      "30": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -1269,7 +1335,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 620,
+          "x": 640,
           "y": 350
         },
         "class": {
@@ -1291,15 +1357,15 @@
         "name": "Flash Opacity Calc",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
-      "30": {
+      "31": {
         "attributes": {
           "bitdepth": {
             "type": "integer",
@@ -1382,7 +1448,7 @@
         "name": "Video Mixer",
         "thumbnail_visible": true
       },
-      "31": {
+      "32": {
         "attributes": {
           "bitdepth": {
             "type": "integer",

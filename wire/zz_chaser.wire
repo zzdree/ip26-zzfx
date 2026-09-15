@@ -58,21 +58,11 @@
       },
       {
         "from": [
-          33,
-          "output"
-        ],
-        "to": [
-          34,
-          "input0"
-        ]
-      },
-      {
-        "from": [
           32,
           "output"
         ],
         "to": [
-          34,
+          33,
           "input1"
         ]
       },
@@ -82,8 +72,18 @@
           "output"
         ],
         "to": [
-          35,
+          34,
           "input0"
+        ]
+      },
+      {
+        "from": [
+          34,
+          "output0"
+        ],
+        "to": [
+          35,
+          "input1"
         ]
       },
       {
@@ -108,7 +108,7 @@
       },
       {
         "from": [
-          34,
+          33,
           "output0"
         ],
         "to": [
@@ -118,8 +118,28 @@
       },
       {
         "from": [
+          33,
+          "output0"
+        ],
+        "to": [
+          36,
+          "input2"
+        ]
+      },
+      {
+        "from": [
           32,
           "output"
+        ],
+        "to": [
+          36,
+          "input3"
+        ]
+      },
+      {
+        "from": [
+          35,
+          "output0"
         ],
         "to": [
           36,
@@ -128,7 +148,7 @@
       },
       {
         "from": [
-          34,
+          33,
           "output0"
         ],
         "to": [
@@ -138,81 +158,21 @@
       },
       {
         "from": [
-          11,
-          "output"
-        ],
-        "to": [
-          37,
-          "selection"
-        ]
-      },
-      {
-        "from": [
-          34,
-          "output0"
-        ],
-        "to": [
-          37,
-          "input2"
-        ]
-      },
-      {
-        "from": [
-          32,
-          "output"
-        ],
-        "to": [
-          37,
-          "input3"
-        ]
-      },
-      {
-        "from": [
-          32,
-          "output"
-        ],
-        "to": [
-          37,
-          "input6"
-        ]
-      },
-      {
-        "from": [
-          34,
-          "output0"
-        ],
-        "to": [
-          37,
-          "input7"
-        ]
-      },
-      {
-        "from": [
-          40,
-          "output"
-        ],
-        "to": [
-          41,
-          "input0"
-        ]
-      },
-      {
-        "from": [
           13,
           "output"
         ],
         "to": [
-          41,
+          40,
           "input1"
         ]
       },
       {
         "from": [
-          36,
-          "output"
+          40,
+          "output0"
         ],
         "to": [
-          42,
+          41,
           "input0"
         ]
       },
@@ -238,11 +198,91 @@
       },
       {
         "from": [
+          43,
+          "output0"
+        ],
+        "to": [
+          44,
+          "input0"
+        ]
+      },
+      {
+        "from": [
           40,
+          "output0"
+        ],
+        "to": [
+          44,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          42,
+          "output0"
+        ],
+        "to": [
+          45,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          44,
+          "output0"
+        ],
+        "to": [
+          45,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          40,
+          "output0"
+        ],
+        "to": [
+          46,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          36,
           "output"
         ],
         "to": [
-          43,
+          47,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          46,
+          "output0"
+        ],
+        "to": [
+          47,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          42,
+          "output0"
+        ],
+        "to": [
+          48,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          47,
+          "output0"
+        ],
+        "to": [
+          48,
           "input1"
         ]
       },
@@ -252,77 +292,77 @@
           "output"
         ],
         "to": [
-          44,
+          49,
           "selection"
         ]
       },
       {
         "from": [
-          43,
+          48,
           "output0"
         ],
         "to": [
-          44,
+          49,
           "input0"
         ]
       },
       {
         "from": [
-          42,
+          45,
           "output0"
         ],
         "to": [
-          44,
+          49,
           "input1"
         ]
       },
       {
         "from": [
-          44,
+          49,
           "output"
         ],
         "to": [
-          45,
+          50,
           "input0"
         ]
       },
       {
         "from": [
-          41,
+          40,
           "output0"
         ],
         "to": [
-          46,
+          51,
           "width"
         ]
       },
       {
         "from": [
-          46,
+          51,
           "output"
         ],
         "to": [
-          47,
+          52,
           "input"
         ]
       },
       {
         "from": [
-          45,
+          50,
           "output"
         ],
         "to": [
-          47,
+          52,
           "translation"
         ]
       },
       {
         "from": [
-          47,
+          52,
           "output"
         ],
         "to": [
-          48,
+          53,
           "shape"
         ]
       },
@@ -332,7 +372,7 @@
           "output"
         ],
         "to": [
-          48,
+          53,
           "material"
         ]
       },
@@ -342,7 +382,7 @@
           "output"
         ],
         "to": [
-          49,
+          54,
           "input0"
         ]
       },
@@ -352,7 +392,7 @@
           "output"
         ],
         "to": [
-          49,
+          54,
           "input1"
         ]
       },
@@ -362,37 +402,37 @@
           "output"
         ],
         "to": [
-          50,
+          55,
           "input1"
         ]
       },
       {
         "from": [
-          48,
+          53,
           "output0"
         ],
         "to": [
-          50,
+          55,
           "input2"
         ]
       },
       {
         "from": [
-          49,
+          54,
           "output0"
         ],
         "to": [
-          50,
+          55,
           "opacity2"
         ]
       },
       {
         "from": [
-          50,
+          55,
           "output"
         ],
         "to": [
-          51,
+          56,
           "input1"
         ]
       },
@@ -402,7 +442,7 @@
           "output"
         ],
         "to": [
-          51,
+          56,
           "input2"
         ]
       },
@@ -412,13 +452,13 @@
           "output"
         ],
         "to": [
-          51,
+          56,
           "opacity2"
         ]
       },
       {
         "from": [
-          51,
+          56,
           "output"
         ],
         "to": [
@@ -443,7 +483,7 @@
     "meta": {
       "author": "Andreas - IP26 Production",
       "category": "effect",
-      "description": "IP26 Modular Suite: 1-Screen Dedicated Piano Chaser with Custom Grid 1-10 & Bounce.",
+      "description": "IP26 Modular Suite: 1-Screen Dedicated Piano Chaser with Full L-to-R Grid Coverage & Bounce.",
       "displayName": "zz-chaser",
       "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e220",
       "license": "MIT",
@@ -461,7 +501,7 @@
       "type": "effect",
       "url": "https://github.com/zzdree/ip26-zzfx",
       "vendor": "IP26 Production",
-      "version": "1.0.0"
+      "version": "2.0.0"
     },
     "nextNodeId": 300,
     "nodes": {
@@ -559,7 +599,7 @@
           },
           "max": {
             "type": "integer",
-            "value": 7
+            "value": 5
           },
           "min": {
             "type": "integer",
@@ -920,14 +960,6 @@
           "instances": {
             "type": "integer",
             "value": 1
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
           }
         },
         "bounds": {
@@ -941,7 +973,7 @@
           "version": 3
         },
         "clock": "video",
-        "color": "ffea1f48",
+        "color": "ffff6a00",
         "constants": {
           "input": {
             "type": "color",
@@ -1264,62 +1296,58 @@
             "type": "flow",
             "value": "signal"
           },
-          "has-max": {
-            "type": "bool",
-            "value": false
-          },
-          "has-min": {
-            "type": "bool",
-            "value": false
-          },
-          "instances": {
+          "input0-dimensions": {
             "type": "integer",
             "value": 1
           },
-          "options-count": {
+          "input1-dimensions": {
             "type": "integer",
-            "value": 0
+            "value": 1
           },
-          "unit": {
+          "size": {
             "type": "integer",
-            "value": 0
+            "value": 2
           },
-          "widget": {
-            "type": "integer",
-            "value": 0
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
           }
         },
         "bounds": {
-          "height": 50,
-          "width": 80,
+          "height": 82,
+          "width": 130,
           "x": 120,
-          "y": 150
+          "y": 200
         },
         "class": {
-          "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
-          "version": 3
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
         },
         "clock": "video",
-        "color": "ff20c7bb",
+        "color": "ffff6a00",
         "constants": {
-          "input": {
+          "input0": {
             "type": "float",
             "value": 1.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
           }
         },
-        "name": "Const 1.0",
-        "thumbnail_visible": false,
+        "name": "Invert Phase",
+        "thumbnail_visible": true,
         "hidden": [
-          "input",
-          "instances",
           "flow",
-          "has-min",
-          "min",
-          "has-max",
-          "max",
-          "options-count",
-          "widget",
-          "unit"
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
         ]
       },
       "34": {
@@ -1352,8 +1380,68 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 230,
-          "y": 150
+          "x": 120,
+          "y": 350
+        },
+        "class": {
+          "id": "77697265-A0D8-429A-A558-69BC58D0D425",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.5
+          }
+        },
+        "name": "Center Phase Mult",
+        "thumbnail_visible": false,
+        "hidden": [
+          "flow",
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
+        ]
+      },
+      "35": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 260,
+          "y": 350
         },
         "class": {
           "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
@@ -1364,25 +1452,100 @@
         "constants": {
           "input0": {
             "type": "float",
-            "value": 1.0
+            "value": 0.5
           },
           "input1": {
             "type": "float",
             "value": 0.0
           }
         },
-        "name": "Invert Phase",
-        "thumbnail_visible": true,
+        "name": "Center-Out Phase",
+        "thumbnail_visible": false,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
-      "35": {
+      "36": {
+        "attributes": {
+          "case-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "selection-type": {
+            "type": "type",
+            "value": "integer"
+          },
+          "size": {
+            "type": "integer",
+            "value": 6
+          }
+        },
+        "bounds": {
+          "height": 150,
+          "width": 195,
+          "x": 420,
+          "y": 200
+        },
+        "class": {
+          "id": "77697265-6899-4A9C-82AB-949346033440",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input2": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input3": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input4": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input5": {
+            "type": "float",
+            "value": 0.0
+          },
+          "selection": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "name": "Switch Phase",
+        "thumbnail_visible": true,
+        "hidden": [
+          "selection-type",
+          "case-type",
+          "flow",
+          "size",
+          "instances"
+        ]
+      },
+      "40": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -1412,11 +1575,11 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 120,
+          "x": 640,
           "y": 300
         },
         "class": {
-          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "id": "77697265-0D55-485E-813D-706DD5DFE88D",
           "version": 1
         },
         "clock": "video",
@@ -1424,252 +1587,22 @@
         "constants": {
           "input0": {
             "type": "float",
-            "value": 0.0
-          },
-          "input1": {
-            "type": "float",
-            "value": 0.5
-          }
-        },
-        "name": "Phase Sub 0.5",
-        "thumbnail_visible": true,
-        "hidden": [
-          "size",
-          "input0-dimensions",
-          "input1-dimensions",
-          "type0",
-          "type1",
-          "flow"
-        ]
-      },
-      "36": {
-        "attributes": {
-          "case-type": {
-            "type": "type",
-            "value": "float"
-          },
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          },
-          "selection-type": {
-            "type": "type",
-            "value": "integer"
-          },
-          "size": {
-            "type": "integer",
-            "value": 8
-          }
-        },
-        "bounds": {
-          "height": 180,
-          "width": 195,
-          "x": 400,
-          "y": 100
-        },
-        "class": {
-          "id": "77697265-6899-4A9C-82AB-949346033440",
-          "version": 3
-        },
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-          "input0": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input1": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input2": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input3": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input4": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input5": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input6": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input7": {
-            "type": "float",
-            "value": 0.0
-          },
-          "selection": {
-            "type": "integer",
-            "value": 0
-          }
-        },
-        "name": "Switch Phase X",
-        "thumbnail_visible": true,
-        "hidden": [
-          "selection-type",
-          "case-type",
-          "flow",
-          "size",
-          "instances"
-        ]
-      },
-      "37": {
-        "attributes": {
-          "case-type": {
-            "type": "type",
-            "value": "float"
-          },
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          },
-          "selection-type": {
-            "type": "type",
-            "value": "integer"
-          },
-          "size": {
-            "type": "integer",
-            "value": 8
-          }
-        },
-        "bounds": {
-          "height": 180,
-          "width": 195,
-          "x": 400,
-          "y": 350
-        },
-        "class": {
-          "id": "77697265-6899-4A9C-82AB-949346033440",
-          "version": 3
-        },
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-          "input0": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input1": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input2": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input3": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input4": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input5": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input6": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input7": {
-            "type": "float",
-            "value": 0.0
-          },
-          "selection": {
-            "type": "integer",
-            "value": 0
-          }
-        },
-        "name": "Switch Phase Y",
-        "thumbnail_visible": true,
-        "hidden": [
-          "selection-type",
-          "case-type",
-          "flow",
-          "size",
-          "instances"
-        ]
-      },
-      "40": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "has-max": {
-            "type": "bool",
-            "value": false
-          },
-          "has-min": {
-            "type": "bool",
-            "value": false
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "unit": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
-          }
-        },
-        "bounds": {
-          "height": 50,
-          "width": 80,
-          "x": 620,
-          "y": 550
-        },
-        "class": {
-          "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
-          "version": 3
-        },
-        "clock": "video",
-        "color": "ff20c7bb",
-        "constants": {
-          "input": {
-            "type": "float",
             "value": 2.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 5.0
           }
         },
-        "name": "Canvas Width 2.0",
-        "thumbnail_visible": false,
+        "name": "Slice Width Calc",
+        "thumbnail_visible": true,
         "hidden": [
-          "input",
-          "instances",
           "flow",
-          "has-min",
-          "min",
-          "has-max",
-          "max",
-          "options-count",
-          "widget",
-          "unit"
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
         ]
       },
       "41": {
@@ -1702,8 +1635,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 730,
-          "y": 550
+          "x": 780,
+          "y": 300
         },
         "class": {
           "id": "77697265-0D55-485E-813D-706DD5DFE88D",
@@ -1714,15 +1647,15 @@
         "constants": {
           "input0": {
             "type": "float",
-            "value": 2.0
+            "value": 0.4
           },
           "input1": {
             "type": "float",
-            "value": 5.0
+            "value": 2.0
           }
         },
-        "name": "Slice Width Calc",
-        "thumbnail_visible": true,
+        "name": "Half Width Calc",
+        "thumbnail_visible": false,
         "hidden": [
           "flow",
           "size",
@@ -1738,6 +1671,10 @@
             "type": "flow",
             "value": "signal"
           },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
           "input0-dimensions": {
             "type": "integer",
             "value": 1
@@ -1746,27 +1683,23 @@
             "type": "integer",
             "value": 1
           },
-          "input0-type": {
+          "type0": {
             "type": "type",
             "value": "float"
           },
-          "input1-type": {
+          "type1": {
             "type": "type",
             "value": "float"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
           }
         },
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 620,
-          "y": 100
+          "x": 920,
+          "y": 300
         },
         "class": {
-          "id": "77697265-548F-4EF6-9B00-F3005FEC8687",
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
           "version": 1
         },
         "clock": "video",
@@ -1774,20 +1707,21 @@
         "constants": {
           "input0": {
             "type": "float",
-            "value": 0.0
+            "value": -1.0
           },
           "input1": {
             "type": "float",
-            "value": 0.4
+            "value": 0.2
           }
         },
-        "name": "Quantize X",
-        "thumbnail_visible": true,
+        "name": "Left Edge Coord",
+        "thumbnail_visible": false,
         "hidden": [
-          "input0-type",
-          "input1-type",
           "flow",
+          "size",
+          "type0",
           "input0-dimensions",
+          "type1",
           "input1-dimensions"
         ]
       },
@@ -1821,8 +1755,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 620,
-          "y": 250
+          "x": 640,
+          "y": 100
         },
         "class": {
           "id": "77697265-A0D8-429A-A558-69BC58D0D425",
@@ -1837,21 +1771,320 @@
           },
           "input1": {
             "type": "float",
-            "value": 2.0
+            "value": 1.999
           }
         },
-        "name": "Continuous Scale X",
-        "thumbnail_visible": true,
+        "name": "Phase Mult 2",
+        "thumbnail_visible": false,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
       "44": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input0-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "input1-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 780,
+          "y": 100
+        },
+        "class": {
+          "id": "77697265-548F-4EF6-9B00-F3005FEC8687",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.4
+          }
+        },
+        "name": "Quantize Step",
+        "thumbnail_visible": true,
+        "hidden": [
+          "input0-type",
+          "input1-type",
+          "flow",
+          "input0-dimensions",
+          "input1-dimensions"
+        ]
+      },
+      "45": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 1060,
+          "y": 100
+        },
+        "class": {
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": -0.8
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Snapped X Pos",
+        "thumbnail_visible": true,
+        "hidden": [
+          "flow",
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
+        ]
+      },
+      "46": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 780,
+          "y": 450
+        },
+        "class": {
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 2.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.4
+          }
+        },
+        "name": "Travel Span Calc",
+        "thumbnail_visible": false,
+        "hidden": [
+          "flow",
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
+        ]
+      },
+      "47": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 920,
+          "y": 450
+        },
+        "class": {
+          "id": "77697265-A0D8-429A-A558-69BC58D0D425",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 1.6
+          }
+        },
+        "name": "Cont Move Calc",
+        "thumbnail_visible": false,
+        "hidden": [
+          "flow",
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
+        ]
+      },
+      "48": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 1060,
+          "y": 450
+        },
+        "class": {
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": -0.8
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Continuous X Pos",
+        "thumbnail_visible": true,
+        "hidden": [
+          "flow",
+          "size",
+          "type0",
+          "input0-dimensions",
+          "type1",
+          "input1-dimensions"
+        ]
+      },
+      "49": {
         "attributes": {
           "case-type": {
             "type": "type",
@@ -1877,8 +2110,8 @@
         "bounds": {
           "height": 100,
           "width": 195,
-          "x": 800,
-          "y": 150
+          "x": 1220,
+          "y": 250
         },
         "class": {
           "id": "77697265-6899-4A9C-82AB-949346033440",
@@ -1900,7 +2133,7 @@
             "value": 1
           }
         },
-        "name": "Switch Snap X",
+        "name": "Switch Snap Mode",
         "thumbnail_visible": true,
         "hidden": [
           "selection-type",
@@ -1910,7 +2143,7 @@
           "instances"
         ]
       },
-      "45": {
+      "50": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -1924,8 +2157,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 1020,
-          "y": 200
+          "x": 1440,
+          "y": 250
         },
         "class": {
           "id": "77697265-E7EF-4944-8FC2-D808EE0433CB",
@@ -1944,9 +2177,13 @@
           }
         },
         "name": "Translation Vec2",
-        "thumbnail_visible": true
+        "thumbnail_visible": true,
+        "hidden": [
+          "flow",
+          "instances"
+        ]
       },
-      "46": {
+      "51": {
         "attributes": {
           "instances": {
             "type": "integer",
@@ -1956,8 +2193,8 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": 1020,
-          "y": 400
+          "x": 1440,
+          "y": 450
         },
         "class": {
           "id": "77697265-4db6-4573-8aa7-42362bc44931",
@@ -1991,7 +2228,7 @@
           "round"
         ]
       },
-      "47": {
+      "52": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -2013,8 +2250,8 @@
         "bounds": {
           "height": 58,
           "width": 195,
-          "x": 1250,
-          "y": 300
+          "x": 1660,
+          "y": 350
         },
         "class": {
           "id": "77697265-0e5a-4bfd-b136-e4f68P3cc463",
@@ -2044,7 +2281,7 @@
           "instances"
         ]
       },
-      "48": {
+      "53": {
         "attributes": {
           "aa-blend": {
             "type": "bool",
@@ -2100,8 +2337,8 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": 1250,
-          "y": 450
+          "x": 1660,
+          "y": 500
         },
         "class": {
           "id": "77697265-EA26-47D6-985A-B4D5DC314BF7",
@@ -2137,7 +2374,7 @@
           "bitdepth"
         ]
       },
-      "49": {
+      "54": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -2167,7 +2404,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 1250,
+          "x": 1660,
           "y": 150
         },
         "class": {
@@ -2189,15 +2426,15 @@
         "name": "Chase Gate",
         "thumbnail_visible": true,
         "hidden": [
+          "flow",
           "size",
-          "input0-dimensions",
-          "input1-dimensions",
           "type0",
+          "input0-dimensions",
           "type1",
-          "flow"
+          "input1-dimensions"
         ]
       },
-      "50": {
+      "55": {
         "attributes": {
           "bitdepth": {
             "type": "integer",
@@ -2233,7 +2470,7 @@
         "bounds": {
           "height": 154,
           "width": 195,
-          "x": 1500,
+          "x": 1900,
           "y": 0
         },
         "class": {
@@ -2280,7 +2517,7 @@
         "name": "Video Mixer",
         "thumbnail_visible": true
       },
-      "51": {
+      "56": {
         "attributes": {
           "bitdepth": {
             "type": "integer",
@@ -2316,7 +2553,7 @@
         "bounds": {
           "height": 154,
           "width": 195,
-          "x": 1750,
+          "x": 2150,
           "y": 0
         },
         "class": {
@@ -2373,7 +2610,7 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": 2000,
+          "x": 2400,
           "y": 0
         },
         "class": {

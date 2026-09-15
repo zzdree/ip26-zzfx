@@ -16,108 +16,71 @@ Project ini dirancang dengan standar **Pure Modular Architecture (`zz-suite`)**.
 │                   ZZ-SUITE PURE MODULAR PLUGINS                        │
 ├──────────────────────┬─────────────────────────────────────────────────┤
 │ zz_pusher.cwired     │ Efek Kejut: Beat Punch Zoom + Solid Glow Fade   │
-│ zz_chaser.cwired     │ 1-Screen Precision Grid Runner (Slices & Bounce)│
-│ zz_wiper.cwired      │ Smooth Continuous Scanner Curtain Wipe          │
+│ zz_chaser.cwired     │ 1-Screen Precision Grid Runner (Full L-to-R)    │
+│ zz_wiper.cwired      │ Moving Radiant Gradient Curtain Wipe            │
 │ zz_strobe.cwired     │ High-Speed Native Piano Flash Strobe            │
-│ zz_stroke.cwired     │ Animated Snake Border Glow with Fading Tail     │
+│ zz_stroke.cwired     │ Animated Perimeter Snake (Radius & Inset Frame) │
 └──────────────────────┴─────────────────────────────────────────────────┘
 ```
 
-### 💡 Keuntungan Pure Modular:
-1. **Fleksibilitas Stacking:** Bebas drag hanya efek yang diperlukan ke Composition, Layer, atau Clip.
-2. **Bebas Crash (*Crash-Proof & Zero Conflict*):** Setiap modul berdiri sendiri tanpa dependensi eksternal, compiled native menggunakan official Resolume Wire Engine.
-3. **Ultra Ringan & Hemat GPU:** Modul hanya memproses shader saat aktif. Saat piano key dilepas, opacity langsung cut ke 0.0 (nol beban GPU).
-4. **Urutan Efek Dinamis:** Urutan render bebas diatur (misal: *Stroke* di atas video, lalu di-*Push* bersamaan dengan *Wiper*).
-
 ---
 
-## 📐 Fleksibilitas Resolusi & Fleksibilitas Penempatan
+## 🎛️ Panduan Parameter & Pembaruan Setiap Modul
 
-### 1. Dynamic Resolution (100% Fleksibel)
-- Seluruh 5 plugin dibangun menggunakan sistem koordinat **Relative Texture & Procedural Canvas (`resolution-relative: [1, 1]`)**.
-- **Hasil:**
-  - ✅ **1920x1080 (FHD / Monitor Preview):** Tampilan proporsional dan tajam.
-  - ✅ **2400x720 (Novastar LED Wall Auditorium UNNES):** Otomatis menyesuaikan aspek rasio ultrawide panggung tanpa distorsi.
-  - ✅ **4K / Custom Resolution:** 100% adaptif mengikuti resolusi video buffer tanpa perlu setting ulang.
-
-### 2. Penempatan: Composition vs Layer vs Clip
-- **Di Composition (Global Master FX):**
-  - **Sangat Aman!** Semua efek akan memengaruhi keseluruhan output visual (Video Background + Kamera + Lowerthird/Lirik). Sangat direkomendasikan untuk *Pusher* dan *Strobe* saat drop musik/reff lagu.
-- **Di Layer (Specific Track FX):**
-  - Efek hanya memengaruhi layer tersebut (misalnya hanya di Layer Background Motion Graphics, sementara Layer Lirik tetap bersih).
-- **Di Clip (Individual Video FX):**
-  - Efek melekat langsung pada video clip tertentu saat di-trigger.
-
----
-
-## 📦 Struktur Folder & File (`C:\ANDREAS\ip26-zzfx`)
-
-Repository terbagi menjadi 2 folder utama:
-* **[`cwired/`](file:///C:/ANDREAS/ip26-zzfx/cwired)** ➔ Berisi 5 plugin biner siap pakai untuk **Resolume Arena**.
-* **[`wire/`](file:///C:/ANDREAS/ip26-zzfx/wire)** ➔ Berisi 5 source patch untuk **Resolume Wire**.
-
-### 1. Folder `cwired/` (Siap Pakai di Resolume Arena)
-| File | Ukuran | Jenis | Deskripsi & Fitur Utama |
-| :--- | :--- | :--- | :--- |
-| **[`cwired/zz_pusher.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_pusher.cwired)** | 15.2 KB | Modular | **Efek Kejut (Beat Zoom Kick + Solid Flash).** Dilengkapi tombol klik `Punch!` di inspector & piano toggle, zoom membesar seketika lalu pudar halus bersama kilatan solid. |
-| **[`cwired/zz_chaser.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_chaser.cwired)** | 25.0 KB | Modular | **1-Screen Precision Grid Runner.** Tanpa perlu slice screen / Advanced Output! Custom Grid 1–10 (default 5 panel), Snap to Grid, 6 arah gerakan, opsi Bounce (ping-pong vs looping). |
-| **[`cwired/zz_wiper.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_wiper.cwired)** | 21.4 KB | Modular | **Smooth Continuous Scanner Curtain Wipe.** Bilah sapuan cahaya continuous (tanpa grid), 6 arah gerakan, opsi Bounce, kontrol Bar Width & Speed. |
-| **[`cwired/zz_strobe.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_strobe.cwired)** | 10.3 KB | Modular | **High-Speed Flash Strobe.** Model stock Resolume Strobe dengan Piano hold, frekuensi 2–30 Hz, kontrol warna dan intensitas kilatan. |
-| **[`cwired/zz_stroke.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_stroke.cwired)** | 18.4 KB | Modular | **Perimeter Snake Border Glow.** Efek ular cahaya berlari mengelilingi bingkai tepi layar LED dengan ekor memudar halus (*smooth gradient tail*), arah CW/CCW, dan ketebalan garis. |
-
----
-
-## 🎛️ Panduan Parameter & Cara Pakai Setiap Modul
-
-### 1. `zz-pusher` (Efek Kejut / Beat Punch Zoom)
+### 1. [`zz_pusher.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_pusher.cwired) (Efek Kejut + Tombol Trigger Langsung)
 * **`Punch!` (Click Trigger Button):** Tombol klik langsung di inspector untuk memicu efek hentakan seketika tanpa harus mapping piano manual.
-* **`Push` (Toggle / Piano):** Saklar aktivasi untuk shortcut keyboard / MIDI.
-* **`Push Amount` (0.0 – 1.0, default: `0.35`):** Besaran zoom hentakan kejut.
-* **`Push Decay` (0.02 – 1.0s, default: `0.15s`):** Kecepatan pudar halus (*smooth exponential release*).
-* **`Flash Intensity` (0.0 – 1.0, default: `0.40`):** Kecerahan kilatan solid yang muncul bersama hentakan dan pudar bersamaan.
+* **`Push` (Toggle / Piano):** Saklar aktivasi untuk shortcut keyboard / MIDI pad.
+* **`Push Amount` (0.0 – 1.5, default: `0.45`):** Besaran zoom hentakan kejut dari titik tengah layar.
+* **`Push Decay` (0.05 – 1.5s, default: `0.25s`):** Waktu pudar elastis (*smooth release decay*).
+* **`Flash Intensity` (0.0 – 1.0, default: `0.50`):** Kecerahan kilatan solid yang muncul bersama hentakan dan pudar bersamaan.
 * **`Flash Color` (Color Picker):** Warna kilatan kejut (default: Putih).
 * **`Bypass` (Toggle):** Mem-bypass efek seketika.
 
-### 2. `zz-chaser` (1-Screen Precision Grid Runner)
-* **`Chase (Hold)` (Piano Hold):** Tahan untuk mengaktifkan chaser, lepas untuk instant cut.
+### 2. [`zz_chaser.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_chaser.cwired) (1-Screen Full Left-to-Right Precision Chaser)
+* **Cakupan Penuh Layar (*Full L-to-R*):** Pembagian matematis presisi dari ujung kiri paling luar ($-0.80$) melintasi seluruh panel tengah ($0.00$) hingga ujung kanan paling luar ($+0.80$) untuk 5 panel LED Auditorium UNNES.
+* **`Chase (Hold)` (Piano Hold):** Tahan untuk menyalakan chaser, lepas untuk *instant cut*.
 * **`Direction` (0 – 5):**
-  - `0`: Left $\rightarrow$ Right
-  - `1`: Right $\rightarrow$ Left
-  - `2`: Up $\rightarrow$ Down
-  - `3`: Down $\rightarrow$ Up
-  - `4`: Center $\rightarrow$ Out
-  - `5`: Out $\rightarrow$ Center
+  - `0`: Kiri ke Kanan (*Left $\rightarrow$ Right*)
+  - `1`: Kanan ke Kiri (*Right $\rightarrow$ Left*)
+  - `2`: Atas ke Bawah (*Up $\rightarrow$ Down*)
+  - `3`: Bawah ke Atas (*Down $\rightarrow$ Up*)
+  - `4`: Tengah ke Luar (*Center $\rightarrow$ Out*)
+  - `5`: Luar ke Tengah (*Out $\rightarrow$ Center*)
 * **`Bounce` (Toggle, default: OFF):**
-  - `OFF`: Runner meluncur satu arah lalu melompat looping langsung dari awal.
-  - `ON`: Runner bergerak bolak-balik terus menerus (*ping-pong*).
-* **`Grid Slices X` (Int 1 – 10, default: `5`):** Pembagi kolom presisi. Set `5` untuk 5 panel LED Auditorium UNNES.
-* **`Grid Slices Y` (Int 1 – 10, default: `1`):** Pembagi baris presisi horizontal.
+  - `OFF`: Meluncur satu arah lalu langsung me-loop dari awal (*sawtooth*).
+  - `ON`: Memantul bolak-balik terus menerus (*ping-pong triangle*).
+* **`Grid Slices X` (Int 1 – 10, default: `5`):** Jumlah kolom panel horizontal.
+* **`Grid Slices Y` (Int 1 – 10, default: `1`):** Jumlah baris panel vertikal.
 * **`Snap to Grid` (Toggle, default: ON):**
-  - `ON`: Melompat presisi per panel LED.
-  - `OFF`: Bergerak meluncur mulus continuous melintasi grid.
+  - `ON`: Melompat presisi panel per panel.
+  - `OFF`: Meluncur mulus continuous melintasi layar.
 * **`Chase Speed` (0.1 – 8.0 Hz, default: `1.5 Hz`):** Kecepatan lari chaser.
 * **`Chase Color` (Color Picker):** Warna bilah chaser (default: Amber Gold).
 * **`Chase Intensity` (0.0 – 1.0):** Kecerahan bilah chaser.
 
-### 3. `zz-wiper` (Continuous Scanner Curtain Wipe)
+### 3. [`zz_wiper.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_wiper.cwired) (Radiant Moving Gradient Curtain Wipe)
+* **Bentuk Gradien Digeser:** Menghasilkan tirai cahaya lembut (*radiant light beam*) dengan falloff gradien silky-smooth yang meluncur menyapu layar video.
 * **`Wiper (Hold)` (Piano Hold):** Tahan untuk memicu sapuan cahaya.
 * **`Direction` (0 – 5):** L->R, R->L, Up->Down, Down->Up, Center->Out, Out->Center.
 * **`Bounce` (Toggle):** Sapuan satu arah atau bolak-balik (*ping-pong*).
-* **`Wipe Speed` (0.1 – 6.0 Hz):** Kecepatan siklus sapuan tirai.
-* **`Bar Width` (0.02 – 1.0, default: `0.35`):** Lebar bilah sapuan cahaya.
-* **`Bar Color` (Color Picker):** Warna tirai scanner.
+* **`Wipe Speed` (0.1 – 6.0 Hz):** Kecepatan sapuan tirai.
+* **`Gradient Width` (0.2 – 3.0, default: `1.0`):** Lebar sebaran gradien cahaya.
+* **`Wipe Color` (Color Picker):** Warna gradien tirai scanner.
 * **`Wipe Intensity` (0.0 – 1.0):** Opacity bilah sapuan.
 
-### 4. `zz-strobe` (High-Speed Multi-Rate Flash)
+### 4. [`zz_strobe.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_strobe.cwired) (Stock Strobe Reimagined)
 * **`Strobe (Hold)` (Piano Hold):** Tahan tombol untuk memicu flash cepat.
 * **`Strobe Rate` (2.0 – 30.0 Hz, default: `14.0 Hz`):** Kecepatan kedipan per detik.
 * **`Strobe Color` (Color Picker):** Warna kilatan (default: Putih).
 * **`Strobe Intensity` (0.0 – 1.0):** Kecerahan kilatan.
 
-### 5. `zz-stroke` (Animated Snake Perimeter Border)
-* **`Stroke (Hold)` (Piano Hold):** Tahan tombol untuk memunculkan ular bingkai neon.
-* **`Stroke Width` (0.005 – 0.08, default: `0.025`):** Ketebalan garis tepi layar LED.
-* **`Snake Speed` (0.1 – 4.0 Hz, default: `1.0 Hz`):** Kecepatan lari ular mengitari pinggir layar.
+### 5. [`zz_stroke.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_stroke.cwired) (Perimeter Snake Border dengan Animasi & Fleksibilitas)
+* **Animasi Ular Nyata (*Animated Snake*):** Ular neon berlari mengelilingi bingkai tepi layar dengan ekor gradien memudar (*smooth fading tail*) yang 100% terang dan dinamis!
+* **`Stroke (Hold)` (Piano Hold):** Tahan untuk memunculkan ular bingkai neon.
+* **`Stroke Width` (0.005 – 0.08, default: `0.025`):** Ketebalan garis tepi.
+* **`Corner Radius` (0.0 – 0.5, default: `0.0`):** Sudut lengkung modern (*rounded corners*) untuk frame panggung yang elegan.
+* **`Border Inset` (0.0 – 0.2, default: `0.0`):** Jarak batas frame dari tepi fisik layar (*floating inner frame*).
+* **`Snake Speed` (0.1 – 4.0 Hz, default: `1.2 Hz`):** Kecepatan putaran ular neon mengelilingi layar.
 * **`Direction` (0 = Clockwise, 1 = Counter-Clockwise):** Arah putaran ular cahaya.
 * **`Stroke Color` (Color Picker):** Warna neon ular (default: Cyan Glow).
 * **`Stroke Intensity` (0.0 – 1.0):** Kecerahan efek stroke.
@@ -132,33 +95,6 @@ Repository terbagi menjadi 2 folder utama:
    - Buka Resolume Arena $\rightarrow$ **Preferences** $\rightarrow$ **Effects**.
    - Klik **Add Directory** $\rightarrow$ Arahkan ke `C:\ANDREAS\ip26-zzfx\cwired`.
 4. Seluruh plugin akan langsung muncul di panel **Effects** Resolume Arena!
-
----
-
-## 🎹 Panduan Setting Mode Piano di Resolume Arena
-
-Untuk performa VJ live yang responsif saat ibadah/konser:
-
-1. Drag plugin yang diinginkan ke **Composition** (atau layer video).
-2. Tekan **`Ctrl + Shift + K`** (*Shortcuts $\rightarrow$ Edit Keyboard*).
-3. Klik parameter toggle efek (misal `Push`, `Chase (Hold)`, `Strobe (Hold)`), lalu tekan tombol keyboard yang diinginkan (misal `Space`, `A`, `S`, dll).
-4. Di panel kanan bawah (**Shortcuts Inspector**), ubah dropdown **Mode** dari *Toggle* menjadi **`Piano`**.
-5. Tekan **`Esc`** untuk keluar.
-6. **Hasil:**
-   - **Tahan tombol:** Efek langsung aktif dan bergerak sesuai tempo.
-   - **Lepas tombol:** Efek mati seketika (*instant cut*), opacity 0.0, nol beban GPU!
-
----
-
-## 🔨 Cara Compile Ulang Source Patch
-
-Jika melakukan penyesuaian parameter di [`build_suite.py`](file:///C:/ANDREAS/ip26-zzfx/build_suite.py), jalankan:
-
-```powershell
-python build_suite.py
-```
-
-Script akan men-generate source `.wire` dan mengompilasinya otomatis menjadi file `.cwired` menggunakan Resolume Wire CLI.
 
 ---
 
