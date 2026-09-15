@@ -499,7 +499,7 @@
       {
         "from": [
           67,
-          "output"
+          "output0"
         ],
         "to": [
           69,
@@ -529,7 +529,7 @@
       {
         "from": [
           68,
-          "output"
+          "output0"
         ],
         "to": [
           70,
@@ -914,10 +914,10 @@
     ],
     "meta": {
       "author": "Andreas - IP26 Production",
-      "category": "Effect",
-      "description": "IP26 Multi-Performance Rack: Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices / H&V), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026 (Universal Resolution / 2400x720 / 16:9).",
+      "category": "effect",
+      "description": "IP26 Multi-Performance Rack: Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices / H&V), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026.",
       "displayName": "zzfx",
-      "identifier": "ip26.andreas.zzfx",
+      "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e206",
       "license": "MIT",
       "mail": "",
       "name": "zzfx",

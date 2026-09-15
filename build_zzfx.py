@@ -39,10 +39,10 @@ def build_patch():
             ],
             "meta": {
                 "author": "Andreas - IP26 Production",
-                "category": "Effect",
-                "description": "IP26 Multi-Performance Rack: Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices / H&V), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026 (Universal Resolution / 2400x720 / 16:9).",
+                "category": "effect",
+                "description": "IP26 Multi-Performance Rack: Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices / H&V), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026.",
                 "displayName": "zzfx",
-                "identifier": "ip26.andreas.zzfx",
+                "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e206",
                 "license": "MIT",
                 "mail": "",
                 "name": "zzfx",
@@ -1051,7 +1051,7 @@ def build_patch():
     })
     connect(32, "output", 69, "selection")
     connect(65, "output", 69, "input0")
-    connect(67, "output", 69, "input1")
+    connect(67, "output0", 69, "input1")
 
     # Switch Snap Y (Node 70)
     add_node(70, {
@@ -1071,7 +1071,7 @@ def build_patch():
     })
     connect(32, "output", 70, "selection")
     connect(66, "output", 70, "input0")
-    connect(68, "output", 70, "input1")
+    connect(68, "output0", 70, "input1")
 
     # Beam Pos Vec2 (Node 71)
     add_node(71, {
