@@ -248,6 +248,36 @@
       },
       {
         "from": [
+          37,
+          "output"
+        ],
+        "to": [
+          38,
+          "trigger"
+        ]
+      },
+      {
+        "from": [
+          30,
+          "output"
+        ],
+        "to": [
+          39,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          38,
+          "output"
+        ],
+        "to": [
+          39,
+          "input1"
+        ]
+      },
+      {
+        "from": [
           31,
           "output"
         ],
@@ -288,6 +318,36 @@
       },
       {
         "from": [
+          64,
+          "output"
+        ],
+        "to": [
+          80,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          80,
+          "output0"
+        ],
+        "to": [
+          81,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          34,
+          "output"
+        ],
+        "to": [
+          79,
+          "frequency"
+        ]
+      },
+      {
+        "from": [
           33,
           "output"
         ],
@@ -328,6 +388,26 @@
       },
       {
         "from": [
+          81,
+          "output0"
+        ],
+        "to": [
+          65,
+          "input3"
+        ]
+      },
+      {
+        "from": [
+          79,
+          "output"
+        ],
+        "to": [
+          65,
+          "input6"
+        ]
+      },
+      {
+        "from": [
           33,
           "output"
         ],
@@ -343,7 +423,17 @@
         ],
         "to": [
           66,
-          "input3"
+          "input4"
+        ]
+      },
+      {
+        "from": [
+          62,
+          "output"
+        ],
+        "to": [
+          66,
+          "input5"
         ]
       },
       {
@@ -508,6 +598,26 @@
       },
       {
         "from": [
+          61,
+          "output0"
+        ],
+        "to": [
+          72,
+          "input3"
+        ]
+      },
+      {
+        "from": [
+          61,
+          "output0"
+        ],
+        "to": [
+          72,
+          "input6"
+        ]
+      },
+      {
+        "from": [
           33,
           "output"
         ],
@@ -523,7 +633,17 @@
         ],
         "to": [
           73,
-          "input3"
+          "input4"
+        ]
+      },
+      {
+        "from": [
+          61,
+          "output0"
+        ],
+        "to": [
+          73,
+          "input5"
         ]
       },
       {
@@ -598,8 +718,8 @@
       },
       {
         "from": [
-          30,
-          "output"
+          39,
+          "output0"
         ],
         "to": [
           77,
@@ -780,6 +900,7 @@
       22,
       23,
       30,
+      37,
       31,
       32,
       33,
@@ -794,10 +915,10 @@
     "meta": {
       "author": "Andreas - IP26 Production",
       "category": "Effect",
-      "description": "IP26 Multi-Performance Rack: Push, Grid Chaser (5 Slices / Multi-Direction), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026 (2400x720 LED Center).",
+      "description": "IP26 Multi-Performance Rack: Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices / H&V), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026 (Universal Resolution / 2400x720 / 16:9).",
       "displayName": "zzfx",
       "identifier": "ip26.andreas.zzfx",
-      "license": "",
+      "license": "MIT",
       "mail": "",
       "name": "zzfx",
       "tags": [
@@ -808,14 +929,15 @@
         "strobe",
         "outline",
         "worship",
-        "unnes"
+        "unnes",
+        "resolume"
       ],
       "type": "effect",
-      "url": "https://github.com/andre/ip26",
+      "url": "https://github.com/zzdree/ip26-zzfx",
       "vendor": "IP26 Production",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
-    "nextNodeId": 150,
+    "nextNodeId": 180,
     "nodes": {
       "0": {
         "attributes": {
@@ -1200,7 +1322,7 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 0.45
+            "value": 0.4
           }
         },
         "hidden": [
@@ -2203,6 +2325,168 @@
         "name": "Chase Enable",
         "thumbnail_visible": true
       },
+      "37": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "event"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 140,
+          "x": 600,
+          "y": 350
+        },
+        "class": {
+          "id": "77697265-e61f-42c0-862a-0dca04e14569",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ff02bbff",
+        "constants": {
+          "input": {
+            "type": "trigger",
+            "value": null
+          }
+        },
+        "hidden": [
+          "instances",
+          "flow"
+        ],
+        "name": "Chase Trigger",
+        "thumbnail_visible": true
+      },
+      "38": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 130,
+          "width": 195,
+          "x": 760,
+          "y": 350
+        },
+        "class": {
+          "id": "77697265-D980-43B3-9237-6683B154A5B0",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "attack-time": {
+            "type": "float",
+            "value": 0.01
+          },
+          "linear": {
+            "type": "bool",
+            "value": false
+          },
+          "release": {
+            "type": "trigger",
+            "value": null
+          },
+          "release-time": {
+            "type": "float",
+            "value": 0.45
+          },
+          "reset": {
+            "type": "trigger",
+            "value": null
+          },
+          "restart-at-zero": {
+            "type": "bool",
+            "value": false
+          },
+          "trigger": {
+            "type": "trigger",
+            "value": null
+          }
+        },
+        "hidden": [
+          "instances",
+          "flow",
+          "attack-time",
+          "linear",
+          "restart-at-zero",
+          "reset",
+          "release",
+          "release-time"
+        ],
+        "name": "Chase Envelope",
+        "thumbnail_visible": true
+      },
+      "39": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 980,
+          "y": 280
+        },
+        "class": {
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "size",
+          "input0-dimensions",
+          "input1-dimensions",
+          "type0",
+          "type1",
+          "flow"
+        ],
+        "name": "Chase Gate Add",
+        "thumbnail_visible": true
+      },
       "31": {
         "attributes": {
           "flow": {
@@ -2246,7 +2530,7 @@
           "height": 82,
           "width": 140,
           "x": 600,
-          "y": 350
+          "y": 450
         },
         "class": {
           "id": "77697265-2649-4abb-b38f-4e1005183415",
@@ -2294,7 +2578,7 @@
           "height": 82,
           "width": 140,
           "x": 600,
-          "y": 450
+          "y": 550
         },
         "class": {
           "id": "77697265-999C-4F8B-8B9D-3646DC68AA69",
@@ -2337,7 +2621,7 @@
           },
           "max": {
             "type": "integer",
-            "value": 3
+            "value": 6
           },
           "min": {
             "type": "integer",
@@ -2369,15 +2653,39 @@
           },
           "option3-label": {
             "type": "string",
-            "value": "Up to Down"
+            "value": "Out to Center"
           },
           "option3-value": {
             "type": "integer",
             "value": 3
           },
-          "options-count": {
+          "option4-label": {
+            "type": "string",
+            "value": "Up to Down"
+          },
+          "option4-value": {
             "type": "integer",
             "value": 4
+          },
+          "option5-label": {
+            "type": "string",
+            "value": "Down to Up"
+          },
+          "option5-value": {
+            "type": "integer",
+            "value": 5
+          },
+          "option6-label": {
+            "type": "string",
+            "value": "Bounce / Ping-Pong"
+          },
+          "option6-value": {
+            "type": "integer",
+            "value": 6
+          },
+          "options-count": {
+            "type": "integer",
+            "value": 7
           },
           "unit": {
             "type": "integer",
@@ -2392,7 +2700,7 @@
           "height": 82,
           "width": 140,
           "x": 600,
-          "y": 550
+          "y": 650
         },
         "class": {
           "id": "77697265-2649-4abb-b38f-4e1005183415",
@@ -2422,6 +2730,12 @@
           "option2-value",
           "option3-label",
           "option3-value",
+          "option4-label",
+          "option4-value",
+          "option5-label",
+          "option5-value",
+          "option6-label",
+          "option6-value",
           "options-count",
           "widget",
           "unit"
@@ -2472,7 +2786,7 @@
           "height": 82,
           "width": 140,
           "x": 600,
-          "y": 650
+          "y": 750
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -2524,7 +2838,7 @@
           "height": 82,
           "width": 140,
           "x": 600,
-          "y": 750
+          "y": 850
         },
         "class": {
           "id": "77697265-4C9E-4F75-B4F0-5415B713EA1B",
@@ -2596,7 +2910,7 @@
           "height": 82,
           "width": 140,
           "x": 600,
-          "y": 850
+          "y": 950
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -2656,7 +2970,7 @@
           "height": 82,
           "width": 130,
           "x": 800,
-          "y": 350
+          "y": 450
         },
         "class": {
           "id": "77697265-0D55-485E-813D-706DD5DFE88D",
@@ -2704,7 +3018,7 @@
           "height": 130,
           "width": 195,
           "x": 800,
-          "y": 480
+          "y": 580
         },
         "class": {
           "id": "77697265-F95F-41D8-8FC4-DF0DC56E1051",
@@ -2765,7 +3079,7 @@
           "height": 30,
           "width": 130,
           "x": 1020,
-          "y": 480
+          "y": 580
         },
         "class": {
           "id": "77697265-1296-4264-A646-5CE3BE529286",
@@ -2806,7 +3120,7 @@
           "height": 130,
           "width": 195,
           "x": 800,
-          "y": 640
+          "y": 740
         },
         "class": {
           "id": "77697265-9890-41DC-A93D-9F3913A78FEB",
@@ -2848,6 +3162,168 @@
         "name": "Triangle Center",
         "thumbnail_visible": true
       },
+      "80": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input0-type": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 30,
+          "width": 130,
+          "x": 1020,
+          "y": 740
+        },
+        "class": {
+          "id": "77697265-1296-4264-A646-5CE3BE529286",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "input0-type",
+          "flow",
+          "input0-dimensions"
+        ],
+        "name": "Negate Triangle",
+        "thumbnail_visible": true
+      },
+      "81": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 1170,
+          "y": 740
+        },
+        "class": {
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 1.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "size",
+          "input0-dimensions",
+          "input1-dimensions",
+          "type0",
+          "type1",
+          "flow"
+        ],
+        "name": "Out to Center Calc",
+        "thumbnail_visible": true
+      },
+      "79": {
+        "attributes": {
+          "anti-alias": {
+            "type": "bool",
+            "value": false
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "unipolar": {
+            "type": "bool",
+            "value": false
+          }
+        },
+        "bounds": {
+          "height": 130,
+          "width": 195,
+          "x": 800,
+          "y": 900
+        },
+        "class": {
+          "id": "77697265-9890-41DC-A93D-9F3913A78FEB",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "amplitude": {
+            "type": "float",
+            "value": 1.0
+          },
+          "frequency": {
+            "type": "float",
+            "value": 1.2
+          },
+          "offset": {
+            "type": "float",
+            "value": 0.0
+          },
+          "phase-offset": {
+            "type": "float",
+            "value": 0.0
+          },
+          "reset-phase": {
+            "type": "trigger",
+            "value": null
+          }
+        },
+        "hidden": [
+          "instances",
+          "reset-phase",
+          "unipolar",
+          "anti-alias",
+          "amplitude",
+          "offset",
+          "phase-offset"
+        ],
+        "name": "Ping-Pong Osc",
+        "thumbnail_visible": true
+      },
       "65": {
         "attributes": {
           "case-type": {
@@ -2868,13 +3344,13 @@
           },
           "size": {
             "type": "integer",
-            "value": 4
+            "value": 7
           }
         },
         "bounds": {
-          "height": 130,
+          "height": 160,
           "width": 195,
-          "x": 1020,
+          "x": 1350,
           "y": 550
         },
         "class": {
@@ -2897,6 +3373,18 @@
             "value": 0.0
           },
           "input3": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input4": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input5": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input6": {
             "type": "float",
             "value": 0.0
           },
@@ -2935,14 +3423,14 @@
           },
           "size": {
             "type": "integer",
-            "value": 4
+            "value": 7
           }
         },
         "bounds": {
-          "height": 130,
+          "height": 160,
           "width": 195,
-          "x": 1020,
-          "y": 700
+          "x": 1350,
+          "y": 740
         },
         "class": {
           "id": "77697265-6899-4A9C-82AB-949346033440",
@@ -2964,6 +3452,18 @@
             "value": 0.0
           },
           "input3": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input4": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input5": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input6": {
             "type": "float",
             "value": 0.0
           },
@@ -3008,7 +3508,7 @@
         "bounds": {
           "height": 58,
           "width": 130,
-          "x": 1250,
+          "x": 1580,
           "y": 550
         },
         "class": {
@@ -3063,8 +3563,8 @@
         "bounds": {
           "height": 58,
           "width": 130,
-          "x": 1250,
-          "y": 700
+          "x": 1580,
+          "y": 740
         },
         "class": {
           "id": "77697265-548F-4EF6-9B00-F3005FEC8687",
@@ -3118,7 +3618,7 @@
         "bounds": {
           "height": 106,
           "width": 130,
-          "x": 1420,
+          "x": 1750,
           "y": 550
         },
         "class": {
@@ -3177,8 +3677,8 @@
         "bounds": {
           "height": 106,
           "width": 130,
-          "x": 1420,
-          "y": 700
+          "x": 1750,
+          "y": 740
         },
         "class": {
           "id": "77697265-6899-4A9C-82AB-949346033440",
@@ -3224,8 +3724,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 1580,
-          "y": 600
+          "x": 1920,
+          "y": 640
         },
         "class": {
           "id": "77697265-E7EF-4944-8FC2-D808EE0433CB",
@@ -3266,13 +3766,13 @@
           },
           "size": {
             "type": "integer",
-            "value": 4
+            "value": 7
           }
         },
         "bounds": {
-          "height": 130,
+          "height": 160,
           "width": 130,
-          "x": 1250,
+          "x": 1580,
           "y": 300
         },
         "class": {
@@ -3296,7 +3796,19 @@
           },
           "input3": {
             "type": "float",
+            "value": 0.4
+          },
+          "input4": {
+            "type": "float",
             "value": 2.0
+          },
+          "input5": {
+            "type": "float",
+            "value": 2.0
+          },
+          "input6": {
+            "type": "float",
+            "value": 0.4
           },
           "selection": {
             "type": "integer",
@@ -3333,13 +3845,13 @@
           },
           "size": {
             "type": "integer",
-            "value": 4
+            "value": 7
           }
         },
         "bounds": {
-          "height": 130,
+          "height": 160,
           "width": 130,
-          "x": 1420,
+          "x": 1750,
           "y": 300
         },
         "class": {
@@ -3363,7 +3875,19 @@
           },
           "input3": {
             "type": "float",
+            "value": 2.0
+          },
+          "input4": {
+            "type": "float",
             "value": 0.4
+          },
+          "input5": {
+            "type": "float",
+            "value": 0.4
+          },
+          "input6": {
+            "type": "float",
+            "value": 2.0
           },
           "selection": {
             "type": "integer",
@@ -3390,7 +3914,7 @@
         "bounds": {
           "height": 106,
           "width": 195,
-          "x": 1580,
+          "x": 1920,
           "y": 300
         },
         "class": {
@@ -3447,7 +3971,7 @@
         "bounds": {
           "height": 58,
           "width": 195,
-          "x": 1800,
+          "x": 2150,
           "y": 450
         },
         "class": {
@@ -3518,7 +4042,7 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": 1800,
+          "x": 2150,
           "y": 600
         },
         "class": {
@@ -3630,8 +4154,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 800,
-          "y": 850
+          "x": 1170,
+          "y": 380
         },
         "class": {
           "id": "77697265-A0D8-429A-A558-69BC58D0D425",

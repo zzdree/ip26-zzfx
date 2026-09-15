@@ -1,31 +1,30 @@
 # ⚡ zzfx — Resolume Multi-Performance Effect Plugin
 **Dedicated VJ Master Rack untuk Ibadah Perdana UKK UNNES 2026**  
 *Lokasi Project: `C:\ANDREAS\ip26-zzfx`*  
-*Target Output: Novastar Video Processor / LED Center Utama 2400x720 (Auditorium UNNES)*  
+*Target Output: Novastar Video Processor (Auditorium UNNES 2400x720) & Universal Canvas (16:9, 1080p, 4K)*  
 *Operator Resolume: Andreas*
 
 ---
 
 ## 🎯 Gambaran Plugin
-`zzfx` adalah plugin efek terpadu (*All-in-One Master Rack*) untuk **Resolume Arena 7+** yang dirancang khusus untuk memenuhi kebutuhan live visual panggung lebar (ultra-wide LED 2400x720) tanpa perlu repot memotong screen manual.
+`zzfx` adalah plugin efek terpadu (*All-in-One Master Rack*) untuk **Resolume Arena 7+** yang dirancang dengan sistem kalkulasi koordinat normal (`-1.0` s/d `+1.0`) dan mode resolusi adaptif. 
 
-Modul utama:
-1. **Push (Beat Punch & Zoom Bump):** Hentakan ritmis saat kick drum / drop dengan decay envelope yang halus dan punchy.
-2. **Chase (Dynamic Grid Slicer & Beam Sweep):**
-   - **1 Screen All-in-One:** Tidak perlu lagi memotong screen menjadi 5 bagian terpisah seperti workflow lama! Cukup pasang di 1 layer/screen 2400x720, plugin otomatis membagi grid sesuai setting.
-   - **Grid Slices (1–10, default: 5):** Pas untuk setup fisik 5 modul kabinet LED Center Auditorium UNNES.
-   - **Snap to Grid (Toggle):**
-     - `ON (True)`: Bilah melompat persis per-panel layar (gaya *Chaser v4.0.0*).
-     - `OFF (False)`: Bilah bergerak meluncur mulus (*smooth laser/light sweep*).
-   - **Chase Direction (4 Arah):**
-     - `Left -> Right` (Kiri ke Kanan)
-     - `Right -> Left` (Kanan ke Kiri)
-     - `Center -> Out` (Dari Tengah membuka ke Kanan & Kiri bersamaan)
-     - `Up -> Down` (Dari Atas menyapu ke Bawah)
-3. **Strobe (High-Speed Flash & Burst):** Kilatan cahaya putih ritmis (2–30 Hz) yang bisa dipicu terus-menerus (*toggle*) atau lewat hentakan sesaat (*burst envelope*).
-4. **Outline (Edge Detection & Neon Glow):** Garis tepi bercahaya neon (Sobel algorithm) di sekeliling siluet kamera, teks lirik, atau motion grafis. Sangat megah untuk sesi penyembahan (*Worship*).
-5. **Master Punch (Combo Button):** 1 tombol pemicu sakti yang mengaktifkan hentakan Push dan kilatan Strobe secara bersamaan saat momen transisi atau drop lagu.
-6. **Master Mix (Global Dry/Wet):** Slider peredam untuk mengatur intensitas efek secara menyeluruh atau bypass murni.
+### ✨ Keunggulan Utama
+1. **Bebas Potong Screen (Single Screen All-in-One):**
+   - Tidak perlu lagi memotong screen menjadi 5 bagian terpisah di *Advanced Output* seperti workflow lama (*Chaser v4*).
+   - Cukup pasang di 1 layer atau 1 screen, plugin otomatis menghitung pembagian panel LED.
+2. **Fleksibel di Segala Resolusi (Universal Aspect Ratio):**
+   - Mendukung penuh LED Center ultra-wide **`2400x720`**.
+   - Otomatis adaptif jika dipakai di resolusi standar **`16:9` (1920x1080 / 4K)**, **`4:3`**, atau canvas custom lainnya tanpa distorsi!
+3. **Grid Vertikal & Horizontal:**
+   - Arah sapuan horizontal (Kiri, Kanan, Tengah, Membal) otomatis menggunakan **Grid Kolom Vertikal**.
+   - Arah sapuan vertikal (Atas ke Bawah, Bawah ke Atas) otomatis membagi layar menjadi **Grid Baris Horizontal**.
+4. **Trigger & Shortcut Terpisah (Piano / Toggle Ready):**
+   - Setiap modul efek memiliki tombol **`Trigger`** instan sendiri:
+     - Tekan tombol **`A`** ➔ Hentakan **Push**.
+     - Tekan tombol **`B`** ➔ Flash burst **Strobe**.
+     - Tekan tombol **`1`** ➔ Sapuan kilat **Chase**.
+     - Tekan tombol **`Space`** ➔ Combo **Master Punch** (Push + Strobe).
 
 ---
 
@@ -33,101 +32,104 @@ Modul utama:
 
 | File | Format | Deskripsi |
 | :--- | :--- | :--- |
-| **`zzfx.cwired`** | Compiled Wire Plugin | File plugin biner siap pakai untuk **Resolume Arena 7+**. Terkunci aman, ringan, siap langsung di-load di live show. |
-| **`zzfx.wire`** | Wire Project File | Source patch berbasis node yang bisa dibuka dan diedit kembali kapan saja menggunakan aplikasi **Resolume Wire**. |
-| **`build_zzfx.py`** | Python Builder Script | Script generator otomatis untuk me-rebuild file `.wire` dan mengompilasinya menjadi `.cwired`. |
+| **`zzfx.cwired`** | Compiled Wire Plugin | Plugin biner siap pakai untuk **Resolume Arena 7+**. Terkunci aman, sangat ringan, siap dipakai di live show. |
+| **`zzfx.wire`** | Wire Project File | Source patch berbasis node yang bisa dibuka dan diedit kembali menggunakan **Resolume Wire**. |
+| **`build_zzfx.py`** | Python Builder Script | Script generator otomatis untuk me-rebuild `.wire` dan mengompilasinya menjadi `.cwired`. |
+| **`README.md`** | Markdown Documentation | Panduan lengkap parameter, cara instalasi, dan mapping shortcut MIDI/Keyboard. |
+| **`LICENSE`** | Open Source (MIT) | Lisensi resmi open source project. |
 
 ---
 
 ## 🚀 Cara Instalasi Manual ke Resolume Arena
 
-Sesuai permintaan Anda, file **tidak disalin otomatis** ke folder user/system. Silakan salin sendiri dengan salah satu cara berikut:
-
-### Cara 1: Salin ke Folder Extra Effects (Paling Direkomendasikan)
-1. Buka File Explorer.
-2. Salin file **`zzfx.cwired`** (atau `zzfx.wire`).
+1. Buka File Explorer ke folder [`C:\ANDREAS\ip26-zzfx`](file:///C:/ANDREAS/ip26-zzfx).
+2. Salin (*copy*) file **`zzfx.cwired`** (atau `zzfx.wire`).
 3. Tempel (*paste*) ke folder plugin Resolume Anda:
    ```text
    C:\Users\<NamaUser>\Documents\Resolume Arena\Extra Effects\
    ```
    *(Atau di `C:\Users\<NamaUser>\OneDrive\Documents\Resolume Arena\Extra Effects\` jika OneDrive aktif).*
-4. Buka **Resolume Arena**. Plugin **`zzfx`** akan langsung muncul di panel **Effects** pada kategori Video Effects.
-
-### Cara 2: Salin ke Folder Patches Resolume Wire
-1. Salin file **`zzfx.cwired`** atau **`zzfx.wire`**.
-2. Tempel ke folder:
-   ```text
-   C:\Users\<NamaUser>\Documents\Resolume Wire\Patches\
-   ```
-3. Buka Resolume Arena. Efek otomatis terindeks di panel Effects.
+4. Buka **Resolume Arena**. Plugin **`zzfx`** akan langsung muncul di tab panel **Effects** pada kategori Video Effects!
 
 ---
 
 ## 🎛️ Panduan Parameter & Kontrol
 
 ```
-[INPUT VIDEO (2400x720)] ──► [PUSH] ──► [OUTLINE] ──► [CHASE] ──► [STROBE] ──► [DRY/WET] ──► [OUTPUT]
-                               ▲                        ▲           ▲
-                               └─────── [MASTER PUNCH] ─┴───────────┘
+[INPUT VIDEO] ──► [PUSH] ──► [OUTLINE] ──► [CHASE] ──► [STROBE] ──► [MASTER MIX] ──► [OUTPUT]
+                    ▲                        ▲           ▲
+                    └─────── [MASTER PUNCH] ─┴───────────┘
 ```
 
 ### 1. Master Section
-* **`Master Punch (Trigger Button)`:** Sekali tekan, langsung memicu hentakan Push + Strobe Burst bersamaan. Cocok di-map ke tombol keyboard `Space` atau drum pad MIDI!
-* **`Master Mix (Slider 0.0 – 1.0)`:** Pengatur Dry/Wet global. Pada nilai `1.0`, efek aktif penuh; pada `0.0`, video kembali murni (*true bypass*).
+* **`Master Punch (Trigger Button)`:** Sekali tekan memicu hentakan Push + Strobe Burst bersamaan. Pilihan tepat untuk transisi song / beat drop!
+* **`Master Mix (Slider 0.0 – 1.0)`:** Pengatur Dry/Wet global. Nilai `1.0` efek aktif penuh; nilai `0.0` video kembali murni (*true bypass*).
 
-### 2. Push Module (Zoom & Hentakan)
-* **`Push Enable (Toggle)`:** Saklar on/off untuk modul Push.
-* **`Push Trigger (Trigger Button)`:** Pemicu manual khusus hentakan push.
-* **`Push Amount (Slider 0.0 – 1.0)`:** Kekuatan zoom hentakan (rekomendasi: `0.3 – 0.6`).
-* **`Push Decay (Slider 0.05 – 1.0s)`:** Kecepatan kembali ke posisi normal (default `0.25s` untuk membal yang punchy dan musikal).
+### 2. Push Module (Zoom & Beat Punch)
+* **`Push Enable (Toggle)`:** Saklar on/off modul Push.
+* **`Push Trigger (Trigger Button)`:** Pemicu manual hentakan zoom (Attack instan 0.01s, decay halus).
+* **`Push Amount (Slider 0.0 – 1.0)`:** Kekuatan zoom hentakan (rekomendasi: `0.3 – 0.5`).
+* **`Push Decay (Slider 0.05 – 1.0s)`:** Kecepatan kembali normal (default `0.25s` untuk membal yang punchy).
 
-### 3. Chase Module (Multi-Direction Grid Slicer & Sweep)
-* **`Chase Enable (Toggle)`:** Saklar on/off untuk bilah cahaya berjalan.
-* **`Chase Speed (Slider 0.2 – 8.0 Hz)`:** Kecepatan sapuan bar melintasi layar.
-* **`Grid Slices (Int 1 – 10, default: 5)`:** Jumlah pembagian panel LED. Set ke `5` untuk layar fisik 5 bagian di Auditorium UNNES.
+### 3. Chase Module (Multi-Direction Grid Slicer & Beam Sweep)
+* **`Chase Enable (Toggle)`:** Saklar untuk menyalakan sapuan cahaya secara terus-menerus (*continuous loop*).
+* **`Chase Trigger (Trigger Button)`:** Pemicu hentakan sapuan sesaat (*momentary 1-shot burst*). Sangat asik ditekan per ketukan lagu!
+* **`Grid Slices (Int 1 – 10, default: 5)`:** Jumlah pembagian panel LED. Set ke `5` untuk layar fisik 5 modul kabinet di Auditorium UNNES.
 * **`Snap to Grid (Toggle, default: ON)`:**
-  - `ON`: Efek melompat tepat per-panel LED (1 -> 2 -> 3 -> 4 -> 5).
-  - `OFF`: Efek menyapu halus seperti laser beam continuous.
-* **`Chase Direction (Dropdown Pilihan)`:**
-  - `0: Left -> Right` (Kiri ke Kanan)
-  - `1: Right -> Left` (Kanan ke Kiri)
-  - `2: Center -> Out` (Mekar dari tengah ke tepi luar)
-  - `3: Up -> Down` (Sapuan vertikal atas ke bawah)
-* **`Chase Width (Slider 0.03 – 0.5)`:** Ketebalan bilah cahaya (default `0.15`).
-* **`Chase Color (Color Picker)`:** Warna sinar cahaya berjalan (default: *Warm Amber Gold*).
-* **`Chase Intensity (Slider 0.0 – 1.0)`:** Kecerahan sinar saat melintas di atas video panggung.
+  - `ON (True)`: Bilah melompat tepat per-panel LED (gaya *Chaser v4.0.0*).
+  - `OFF (False)`: Bilah meluncur mulus seperti sapuan *laser beam continuous*.
+* **`Chase Direction (7 Mode Pilihan Animasi Lengkap)`:**
+  1. **`0: Left to Right`**: Sapuan kolom vertikal dari kiri ke kanan.
+  2. **`1: Right to Left`**: Sapuan kolom vertikal dari kanan ke kiri.
+  3. **`2: Center to Out`**: Mekar dari tengah layar ke kedua sisi luar (kiri & kanan) bersamaan.
+  4. **`3: Out to Center`**: Kuncup dari kedua sisi luar menuju ke tengah layar.
+  5. **`4: Up to Down`**: Sapuan baris horizontal dari atas ke bawah.
+  6. **`5: Down to Up`**: Sapuan baris horizontal dari bawah ke atas.
+  7. **`6: Bounce / Ping-Pong`**: Sapuan bolak-balik (kiri ➔ kanan ➔ kiri ➔ kanan) secara kontinyu!
+* **`Chase Speed (Slider 0.2 – 8.0 Hz)`:** Frekuensi kecepatan gerak bilah cahaya.
+* **`Chase Color (Color Picker)`:** Warna sinar (default: *Warm Gold Amber*).
+* **`Chase Intensity (Slider 0.0 – 1.0)`:** Kecerahan sinar saat melintas di atas panggung.
 
 ### 4. Outline Module (Edge Neon Glow)
-* **`Outline Enable (Toggle)`:** Saklar on/off untuk garis neon.
-* **`Outline Strength (Slider 0.5 – 8.0)`:** Sensitivitas ketebalan deteksi tepi Sobel (rekomendasi: `2.0 – 3.5`).
-* **`Outline Color (Color Picker)`:** Warna cahaya neon (default: *Neon Cyan* `[0, 217, 255]`, bisa diubah ke *Gold Worship* `[255, 217, 76]`).
-* **`Outline Mix (Slider 0.0 – 1.0)`:** Opacity overlay garis glow di atas video asli (mode Additive blending).
+* **`Outline Enable (Toggle)`:** Saklar on/off garis neon di sekeliling WL, singer, atau teks lirik.
+* **`Outline Strength (Slider 0.5 – 8.0)`:** Sensitivitas ketebalan deteksi tepi Sobel.
+* **`Outline Color (Color Picker)`:** Warna cahaya neon (default: *Neon Cyan*, sangat indah jika diubah ke *Warm Gold* saat Worship).
+* **`Outline Mix (Slider 0.0 – 1.0)`:** Opacity overlay garis glow di atas video (Additive blending).
 
-### 5. Strobe Module (High-Speed Flash)
-* **`Strobe Enable (Toggle)`:** Mengaktifkan kedipan strobe terus-menerus.
-* **`Strobe Trigger (Trigger Button)`:** Memicu semburan flash sesaat (*burst flash* 3–4 kedipan).
-* **`Strobe Rate (Slider 2.0 – 30.0 Hz)`:** Frekuensi kedipan strobe (default `14.0 Hz`).
-* **`Strobe Intensity (Slider 0.0 – 1.0)`:** Kecerahan kilatan cahaya putih (default `0.9`).
+### 5. Strobe Module (High-Speed Flash & Burst)
+* **`Strobe Enable (Toggle)`:** Kedipan strobe terus-menerus.
+* **`Strobe Trigger (Trigger Button)`:** Semburan flash sesaat (burst 3–4 kedipan kilat).
+* **`Strobe Rate (Slider 2.0 – 30.0 Hz)`:** Frekuensi kedipan flash per detik.
+* **`Strobe Intensity (Slider 0.0 – 1.0)`:** Kecerahan kilatan cahaya putih.
 
 ---
 
-## 💡 Rekomendasi Penggunaan saat Live Ibadah Perdana
+## 🎹 Panduan Praktis Setting Shortcut di Resolume Arena
+
+Untuk mengatur tombol keyboard atau MIDI terpisah sesuai kebutuhan Anda (*misal Push di tombol A, Strobe di B, Chase di 1*):
+
+1. Buka Resolume Arena, drag plugin **`zzfx`** ke Composition atau Layer target.
+2. Tekan **`Ctrl + Shift + K`** (Menu: `Shortcuts -> Edit Keyboard`) atau **`Ctrl + Shift + M`** (jika menggunakan MIDI Controller).
+3. Klik parameter pada panel **zzfx**:
+   - Klik tombol **`Push Trigger`** ➔ Tekan tombol **`A`** pada keyboard.
+   - Klik tombol **`Strobe Trigger`** ➔ Tekan tombol **`B`** pada keyboard.
+   - Klik tombol **`Chase Trigger`** ➔ Tekan tombol **`1`** pada keyboard.
+   - Klik tombol **`Master Punch`** ➔ Tekan tombol **`Space`** pada keyboard.
+4. **Tips Mode Tombol (Toggle vs Piano/Hold):**
+   - Jika Anda meng-klik **`Push Enable`**, **`Strobe Enable`**, atau **`Chase Enable`**:
+   - Di panel sebelah kanan (*Shortcut Inspector*), ubah modenya dari **Toggle** menjadi **Piano**.
+   - Dengan mode **Piano**: Efek hanya akan menyala **selama tombol ditekan**, dan langsung mati begitu tombol dilepas!
+5. Tekan tombol **`Esc`** untuk keluar dari mode mapping. Sekarang Anda sudah siap live!
+
+---
+
+## 💡 Rekomendasi Setup saat Live Ibadah Perdana
 
 | Sesi Ibadah | Setting yang Disarankan | Mood & Nuansa Visual |
 | :--- | :--- | :--- |
-| **Praise (Upbeat / Cepat)**<br>*Lagu Pembuka, Sorak-Sorai* | • `Push Enable: ON` (Amount `0.5`, Decay `0.2s`)<br>• `Chase Enable: ON` (`Grid Slices: 5`, `Snap: ON`, `Dir: Center -> Out` atau `Left -> Right`)<br>• `Strobe Enable: OFF` (Gunakan `Master Punch` saat intro/reff) | Memberikan energi dinamis tinggi, visual 5 panel LED panggung tampak hidup mengikuti ketukan drum band UKK. |
-| **Worship (Khidmat / Syahdu)**<br>*Penyembahan, Doa Syafaat* | • `Outline Enable: ON` (Color: *Warm Gold / Soft White*, Mix `0.6`)<br>• `Push Enable: OFF`<br>• `Chase Enable: OFF`<br>• `Strobe Enable: OFF` | Siluet WL, singer, dan pemain musik di layar LED Center tampak anggun dengan aura glow keemasan tanpa silau berlebihan. |
-| **Climax / Reff Drop** | • Tekan tombol **`Master Punch`** pada downbeat pertama reff! | Layar menghentak dengan zoom punch sekaligus kilatan strobe 3-flash yang sangat punchy dan megah. |
-
----
-
-## ⌨️ Rekomendasi Shortcut & MIDI Mapping
-* **Tombol `Space` atau MIDI Drum Pad 1:** Map ke parameter `Master Punch`.
-* **Knob 1:** Map ke `Push Amount`.
-* **Knob 2:** Map ke `Outline Mix`.
-* **Knob 3:** Map ke `Chase Speed`.
-* **Knob 4 / Tombol 2:** Map ke `Chase Direction`.
-* **Fader Master:** Map ke `Master Mix` (Dry/Wet).
+| **Praise (Lagu Upbeat / Hentak Drum)** | • `Push Enable: ON` (`Decay: 0.2s`)<br>• `Chase Enable: ON` (`Grid: 5`, `Snap: ON`, Mode `Bounce` atau `Center to Out`)<br>• Mainkan `Push Trigger` (Tombol `A`) atau `Chase Trigger` (Tombol `1`) | Layar 5 modul LED Center tampak energik dan sinkron dengan ketukan drum band UKK. |
+| **Worship (Penyembahan & Khidmat)** | • `Outline Enable: ON` (Color: *Warm Gold / Soft White*, Mix `0.6`)<br>• Modul lain: `OFF` | Siluet WL, singer, dan pemain musik di panggung tampil anggun dengan aura glow keemasan. |
+| **Transisi / Song Drop** | • Tekan tombol **`Space`** (`Master Punch`) pada downbeat intro/reff! | Layar menghentak dengan zoom bump sekaligus kilatan strobe 3-flash megah. |
 
 ---
 *Dibuat khusus untuk Divisi Multimedia & Live Production IP26 — Ibadah Perdana UKK UNNES 2026.*
