@@ -720,7 +720,7 @@ def build_zz_chaser():
         "name": "Move Beam",
         "thumbnail_visible": True
     }
-    conn(74, "shape", 75, "input")
+    conn(74, "output", 75, "input")
     conn(71, "output", 75, "translation")
 
     # Render Shape
@@ -766,7 +766,7 @@ def build_zz_chaser():
     # Video Mixer
     nodes["78"] = node_video_mixer(78, 11, 1800, 0)
     conn(0, "output", 78, "input1")
-    conn(76, "output", 78, "input2")
+    conn(76, "output0", 78, "input2")
     conn(77, "output0", 78, "opacity2")
 
     # Texture Out
@@ -1263,7 +1263,7 @@ def main():
                 pass
         print(f"Compiling {wire_file} -> {cwired_file}...")
         try:
-            res = subprocess.run([wire_exe, "compile", wire_path, "-o", cwired_path], capture_output=True, text=True, timeout=30)
+            res = subprocess.run([wire_exe, "compile", wire_path, "-o", cwired_path], capture_output=True, text=True, timeout=60)
             if os.path.exists(cwired_path):
                 size = os.path.getsize(cwired_path)
                 print(f"  [SUCCESS] {cwired_file} compiled successfully! ({size} bytes)")
