@@ -1350,11 +1350,28 @@ def build_patch():
 if __name__ == "__main__":
     patch_data = build_patch()
     target_dir = r"C:\ANDREAS\ip26-zzfx"
-    os.makedirs(target_dir, exist_ok=True)
-    wire_file = os.path.join(target_dir, "zzfx.wire")
-    cwired_file = os.path.join(target_dir, "zzfx.cwired")
+    wire_dir = os.path.join(target_dir, "wire")
+    cwired_dir = os.path.join(target_dir, "cwired")
+    os.makedirs(wire_dir, exist_ok=True)
+    os.makedirs(cwired_dir, exist_ok=True)
+    wire_file = os.path.join(wire_dir, "zzfx.wire")
+    cwired_file = os.path.join(cwired_dir, "zzfx.cwired")
 
     with open(wire_file, "w", encoding="utf-8") as f:
         json.dump(patch_data, f, indent=2)
 
     print(f"Generated {wire_file} ({len(patch_data['patch']['nodes'])} nodes, {len(patch_data['patch']['connections'])} connections)")
+
+    # Compile with Wire CLI
+    wire_exe = r"C:\Program Files\Resolume Wire\Wire.exe"
+    if os.path.exists(wire_exe):
+        print(f"Compiling {wire_file} -> {cwired_file}...")
+        try:
+            import subprocess
+            res = subprocess.run([wire_exe, "compile", wire_file, "-o", cwired_file], capture_output=True, text=True, timeout=30)
+            if os.path.exists(cwired_file):
+                print(f"  [SUCCESS] {cwired_file} compiled successfully! ({os.path.getsize(cwired_file)} bytes)")
+            else:
+                print(f"  [FAILED] {cwired_file} was not created!")
+        except Exception as e:
+            print(f"  [ERROR] {e}")

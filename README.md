@@ -34,41 +34,49 @@ Project ini menyediakan **dua pendekatan kerja** sesuai kebutuhan operasional VJ
 
 ---
 
-## 📦 Daftar File Plugin (`C:\ANDREAS\ip26-zzfx`)
+## 📦 Struktur Folder & Daftar File (`C:\ANDREAS\ip26-zzfx`)
 
-### 1. Modular Suite (`zz-suite`)
-| File | Ukuran | Deskripsi & Fungsi |
-| :--- | :--- | :--- |
-| **`zz_pusher.cwired`** | 8.0 KB | **Elastic Zoom Kick / Bumper.** Pembesaran hentakan beat drum dengan parameter *Push Amount* dan *Push Decay* mulus. |
-| **`zz_chaser.cwired`** | 39.1 KB | **7-Direction Dedicated Slices Chaser.** 7 tombol saklar terpisah (1-7), Grid Slices (1-10), Snap to Grid, Speed, Color, Intensity. |
-| **`zz_strobe.cwired`** | 8.2 KB | **High-Speed Flash Strobe.** Flash kilatan putih/warna dengan frekuensi 2–30 Hz dan kontrol intensitas. |
-| **`zz_outliner.cwired`** | 7.6 KB | **Neon Sobel Edge Glow.** Deteksi garis kontur siluet kamera/lirik dengan palet warna neon dan wet/dry mix. |
-| **`zz_wiper.cwired`** | 18.2 KB | **Curtain & Scanner Wipe.** Bilah sapuan cahaya horizontal & vertikal (4 arah: L->R, R->L, Up->Down, Down->Up) dengan ketebalan bar dan kecepatan dinamis. |
+Repository terbagi menjadi 2 folder utama agar rapi dan mudah digunakan:
+* **`cwired/`** ➔ Berisi semua plugin biner siap pakai untuk **Resolume Arena**.
+* **`wire/`** ➔ Berisi semua file project/source patch untuk **Resolume Wire**.
 
-### 2. All-in-One Mega Rack
-| File | Ukuran | Deskripsi & Fungsi |
-| :--- | :--- | :--- |
-| **`zzfx.cwired`** | 60.7 KB | **All-in-One VJ Performance Rack.** Menggabungkan Master Punch combo, 7-Direction Chaser, Push Zoom, Strobe, dan Outline dalam satu plugin. |
+### 1. Folder `cwired/` (Siap Pakai di Resolume Arena)
+| File | Ukuran | Jenis | Deskripsi & Fungsi |
+| :--- | :--- | :--- | :--- |
+| **`cwired/zz_pusher.cwired`** | 8.0 KB | Modular | **Elastic Zoom Kick / Bumper.** Pembesaran hentakan beat drum dengan parameter *Push Amount* & *Push Decay*. |
+| **`cwired/zz_chaser.cwired`** | 39.1 KB | Modular | **7-Direction Dedicated Chaser.** 7 trigger saklar terpisah (1-7), Grid Slices (1-10), Snap to Grid, Speed, Color, Intensity. |
+| **`cwired/zz_strobe.cwired`** | 8.2 KB | Modular | **High-Speed Flash Strobe.** Flash kilatan putih/warna dengan frekuensi 2–30 Hz dan kontrol intensitas. |
+| **`cwired/zz_outliner.cwired`** | 7.6 KB | Modular | **Neon Sobel Edge Glow.** Deteksi garis kontur siluet kamera/lirik dengan palet warna neon dan wet/dry mix. |
+| **`cwired/zz_wiper.cwired`** | 18.2 KB | Modular | **Curtain & Scanner Wipe.** Bilah sapuan cahaya (4 arah: L->R, R->L, Up->Down, Down->Up) dengan ketebalan bar dinamis. |
+| **`cwired/zzfx.cwired`** | 60.7 KB | All-in-One | **All-in-One Performance Rack.** Menggabungkan Master Punch combo, 7-Direction Chaser, Push Zoom, Strobe, & Outline dalam 1 rack. |
 
-### 3. Source & Build Tooling
+### 2. Folder `wire/` (Source Patch Resolume Wire)
 | File | Deskripsi |
 | :--- | :--- |
-| `build_suite.py` | Python script otomatis untuk men-generate 5 project `.wire` dan mengompilasinya menjadi 5 `.cwired` via Wire CLI. |
-| `build_zzfx.py` | Python script otomatis untuk men-generate All-in-One `zzfx.wire` dan `zzfx.cwired`. |
-| `zz_*.wire` | File project mentah Resolume Wire untuk setiap modul (dapat dibuka dan diedit di aplikasi Resolume Wire). |
+| **`wire/zz_pusher.wire`** | Source node patch untuk modul Pusher. |
+| **`wire/zz_chaser.wire`** | Source node patch untuk modul Chaser 7-arah. |
+| **`wire/zz_strobe.wire`** | Source node patch untuk modul Strobe flash. |
+| **`wire/zz_outliner.wire`** | Source node patch untuk modul Outliner neon. |
+| **`wire/zz_wiper.wire`** | Source node patch untuk modul Wiper curtain/scanner. |
+| **`wire/zzfx.wire`** | Source node patch untuk All-in-One mega-rack. |
+
+### 3. Builder Scripts
+| File | Deskripsi |
+| :--- | :--- |
+| `build_suite.py` | Python script otomatis untuk men-generate 5 project ke `wire/` dan mengompilasinya ke `cwired/` via Wire CLI. |
+| `build_zzfx.py` | Python script otomatis untuk men-generate `wire/zzfx.wire` dan mengompilasinya ke `cwired/zzfx.cwired`. |
 
 ---
 
 ## 🚀 Cara Instalasi ke Resolume Arena
 
 1. Tutup Resolume Arena terlebih dahulu (jika sedang terbuka).
-2. Buka folder [`C:\ANDREAS\ip26-zzfx`](file:///C:/ANDREAS/ip26-zzfx).
+2. Buka folder [`C:\ANDREAS\ip26-zzfx\cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired).
 3. **Double-click** file `.cwired` yang ingin digunakan:
    - Untuk Modular: double-click `zz_pusher.cwired`, `zz_chaser.cwired`, `zz_strobe.cwired`, `zz_outliner.cwired`, dan `zz_wiper.cwired`.
    - Untuk All-in-One: double-click `zzfx.cwired`.
    *(Resolume akan otomatis mendaftarkannya ke database efek).*
-4. *Alternatif manual:* Salin file `.cwired` ke folder:
-   `C:\Users\Public\Documents\Resolume Wire\Patches\`
+4. *Alternatif folder effect Resolume:* Buka Resolume Arena $\rightarrow$ **Preferences** $\rightarrow$ **Effects** $\rightarrow$ Tambahkan path folder `C:\ANDREAS\ip26-zzfx\cwired`.
 5. Buka kembali **Resolume Arena**. Seluruh plugin siap digunakan di panel **Effects**!
 
 ---

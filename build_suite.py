@@ -1228,8 +1228,15 @@ def main():
         ('77697265-E8EC-4F1B-901A-CFFC104D3B07', 1): ['instances', 'bypass', 'bitdepth', 'resolution-absolute', 'resolution-relative', 'resolution-mode']
     }
 
+    wire_dir = os.path.join(target_dir, "wire")
+    cwired_dir = os.path.join(target_dir, "cwired")
+    os.makedirs(wire_dir, exist_ok=True)
+    os.makedirs(cwired_dir, exist_ok=True)
+
     print("=== BUILDING ZZ-SUITE MODULAR PLUGINS ===")
     for name, wire_file, cwired_file, builder in modules:
+        wire_path = os.path.join(wire_dir, wire_file)
+        cwired_path = os.path.join(cwired_dir, cwired_file)
         print(f"Generating {wire_file}...")
         patch_data = builder()
         for nid, n in patch_data["patch"]["nodes"].items():
@@ -1240,23 +1247,25 @@ def main():
             if cid == "77697265-6899-4A9C-82AB-949346033440": # Switch node
                 if "selection" not in n.get("constants", {}):
                     n.setdefault("constants", {})["selection"] = {"type": "integer", "value": 0}
-        with open(wire_file, "w", encoding="utf-8") as f:
+        with open(wire_path, "w", encoding="utf-8") as f:
             json.dump(patch_data, f, indent=2)
-        print(f"  -> Generated {wire_file} ({len(patch_data['patch']['nodes'])} nodes, {len(patch_data['patch']['connections'])} connections)")
+        print(f"  -> Generated {wire_path} ({len(patch_data['patch']['nodes'])} nodes, {len(patch_data['patch']['connections'])} connections)")
 
     print("\n=== COMPILING WITH WIRE CLI ===")
     wire_exe = r"C:\Program Files\Resolume Wire\Wire.exe"
     for name, wire_file, cwired_file, builder in modules:
-        if os.path.exists(cwired_file):
+        wire_path = os.path.join(wire_dir, wire_file)
+        cwired_path = os.path.join(cwired_dir, cwired_file)
+        if os.path.exists(cwired_path):
             try:
-                os.remove(cwired_file)
+                os.remove(cwired_path)
             except:
                 pass
         print(f"Compiling {wire_file} -> {cwired_file}...")
         try:
-            res = subprocess.run([wire_exe, "compile", wire_file, "-o", cwired_file], capture_output=True, text=True, timeout=30)
-            if os.path.exists(cwired_file):
-                size = os.path.getsize(cwired_file)
+            res = subprocess.run([wire_exe, "compile", wire_path, "-o", cwired_path], capture_output=True, text=True, timeout=30)
+            if os.path.exists(cwired_path):
+                size = os.path.getsize(cwired_path)
                 print(f"  [SUCCESS] {cwired_file} compiled successfully! ({size} bytes)")
             else:
                 print(f"  [FAILED] {cwired_file} was not created!")
