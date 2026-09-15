@@ -14,33 +14,30 @@ def build_patch():
             "connections": [],
             "inputOrder": [
                 0,    # Texture In
-                90,   # Master Punch (Trigger In)
+                90,   # Master Punch (Bool In)
                 97,   # Master Mix (Float In)
-                10,   # Push Enable (Bool In)
-                11,   # Push Trigger (Trigger In)
+                10,   # Push (Bool In)
                 12,   # Push Amount (Float In)
                 13,   # Push Decay (Float In)
-                20,   # Outline Enable (Bool In)
-                21,   # Outline Strength (Float In)
-                22,   # Outline Color (Color In)
-                23,   # Outline Mix (Float In)
-                30,   # Chase Enable (Bool In)
-                37,   # Chase Trigger (Trigger In - Momentary Sweep / Burst)
-                31,   # Grid Slices (Int In - default 5)
-                32,   # Snap to Grid (Bool In - discrete vs smooth)
-                33,   # Chase Direction (Int In Dropdown: 7 directions!)
+                30,   # Chase (Bool In)
+                31,   # Grid Slices (Int In)
+                32,   # Snap to Grid (Bool In)
+                33,   # Chase Direction (Int In Dropdown)
                 34,   # Chase Speed (Float In)
                 35,   # Chase Color (Color In)
                 36,   # Chase Intensity (Float In)
-                50,   # Strobe Enable (Bool In)
-                51,   # Strobe Trigger (Trigger In)
+                50,   # Strobe (Bool In)
                 52,   # Strobe Rate (Float In)
-                53    # Strobe Intensity (Float In)
+                53,   # Strobe Intensity (Float In)
+                20,   # Outline (Bool In)
+                21,   # Outline Strength (Float In)
+                22,   # Outline Color (Color In)
+                23    # Outline Mix (Float In)
             ],
             "meta": {
                 "author": "Andreas - IP26 Production",
                 "category": "effect",
-                "description": "IP26 Multi-Performance Rack: Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices / H&V), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026.",
+                "description": "IP26 Unified Performance Rack v2.0: Instant On/Off Toggles & Piano Responsive Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026.",
                 "displayName": "zzfx",
                 "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e206",
                 "license": "MIT",
@@ -60,7 +57,7 @@ def build_patch():
                 "type": "effect",
                 "url": "https://github.com/zzdree/ip26-zzfx",
                 "vendor": "IP26 Production",
-                "version": "1.1.0"
+                "version": "2.0.0"
             },
             "nextNodeId": 180,
             "nodes": {},
@@ -105,6 +102,17 @@ def build_patch():
             "type1": {"type": "type", "value": "float"}
         }
 
+    def clamp_attr():
+        return {
+            "flow": {"type": "flow", "value": "signal"},
+            "max-dimensions": {"type": "integer", "value": 1},
+            "max-type": {"type": "type", "value": "float"},
+            "min-dimensions": {"type": "integer", "value": 1},
+            "min-type": {"type": "type", "value": "float"},
+            "value-dimensions": {"type": "integer", "value": 1},
+            "value-type": {"type": "type", "value": "float"}
+        }
+
     def float_switch_attr(cases_count):
         return {
             "case-type": {"type": "type", "value": "float"},
@@ -132,18 +140,19 @@ def build_patch():
         "thumbnail_visible": True
     })
 
-    # Master Punch Trigger In (Node 90) - Combo button for drops
+    # Master Punch Bool In (Node 90) - Combo button for drops
     add_node(90, {
         "attributes": {
-            "flow": {"type": "flow", "value": "event"},
+            "bool-view": {"type": "integer", "value": 0},
+            "flow": {"type": "flow", "value": "signal"},
             "instances": {"type": "integer", "value": 1}
         },
         "bounds": {"height": 82, "width": 140, "x": -600, "y": 200},
-        "class": {"id": "77697265-e61f-42c0-862a-0dca04e14569", "version": 1},
+        "class": {"id": "77697265-999C-4F8B-8B9D-3646DC68AA69", "version": 2},
         "clock": "video",
-        "color": "ff02bbff",
-        "constants": {"input": {"type": "trigger", "value": None}},
-        "hidden": ["instances", "flow"],
+        "color": "ffff6a00",
+        "constants": {"input": {"type": "bool", "value": False}},
+        "hidden": ["input", "instances", "flow", "bool-view"],
         "name": "Master Punch",
         "thumbnail_visible": True
     })
@@ -217,7 +226,7 @@ def build_patch():
     connect(98, "output", 99, "input")
 
     # =========================================================================
-    # 1. PUSH MODULE (Zoom / Kick Punch)
+    # 1. PUSH MODULE (Responsive Zoom / Punch)
     # =========================================================================
     add_node(10, {
         "attributes": {
@@ -229,24 +238,9 @@ def build_patch():
         "class": {"id": "77697265-999C-4F8B-8B9D-3646DC68AA69", "version": 2},
         "clock": "video",
         "color": "ffff6a00",
-        "constants": {"input": {"type": "bool", "value": True}},
+        "constants": {"input": {"type": "bool", "value": False}},
         "hidden": ["input", "instances", "flow", "bool-view"],
-        "name": "Push Enable",
-        "thumbnail_visible": True
-    })
-
-    add_node(11, {
-        "attributes": {
-            "flow": {"type": "flow", "value": "event"},
-            "instances": {"type": "integer", "value": 1}
-        },
-        "bounds": {"height": 82, "width": 140, "x": -400, "y": -300},
-        "class": {"id": "77697265-e61f-42c0-862a-0dca04e14569", "version": 1},
-        "clock": "video",
-        "color": "ff02bbff",
-        "constants": {"input": {"type": "trigger", "value": None}},
-        "hidden": ["instances", "flow"],
-        "name": "Push Trigger",
+        "name": "Push",
         "thumbnail_visible": True
     })
 
@@ -262,11 +256,11 @@ def build_patch():
             "unit": {"type": "integer", "value": 0},
             "widget": {"type": "integer", "value": 0}
         },
-        "bounds": {"height": 82, "width": 140, "x": -400, "y": -200},
+        "bounds": {"height": 82, "width": 140, "x": -400, "y": -250},
         "class": {"id": "77697265-D235-4A6A-B661-02ABE55C72FF", "version": 3},
         "clock": "video",
         "color": "ff20c7bb",
-        "constants": {"input": {"type": "float", "value": 0.4}},
+        "constants": {"input": {"type": "float", "value": 0.35}},
         "hidden": ["input", "instances", "flow", "has-min", "min", "has-max", "max", "options-count", "widget", "unit"],
         "name": "Push Amount",
         "thumbnail_visible": True
@@ -279,78 +273,90 @@ def build_patch():
             "has-min": {"type": "bool", "value": True},
             "instances": {"type": "integer", "value": 1},
             "max": {"type": "float", "value": 1.0},
-            "min": {"type": "float", "value": 0.05},
+            "min": {"type": "float", "value": 0.0},
             "options-count": {"type": "integer", "value": 0},
             "unit": {"type": "integer", "value": 0},
             "widget": {"type": "integer", "value": 0}
         },
-        "bounds": {"height": 82, "width": 140, "x": -400, "y": -100},
+        "bounds": {"height": 82, "width": 140, "x": -400, "y": -120},
         "class": {"id": "77697265-D235-4A6A-B661-02ABE55C72FF", "version": 3},
         "clock": "video",
         "color": "ff20c7bb",
-        "constants": {"input": {"type": "float", "value": 0.25}},
+        "constants": {"input": {"type": "float", "value": 0.12}},
         "hidden": ["input", "instances", "flow", "has-min", "min", "has-max", "max", "options-count", "widget", "unit"],
         "name": "Push Decay",
         "thumbnail_visible": True
     })
 
-    add_node(14, {
-        "attributes": {
-            "flow": {"type": "flow", "value": "signal"},
-            "instances": {"type": "integer", "value": 1}
-        },
-        "bounds": {"height": 130, "width": 195, "x": -200, "y": -250},
-        "class": {"id": "77697265-D980-43B3-9237-6683B154A5B0", "version": 1},
+    # Combine Push + Master Punch (Node 101)
+    add_node(101, {
+        "attributes": float_add_attr(),
+        "bounds": {"height": 82, "width": 130, "x": -200, "y": -350},
+        "class": {"id": "77697265-A9AF-4CB4-B10F-3968B36BB63B", "version": 1},
         "clock": "video",
         "color": "ffff6a00",
-        "constants": {
-            "attack-time": {"type": "float", "value": 0.01},
-            "linear": {"type": "bool", "value": False},
-            "release": {"type": "trigger", "value": None},
-            "release-time": {"type": "float", "value": 0.25},
-            "reset": {"type": "trigger", "value": None},
-            "restart-at-zero": {"type": "bool", "value": False},
-            "trigger": {"type": "trigger", "value": None}
-        },
-        "hidden": ["instances", "flow", "attack-time", "linear", "restart-at-zero", "reset", "release"],
-        "name": "Push Envelope",
+        "constants": {"input0": {"type": "float", "value": 0.0}, "input1": {"type": "float", "value": 0.0}},
+        "hidden": ["size", "input0-dimensions", "input1-dimensions", "type0", "type1", "flow"],
+        "name": "Push+Punch Add",
         "thumbnail_visible": True
     })
-    connect(11, "output", 14, "trigger")
-    connect(90, "output", 14, "trigger")
-    connect(13, "output", 14, "release-time")
+    connect(10, "output", 101, "input0")
+    connect(90, "output", 101, "input1")
 
+    # Clamp Push Active 0.0 to 1.0 (Node 102)
+    add_node(102, {
+        "attributes": clamp_attr(),
+        "bounds": {"height": 82, "width": 130, "x": -40, "y": -350},
+        "class": {"id": "77697265-7557-4053-ABEC-73E2A9786804", "version": 2},
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {"max": {"type": "float", "value": 1.0}, "min": {"type": "float", "value": 0.0}, "value": {"type": "float", "value": 0.0}},
+        "hidden": ["value-type", "min-type", "max-type", "flow", "value-dimensions", "min-dimensions", "max-dimensions"],
+        "name": "Push Clamp",
+        "thumbnail_visible": True
+    })
+    connect(101, "output0", 102, "value")
+
+    # Target Zoom Gain (Node 15)
     add_node(15, {
         "attributes": float_multiply_attr(),
-        "bounds": {"height": 82, "width": 130, "x": 30, "y": -250},
+        "bounds": {"height": 82, "width": 130, "x": 120, "y": -350},
         "class": {"id": "77697265-A0D8-429A-A558-69BC58D0D425", "version": 1},
         "clock": "video",
         "color": "ffff6a00",
         "constants": {"input0": {"type": "float", "value": 0.0}, "input1": {"type": "float", "value": 0.0}},
         "hidden": ["size", "input0-dimensions", "input1-dimensions", "type0", "type1", "flow"],
-        "name": "Push Gain",
+        "name": "Target Zoom",
         "thumbnail_visible": True
     })
-    connect(14, "output", 15, "input0")
+    connect(102, "output0", 15, "input0")
     connect(12, "output", 15, "input1")
 
-    add_node(16, {
-        "attributes": float_multiply_attr(),
-        "bounds": {"height": 82, "width": 130, "x": 190, "y": -250},
-        "class": {"id": "77697265-A0D8-429A-A558-69BC58D0D425", "version": 1},
+    # Smooth Transition for Organic Bounce (Node 14)
+    add_node(14, {
+        "attributes": {
+            "input0-type": {"type": "type", "value": "float"},
+            "instances": {"type": "integer", "value": 1}
+        },
+        "bounds": {"height": 58, "width": 195, "x": 280, "y": -350},
+        "class": {"id": "77697265-86ce-4e85-a02d-34f915fca74e", "version": 1},
         "clock": "video",
-        "color": "ffff6a00",
-        "constants": {"input0": {"type": "float", "value": 0.0}, "input1": {"type": "float", "value": 0.0}},
-        "hidden": ["size", "input0-dimensions", "input1-dimensions", "type0", "type1", "flow"],
-        "name": "Push Gate",
+        "color": "ff20c7bb",
+        "constants": {
+            "duration": {"type": "float", "value": 0.12},
+            "input0": {"type": "float", "value": 0.0}
+        },
+        "hidden": ["input0-type", "instances"],
+        "name": "Push Smooth",
         "thumbnail_visible": True
     })
-    connect(15, "output0", 16, "input0")
-    connect(10, "output", 16, "input1")
+    connect(15, "output0", 14, "input0")
+    connect(13, "output", 14, "duration")
 
+    # Add Base Scale 1.0 (Node 17)
     add_node(17, {
         "attributes": float_add_attr(),
-        "bounds": {"height": 82, "width": 130, "x": 350, "y": -250},
+        "bounds": {"height": 82, "width": 130, "x": 500, "y": -350},
         "class": {"id": "77697265-A9AF-4CB4-B10F-3968B36BB63B", "version": 1},
         "clock": "video",
         "color": "ffff6a00",
@@ -359,11 +365,11 @@ def build_patch():
         "name": "Add Base Scale",
         "thumbnail_visible": True
     })
-    connect(16, "output0", 17, "input1")
+    connect(14, "output0", 17, "input1")
 
     add_node(19, {
         "attributes": {"flow": {"type": "flow", "value": "signal"}, "instances": {"type": "integer", "value": 1}},
-        "bounds": {"height": 82, "width": 130, "x": 350, "y": -120},
+        "bounds": {"height": 82, "width": 130, "x": 500, "y": -200},
         "class": {"id": "77697265-E7EF-4944-8FC2-D808EE0433CB", "version": 1},
         "clock": "video",
         "color": "ffff6a00",
@@ -417,7 +423,7 @@ def build_patch():
         "color": "ffff6a00",
         "constants": {"input": {"type": "bool", "value": False}},
         "hidden": ["input", "instances", "flow", "bool-view"],
-        "name": "Outline Enable",
+        "name": "Outline",
         "thumbnail_visible": True
     })
 
@@ -568,9 +574,9 @@ def build_patch():
     connect(26, "output0", 27, "opacity2")
 
     # =========================================================================
-    # 3. CHASE MODULE (7 Directions, Grid Slices, Snap-to-Grid, Momentary Trigger)
+    # 3. CHASE MODULE (7 Directions, Grid Slices, Snap-to-Grid, Direct Toggle)
     # =========================================================================
-    # Chase Enable Bool In (Node 30) - Continuous toggle
+    # Chase Bool In (Node 30) - On/Off Toggle
     add_node(30, {
         "attributes": {
             "bool-view": {"type": "integer", "value": 0},
@@ -583,65 +589,9 @@ def build_patch():
         "color": "ffff6a00",
         "constants": {"input": {"type": "bool", "value": False}},
         "hidden": ["input", "instances", "flow", "bool-view"],
-        "name": "Chase Enable",
+        "name": "Chase",
         "thumbnail_visible": True
     })
-
-    # Chase Trigger In (Node 37) - Shortcut momentary sweep button
-    add_node(37, {
-        "attributes": {
-            "flow": {"type": "flow", "value": "event"},
-            "instances": {"type": "integer", "value": 1}
-        },
-        "bounds": {"height": 82, "width": 140, "x": 600, "y": 350},
-        "class": {"id": "77697265-e61f-42c0-862a-0dca04e14569", "version": 1},
-        "clock": "video",
-        "color": "ff02bbff",
-        "constants": {"input": {"type": "trigger", "value": None}},
-        "hidden": ["instances", "flow"],
-        "name": "Chase Trigger",
-        "thumbnail_visible": True
-    })
-
-    # Chase Momentary Burst Envelope (Node 38)
-    add_node(38, {
-        "attributes": {
-            "flow": {"type": "flow", "value": "signal"},
-            "instances": {"type": "integer", "value": 1}
-        },
-        "bounds": {"height": 130, "width": 195, "x": 760, "y": 350},
-        "class": {"id": "77697265-D980-43B3-9237-6683B154A5B0", "version": 1},
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-            "attack-time": {"type": "float", "value": 0.01},
-            "linear": {"type": "bool", "value": False},
-            "release": {"type": "trigger", "value": None},
-            "release-time": {"type": "float", "value": 0.45},
-            "reset": {"type": "trigger", "value": None},
-            "restart-at-zero": {"type": "bool", "value": False},
-            "trigger": {"type": "trigger", "value": None}
-        },
-        "hidden": ["instances", "flow", "attack-time", "linear", "restart-at-zero", "reset", "release", "release-time"],
-        "name": "Chase Envelope",
-        "thumbnail_visible": True
-    })
-    connect(37, "output", 38, "trigger")
-
-    # Combine Chase Enable + Chase Burst Envelope (Node 39)
-    add_node(39, {
-        "attributes": float_add_attr(),
-        "bounds": {"height": 82, "width": 130, "x": 980, "y": 280},
-        "class": {"id": "77697265-A9AF-4CB4-B10F-3968B36BB63B", "version": 1},
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {"input0": {"type": "float", "value": 0.0}, "input1": {"type": "float", "value": 0.0}},
-        "hidden": ["size", "input0-dimensions", "input1-dimensions", "type0", "type1", "flow"],
-        "name": "Chase Gate Add",
-        "thumbnail_visible": True
-    })
-    connect(30, "output", 39, "input0")
-    connect(38, "output", 39, "input1")
 
     # Grid Slices Int In (Node 31) - default 5 slices
     add_node(31, {
@@ -1213,7 +1163,7 @@ def build_patch():
     connect(75, "output", 76, "shape")
     connect(35, "output", 76, "material")
 
-    # Multiply Chase Intensity with (Chase Enable + Chase Burst Envelope) (Node 77)
+    # Multiply Chase Intensity with Chase Toggle (Node 77)
     add_node(77, {
         "attributes": float_multiply_attr(),
         "bounds": {"height": 82, "width": 130, "x": 1170, "y": 380},
@@ -1226,7 +1176,7 @@ def build_patch():
         "thumbnail_visible": True
     })
     connect(36, "output", 77, "input0")
-    connect(39, "output0", 77, "input1")
+    connect(30, "output", 77, "input1")
 
     # Video Mixer for Chase (Node 78)
     add_node(78, {
@@ -1259,7 +1209,7 @@ def build_patch():
     connect(77, "output0", 78, "opacity2")
 
     # =========================================================================
-    # 4. STROBE MODULE
+    # 4. STROBE MODULE (Instant / Piano Flash)
     # =========================================================================
     add_node(50, {
         "attributes": {
@@ -1273,22 +1223,7 @@ def build_patch():
         "color": "ffff6a00",
         "constants": {"input": {"type": "bool", "value": False}},
         "hidden": ["input", "instances", "flow", "bool-view"],
-        "name": "Strobe Enable",
-        "thumbnail_visible": True
-    })
-
-    add_node(51, {
-        "attributes": {
-            "flow": {"type": "flow", "value": "event"},
-            "instances": {"type": "integer", "value": 1}
-        },
-        "bounds": {"height": 82, "width": 140, "x": 1300, "y": -300},
-        "class": {"id": "77697265-e61f-42c0-862a-0dca04e14569", "version": 1},
-        "clock": "video",
-        "color": "ff02bbff",
-        "constants": {"input": {"type": "trigger", "value": None}},
-        "hidden": ["instances", "flow"],
-        "name": "Strobe Trigger",
+        "name": "Strobe",
         "thumbnail_visible": True
     })
 
@@ -1304,7 +1239,7 @@ def build_patch():
             "unit": {"type": "integer", "value": 0},
             "widget": {"type": "integer", "value": 0}
         },
-        "bounds": {"height": 82, "width": 140, "x": 1300, "y": -200},
+        "bounds": {"height": 82, "width": 140, "x": 1300, "y": -280},
         "class": {"id": "77697265-D235-4A6A-B661-02ABE55C72FF", "version": 3},
         "clock": "video",
         "color": "ff20c7bb",
@@ -1326,7 +1261,7 @@ def build_patch():
             "unit": {"type": "integer", "value": 0},
             "widget": {"type": "integer", "value": 0}
         },
-        "bounds": {"height": 82, "width": 140, "x": 1300, "y": -100},
+        "bounds": {"height": 82, "width": 140, "x": 1300, "y": -160},
         "class": {"id": "77697265-D235-4A6A-B661-02ABE55C72FF", "version": 3},
         "clock": "video",
         "color": "ff20c7bb",
@@ -1336,13 +1271,43 @@ def build_patch():
         "thumbnail_visible": True
     })
 
+    # Combine Strobe + Master Punch (Node 151)
+    add_node(151, {
+        "attributes": float_add_attr(),
+        "bounds": {"height": 82, "width": 130, "x": 1480, "y": -400},
+        "class": {"id": "77697265-A9AF-4CB4-B10F-3968B36BB63B", "version": 1},
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {"input0": {"type": "float", "value": 0.0}, "input1": {"type": "float", "value": 0.0}},
+        "hidden": ["size", "input0-dimensions", "input1-dimensions", "type0", "type1", "flow"],
+        "name": "Strobe+Punch Add",
+        "thumbnail_visible": True
+    })
+    connect(50, "output", 151, "input0")
+    connect(90, "output", 151, "input1")
+
+    # Clamp Strobe Active (Node 152)
+    add_node(152, {
+        "attributes": clamp_attr(),
+        "bounds": {"height": 82, "width": 130, "x": 1640, "y": -400},
+        "class": {"id": "77697265-7557-4053-ABEC-73E2A9786804", "version": 2},
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {"max": {"type": "float", "value": 1.0}, "min": {"type": "float", "value": 0.0}, "value": {"type": "float", "value": 0.0}},
+        "hidden": ["value-type", "min-type", "max-type", "flow", "value-dimensions", "min-dimensions", "max-dimensions"],
+        "name": "Strobe Clamp",
+        "thumbnail_visible": True
+    })
+    connect(151, "output0", 152, "value")
+
+    # Strobe Pulse Oscillator (Node 54)
     add_node(54, {
         "attributes": {
             "anti-alias": {"type": "bool", "value": False},
             "instances": {"type": "integer", "value": 1},
             "unipolar": {"type": "bool", "value": True}
         },
-        "bounds": {"height": 130, "width": 195, "x": 1480, "y": -200},
+        "bounds": {"height": 130, "width": 195, "x": 1480, "y": -250},
         "class": {"id": "77697265-6256-4856-911C-5465AE6BF656", "version": 1},
         "clock": "video",
         "color": "ffff6a00",
@@ -1360,48 +1325,10 @@ def build_patch():
     })
     connect(52, "output", 54, "frequency")
 
-    add_node(55, {
-        "attributes": {
-            "flow": {"type": "flow", "value": "signal"},
-            "instances": {"type": "integer", "value": 1}
-        },
-        "bounds": {"height": 130, "width": 195, "x": 1480, "y": -350},
-        "class": {"id": "77697265-D980-43B3-9237-6683B154A5B0", "version": 1},
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-            "attack-time": {"type": "float", "value": 0.01},
-            "linear": {"type": "bool", "value": False},
-            "release": {"type": "trigger", "value": None},
-            "release-time": {"type": "float", "value": 0.35},
-            "reset": {"type": "trigger", "value": None},
-            "restart-at-zero": {"type": "bool", "value": False},
-            "trigger": {"type": "trigger", "value": None}
-        },
-        "hidden": ["instances", "flow", "attack-time", "linear", "restart-at-zero", "reset", "release", "release-time"],
-        "name": "Strobe Burst",
-        "thumbnail_visible": True
-    })
-    connect(51, "output", 55, "trigger")
-    connect(90, "output", 55, "trigger")
-
-    add_node(56, {
-        "attributes": float_add_attr(),
-        "bounds": {"height": 82, "width": 130, "x": 1690, "y": -350},
-        "class": {"id": "77697265-A9AF-4CB4-B10F-3968B36BB63B", "version": 1},
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {"input0": {"type": "float", "value": 0.0}, "input1": {"type": "float", "value": 0.0}},
-        "hidden": ["size", "input0-dimensions", "input1-dimensions", "type0", "type1", "flow"],
-        "name": "Strobe Gate",
-        "thumbnail_visible": True
-    })
-    connect(50, "output", 56, "input0")
-    connect(55, "output", 56, "input1")
-
+    # Multiply Strobe Clock with Strobe Clamp (Node 57)
     add_node(57, {
         "attributes": float_multiply_attr(),
-        "bounds": {"height": 82, "width": 130, "x": 1690, "y": -200},
+        "bounds": {"height": 82, "width": 130, "x": 1720, "y": -250},
         "class": {"id": "77697265-A0D8-429A-A558-69BC58D0D425", "version": 1},
         "clock": "video",
         "color": "ffff6a00",
@@ -1411,11 +1338,12 @@ def build_patch():
         "thumbnail_visible": True
     })
     connect(54, "output", 57, "input0")
-    connect(56, "output0", 57, "input1")
+    connect(152, "output0", 57, "input1")
 
+    # Multiply with Strobe Intensity (Node 58)
     add_node(58, {
         "attributes": float_multiply_attr(),
-        "bounds": {"height": 82, "width": 130, "x": 1690, "y": -80},
+        "bounds": {"height": 82, "width": 130, "x": 1720, "y": -120},
         "class": {"id": "77697265-A0D8-429A-A558-69BC58D0D425", "version": 1},
         "clock": "video",
         "color": "ffff6a00",

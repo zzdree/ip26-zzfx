@@ -38,12 +38,12 @@
       },
       {
         "from": [
-          11,
+          10,
           "output"
         ],
         "to": [
-          14,
-          "trigger"
+          101,
+          "input0"
         ]
       },
       {
@@ -52,24 +52,24 @@
           "output"
         ],
         "to": [
-          14,
-          "trigger"
+          101,
+          "input1"
         ]
       },
       {
         "from": [
-          13,
-          "output"
+          101,
+          "output0"
         ],
         "to": [
-          14,
-          "release-time"
+          102,
+          "value"
         ]
       },
       {
         "from": [
-          14,
-          "output"
+          102,
+          "output0"
         ],
         "to": [
           15,
@@ -92,23 +92,23 @@
           "output0"
         ],
         "to": [
-          16,
+          14,
           "input0"
         ]
       },
       {
         "from": [
-          10,
+          13,
           "output"
         ],
         "to": [
-          16,
-          "input1"
+          14,
+          "duration"
         ]
       },
       {
         "from": [
-          16,
+          14,
           "output0"
         ],
         "to": [
@@ -244,36 +244,6 @@
         "to": [
           27,
           "opacity2"
-        ]
-      },
-      {
-        "from": [
-          37,
-          "output"
-        ],
-        "to": [
-          38,
-          "trigger"
-        ]
-      },
-      {
-        "from": [
-          30,
-          "output"
-        ],
-        "to": [
-          39,
-          "input0"
-        ]
-      },
-      {
-        "from": [
-          38,
-          "output"
-        ],
-        "to": [
-          39,
-          "input1"
         ]
       },
       {
@@ -718,8 +688,8 @@
       },
       {
         "from": [
-          39,
-          "output0"
+          30,
+          "output"
         ],
         "to": [
           77,
@@ -758,22 +728,12 @@
       },
       {
         "from": [
-          52,
+          50,
           "output"
         ],
         "to": [
-          54,
-          "frequency"
-        ]
-      },
-      {
-        "from": [
-          51,
-          "output"
-        ],
-        "to": [
-          55,
-          "trigger"
+          151,
+          "input0"
         ]
       },
       {
@@ -782,28 +742,28 @@
           "output"
         ],
         "to": [
-          55,
-          "trigger"
-        ]
-      },
-      {
-        "from": [
-          50,
-          "output"
-        ],
-        "to": [
-          56,
-          "input0"
-        ]
-      },
-      {
-        "from": [
-          55,
-          "output"
-        ],
-        "to": [
-          56,
+          151,
           "input1"
+        ]
+      },
+      {
+        "from": [
+          151,
+          "output0"
+        ],
+        "to": [
+          152,
+          "value"
+        ]
+      },
+      {
+        "from": [
+          52,
+          "output"
+        ],
+        "to": [
+          54,
+          "frequency"
         ]
       },
       {
@@ -818,7 +778,7 @@
       },
       {
         "from": [
-          56,
+          152,
           "output0"
         ],
         "to": [
@@ -892,15 +852,9 @@
       90,
       97,
       10,
-      11,
       12,
       13,
-      20,
-      21,
-      22,
-      23,
       30,
-      37,
       31,
       32,
       33,
@@ -908,14 +862,17 @@
       35,
       36,
       50,
-      51,
       52,
-      53
+      53,
+      20,
+      21,
+      22,
+      23
     ],
     "meta": {
       "author": "Andreas - IP26 Production",
       "category": "effect",
-      "description": "IP26 Multi-Performance Rack: Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices / H&V), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026.",
+      "description": "IP26 Unified Performance Rack v2.0: Instant On/Off Toggles & Piano Responsive Push, Multi-Direction Grid Chaser (7 Patterns / 1-10 Slices), Strobe, Outline, and Master Punch for Ibadah Perdana UKK UNNES 2026.",
       "displayName": "zzfx",
       "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e206",
       "license": "MIT",
@@ -935,7 +892,7 @@
       "type": "effect",
       "url": "https://github.com/zzdree/ip26-zzfx",
       "vendor": "IP26 Production",
-      "version": "1.1.0"
+      "version": "2.0.0"
     },
     "nextNodeId": 180,
     "nodes": {
@@ -973,9 +930,13 @@
       },
       "90": {
         "attributes": {
+          "bool-view": {
+            "type": "integer",
+            "value": 0
+          },
           "flow": {
             "type": "flow",
-            "value": "event"
+            "value": "signal"
           },
           "instances": {
             "type": "integer",
@@ -989,20 +950,22 @@
           "y": 200
         },
         "class": {
-          "id": "77697265-e61f-42c0-862a-0dca04e14569",
-          "version": 1
+          "id": "77697265-999C-4F8B-8B9D-3646DC68AA69",
+          "version": 2
         },
         "clock": "video",
-        "color": "ff02bbff",
+        "color": "ffff6a00",
         "constants": {
           "input": {
-            "type": "trigger",
-            "value": null
+            "type": "bool",
+            "value": false
           }
         },
         "hidden": [
+          "input",
           "instances",
-          "flow"
+          "flow",
+          "bool-view"
         ],
         "name": "Master Punch",
         "thumbnail_visible": true
@@ -1220,7 +1183,7 @@
         "constants": {
           "input": {
             "type": "bool",
-            "value": true
+            "value": false
           }
         },
         "hidden": [
@@ -1229,43 +1192,7 @@
           "flow",
           "bool-view"
         ],
-        "name": "Push Enable",
-        "thumbnail_visible": true
-      },
-      "11": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "event"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          }
-        },
-        "bounds": {
-          "height": 82,
-          "width": 140,
-          "x": -400,
-          "y": -300
-        },
-        "class": {
-          "id": "77697265-e61f-42c0-862a-0dca04e14569",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ff02bbff",
-        "constants": {
-          "input": {
-            "type": "trigger",
-            "value": null
-          }
-        },
-        "hidden": [
-          "instances",
-          "flow"
-        ],
-        "name": "Push Trigger",
+        "name": "Push",
         "thumbnail_visible": true
       },
       "12": {
@@ -1311,7 +1238,7 @@
           "height": 82,
           "width": 140,
           "x": -400,
-          "y": -200
+          "y": -250
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -1322,7 +1249,7 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 0.4
+            "value": 0.35
           }
         },
         "hidden": [
@@ -1364,7 +1291,7 @@
           },
           "min": {
             "type": "float",
-            "value": 0.05
+            "value": 0.0
           },
           "options-count": {
             "type": "integer",
@@ -1383,7 +1310,7 @@
           "height": 82,
           "width": 140,
           "x": -400,
-          "y": -100
+          "y": -120
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -1394,7 +1321,7 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 0.25
+            "value": 0.12
           }
         },
         "hidden": [
@@ -1412,69 +1339,133 @@
         "name": "Push Decay",
         "thumbnail_visible": true
       },
-      "14": {
+      "101": {
         "attributes": {
           "flow": {
             "type": "flow",
             "value": "signal"
           },
-          "instances": {
+          "input0-dimensions": {
             "type": "integer",
             "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
           }
         },
         "bounds": {
-          "height": 130,
-          "width": 195,
+          "height": 82,
+          "width": 130,
           "x": -200,
-          "y": -250
+          "y": -350
         },
         "class": {
-          "id": "77697265-D980-43B3-9237-6683B154A5B0",
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
           "version": 1
         },
         "clock": "video",
         "color": "ffff6a00",
         "constants": {
-          "attack-time": {
+          "input0": {
             "type": "float",
-            "value": 0.01
+            "value": 0.0
           },
-          "linear": {
-            "type": "bool",
-            "value": false
-          },
-          "release": {
-            "type": "trigger",
-            "value": null
-          },
-          "release-time": {
+          "input1": {
             "type": "float",
-            "value": 0.25
-          },
-          "reset": {
-            "type": "trigger",
-            "value": null
-          },
-          "restart-at-zero": {
-            "type": "bool",
-            "value": false
-          },
-          "trigger": {
-            "type": "trigger",
-            "value": null
+            "value": 0.0
           }
         },
         "hidden": [
-          "instances",
-          "flow",
-          "attack-time",
-          "linear",
-          "restart-at-zero",
-          "reset",
-          "release"
+          "size",
+          "input0-dimensions",
+          "input1-dimensions",
+          "type0",
+          "type1",
+          "flow"
         ],
-        "name": "Push Envelope",
+        "name": "Push+Punch Add",
+        "thumbnail_visible": true
+      },
+      "102": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "max-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "max-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "min-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "min-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "value-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "value-type": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": -40,
+          "y": -350
+        },
+        "class": {
+          "id": "77697265-7557-4053-ABEC-73E2A9786804",
+          "version": 2
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "max": {
+            "type": "float",
+            "value": 1.0
+          },
+          "min": {
+            "type": "float",
+            "value": 0.0
+          },
+          "value": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "value-type",
+          "min-type",
+          "max-type",
+          "flow",
+          "value-dimensions",
+          "min-dimensions",
+          "max-dimensions"
+        ],
+        "name": "Push Clamp",
         "thumbnail_visible": true
       },
       "15": {
@@ -1507,8 +1498,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 30,
-          "y": -250
+          "x": 120,
+          "y": -350
         },
         "class": {
           "id": "77697265-A0D8-429A-A558-69BC58D0D425",
@@ -1534,67 +1525,47 @@
           "type1",
           "flow"
         ],
-        "name": "Push Gain",
+        "name": "Target Zoom",
         "thumbnail_visible": true
       },
-      "16": {
+      "14": {
         "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "input0-dimensions": {
-            "type": "integer",
-            "value": 1
-          },
-          "input1-dimensions": {
-            "type": "integer",
-            "value": 1
-          },
-          "size": {
-            "type": "integer",
-            "value": 2
-          },
-          "type0": {
+          "input0-type": {
             "type": "type",
             "value": "float"
           },
-          "type1": {
-            "type": "type",
-            "value": "float"
+          "instances": {
+            "type": "integer",
+            "value": 1
           }
         },
         "bounds": {
-          "height": 82,
-          "width": 130,
-          "x": 190,
-          "y": -250
+          "height": 58,
+          "width": 195,
+          "x": 280,
+          "y": -350
         },
         "class": {
-          "id": "77697265-A0D8-429A-A558-69BC58D0D425",
+          "id": "77697265-86ce-4e85-a02d-34f915fca74e",
           "version": 1
         },
         "clock": "video",
-        "color": "ffff6a00",
+        "color": "ff20c7bb",
         "constants": {
-          "input0": {
+          "duration": {
             "type": "float",
-            "value": 0.0
+            "value": 0.12
           },
-          "input1": {
+          "input0": {
             "type": "float",
             "value": 0.0
           }
         },
         "hidden": [
-          "size",
-          "input0-dimensions",
-          "input1-dimensions",
-          "type0",
-          "type1",
-          "flow"
+          "input0-type",
+          "instances"
         ],
-        "name": "Push Gate",
+        "name": "Push Smooth",
         "thumbnail_visible": true
       },
       "17": {
@@ -1627,8 +1598,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 350,
-          "y": -250
+          "x": 500,
+          "y": -350
         },
         "class": {
           "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
@@ -1671,8 +1642,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 350,
-          "y": -120
+          "x": 500,
+          "y": -200
         },
         "class": {
           "id": "77697265-E7EF-4944-8FC2-D808EE0433CB",
@@ -1818,7 +1789,7 @@
           "flow",
           "bool-view"
         ],
-        "name": "Outline Enable",
+        "name": "Outline",
         "thumbnail_visible": true
       },
       "21": {
@@ -2322,169 +2293,7 @@
           "flow",
           "bool-view"
         ],
-        "name": "Chase Enable",
-        "thumbnail_visible": true
-      },
-      "37": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "event"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          }
-        },
-        "bounds": {
-          "height": 82,
-          "width": 140,
-          "x": 600,
-          "y": 350
-        },
-        "class": {
-          "id": "77697265-e61f-42c0-862a-0dca04e14569",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ff02bbff",
-        "constants": {
-          "input": {
-            "type": "trigger",
-            "value": null
-          }
-        },
-        "hidden": [
-          "instances",
-          "flow"
-        ],
-        "name": "Chase Trigger",
-        "thumbnail_visible": true
-      },
-      "38": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          }
-        },
-        "bounds": {
-          "height": 130,
-          "width": 195,
-          "x": 760,
-          "y": 350
-        },
-        "class": {
-          "id": "77697265-D980-43B3-9237-6683B154A5B0",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-          "attack-time": {
-            "type": "float",
-            "value": 0.01
-          },
-          "linear": {
-            "type": "bool",
-            "value": false
-          },
-          "release": {
-            "type": "trigger",
-            "value": null
-          },
-          "release-time": {
-            "type": "float",
-            "value": 0.45
-          },
-          "reset": {
-            "type": "trigger",
-            "value": null
-          },
-          "restart-at-zero": {
-            "type": "bool",
-            "value": false
-          },
-          "trigger": {
-            "type": "trigger",
-            "value": null
-          }
-        },
-        "hidden": [
-          "instances",
-          "flow",
-          "attack-time",
-          "linear",
-          "restart-at-zero",
-          "reset",
-          "release",
-          "release-time"
-        ],
-        "name": "Chase Envelope",
-        "thumbnail_visible": true
-      },
-      "39": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "input0-dimensions": {
-            "type": "integer",
-            "value": 1
-          },
-          "input1-dimensions": {
-            "type": "integer",
-            "value": 1
-          },
-          "size": {
-            "type": "integer",
-            "value": 2
-          },
-          "type0": {
-            "type": "type",
-            "value": "float"
-          },
-          "type1": {
-            "type": "type",
-            "value": "float"
-          }
-        },
-        "bounds": {
-          "height": 82,
-          "width": 130,
-          "x": 980,
-          "y": 280
-        },
-        "class": {
-          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-          "input0": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input1": {
-            "type": "float",
-            "value": 0.0
-          }
-        },
-        "hidden": [
-          "size",
-          "input0-dimensions",
-          "input1-dimensions",
-          "type0",
-          "type1",
-          "flow"
-        ],
-        "name": "Chase Gate Add",
+        "name": "Chase",
         "thumbnail_visible": true
       },
       "31": {
@@ -4306,43 +4115,7 @@
           "flow",
           "bool-view"
         ],
-        "name": "Strobe Enable",
-        "thumbnail_visible": true
-      },
-      "51": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "event"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          }
-        },
-        "bounds": {
-          "height": 82,
-          "width": 140,
-          "x": 1300,
-          "y": -300
-        },
-        "class": {
-          "id": "77697265-e61f-42c0-862a-0dca04e14569",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ff02bbff",
-        "constants": {
-          "input": {
-            "type": "trigger",
-            "value": null
-          }
-        },
-        "hidden": [
-          "instances",
-          "flow"
-        ],
-        "name": "Strobe Trigger",
+        "name": "Strobe",
         "thumbnail_visible": true
       },
       "52": {
@@ -4388,7 +4161,7 @@
           "height": 82,
           "width": 140,
           "x": 1300,
-          "y": -200
+          "y": -280
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -4460,7 +4233,7 @@
           "height": 82,
           "width": 140,
           "x": 1300,
-          "y": -100
+          "y": -160
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -4489,6 +4262,135 @@
         "name": "Strobe Intensity",
         "thumbnail_visible": true
       },
+      "151": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 1480,
+          "y": -400
+        },
+        "class": {
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "size",
+          "input0-dimensions",
+          "input1-dimensions",
+          "type0",
+          "type1",
+          "flow"
+        ],
+        "name": "Strobe+Punch Add",
+        "thumbnail_visible": true
+      },
+      "152": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "max-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "max-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "min-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "min-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "value-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "value-type": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 1640,
+          "y": -400
+        },
+        "class": {
+          "id": "77697265-7557-4053-ABEC-73E2A9786804",
+          "version": 2
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "max": {
+            "type": "float",
+            "value": 1.0
+          },
+          "min": {
+            "type": "float",
+            "value": 0.0
+          },
+          "value": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "value-type",
+          "min-type",
+          "max-type",
+          "flow",
+          "value-dimensions",
+          "min-dimensions",
+          "max-dimensions"
+        ],
+        "name": "Strobe Clamp",
+        "thumbnail_visible": true
+      },
       "54": {
         "attributes": {
           "anti-alias": {
@@ -4508,7 +4410,7 @@
           "height": 130,
           "width": 195,
           "x": 1480,
-          "y": -200
+          "y": -250
         },
         "class": {
           "id": "77697265-6256-4856-911C-5465AE6BF656",
@@ -4555,132 +4457,6 @@
         "name": "Strobe Clock",
         "thumbnail_visible": true
       },
-      "55": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          }
-        },
-        "bounds": {
-          "height": 130,
-          "width": 195,
-          "x": 1480,
-          "y": -350
-        },
-        "class": {
-          "id": "77697265-D980-43B3-9237-6683B154A5B0",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-          "attack-time": {
-            "type": "float",
-            "value": 0.01
-          },
-          "linear": {
-            "type": "bool",
-            "value": false
-          },
-          "release": {
-            "type": "trigger",
-            "value": null
-          },
-          "release-time": {
-            "type": "float",
-            "value": 0.35
-          },
-          "reset": {
-            "type": "trigger",
-            "value": null
-          },
-          "restart-at-zero": {
-            "type": "bool",
-            "value": false
-          },
-          "trigger": {
-            "type": "trigger",
-            "value": null
-          }
-        },
-        "hidden": [
-          "instances",
-          "flow",
-          "attack-time",
-          "linear",
-          "restart-at-zero",
-          "reset",
-          "release",
-          "release-time"
-        ],
-        "name": "Strobe Burst",
-        "thumbnail_visible": true
-      },
-      "56": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "input0-dimensions": {
-            "type": "integer",
-            "value": 1
-          },
-          "input1-dimensions": {
-            "type": "integer",
-            "value": 1
-          },
-          "size": {
-            "type": "integer",
-            "value": 2
-          },
-          "type0": {
-            "type": "type",
-            "value": "float"
-          },
-          "type1": {
-            "type": "type",
-            "value": "float"
-          }
-        },
-        "bounds": {
-          "height": 82,
-          "width": 130,
-          "x": 1690,
-          "y": -350
-        },
-        "class": {
-          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ffff6a00",
-        "constants": {
-          "input0": {
-            "type": "float",
-            "value": 0.0
-          },
-          "input1": {
-            "type": "float",
-            "value": 0.0
-          }
-        },
-        "hidden": [
-          "size",
-          "input0-dimensions",
-          "input1-dimensions",
-          "type0",
-          "type1",
-          "flow"
-        ],
-        "name": "Strobe Gate",
-        "thumbnail_visible": true
-      },
       "57": {
         "attributes": {
           "flow": {
@@ -4711,8 +4487,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 1690,
-          "y": -200
+          "x": 1720,
+          "y": -250
         },
         "class": {
           "id": "77697265-A0D8-429A-A558-69BC58D0D425",
@@ -4771,8 +4547,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 1690,
-          "y": -80
+          "x": 1720,
+          "y": -120
         },
         "class": {
           "id": "77697265-A0D8-429A-A558-69BC58D0D425",
