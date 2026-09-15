@@ -1,6 +1,7 @@
 # ⚡ zz-suite — Pure Modular Resolume Performance VJ Plugins
 **Professional Pure Modular VJ Toolkit untuk Ibadah Perdana UKK UNNES 2026**  
-*Lokasi Project: `C:\ANDREAS\ip26-zzfx`*  
+*Lokasi Project: [`C:\ANDREAS\ip26-zzfx`](file:///C:/ANDREAS/ip26-zzfx)*  
+*Repository GitHub: [https://github.com/zzdree/ip26-zzfx](https://github.com/zzdree/ip26-zzfx)*  
 *Target Output: Novastar Video Processor (Auditorium UNNES 2400x720) & Universal Canvas (16:9, 1080p, 4K)*  
 *Operator Resolume: Andreas (IP26 Production)*
 
@@ -8,148 +9,156 @@
 
 ## 🌟 Filosofi Arsitektur: 100% Pure Modular
 
-Project ini dirancang dengan pendekatan **Pure Modular Suite (`zz-suite`)**. Setiap efek merupakan plugin mandiri (*standalone plugin*) yang terpisah secara independen:
+Project ini dirancang dengan standar **Pure Modular Architecture (`zz-suite`)**. Setiap efek merupakan plugin mandiri (*standalone compiled binary*) yang independen dan terisolasi:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
 │                   ZZ-SUITE PURE MODULAR PLUGINS                        │
 ├──────────────────────┬─────────────────────────────────────────────────┤
-│ zz_pusher.cwired     │ Elastic Zoom Kick & Beat Punch                  │
-│ zz_chaser.cwired     │ 7-Direction Dedicated Piano Chaser (Keys 1–7)   │
-│ zz_strobe.cwired     │ High-Speed Multi-Rate Flash Strobe              │
-│ zz_outliner.cwired   │ Neon Sobel Edge Glow Overlay                    │
-│ zz_wiper.cwired      │ Linear Scanner Light Beam & Curtain Wipe        │
+│ zz_pusher.cwired     │ Efek Kejut: Beat Punch Zoom + Solid Glow Fade   │
+│ zz_chaser.cwired     │ 1-Screen Precision Grid Runner (Slices & Bounce)│
+│ zz_wiper.cwired      │ Smooth Continuous Scanner Curtain Wipe          │
+│ zz_strobe.cwired     │ High-Speed Native Piano Flash Strobe            │
+│ zz_stroke.cwired     │ Animated Snake Border Glow with Fading Tail     │
 └──────────────────────┴─────────────────────────────────────────────────┘
 ```
 
 ### 💡 Keuntungan Pure Modular:
-1. **Fleksibilitas Stacking:** Kamu bebas drag hanya efek yang kamu inginkan ke Layer atau Composition.
-2. **Urutan Efek Bebas:** Efek bisa diatur urutan render-nya (misal: *Outliner* dulu baru di-*Push*, atau *Chaser* di atas *Strobe*).
-3. **Ultra Ringan & Hemat GPU:** Setiap modul hanya memuat shader node yang diperlukan, nol overhead dari efek yang tidak digunakan.
-4. **Respon Piano Seketika:** Setiap parameter trigger diprogram untuk mode Piano tanpa latency.
+1. **Fleksibilitas Stacking:** Bebas drag hanya efek yang diperlukan ke Composition, Layer, atau Clip.
+2. **Bebas Crash (*Crash-Proof & Zero Conflict*):** Setiap modul berdiri sendiri tanpa dependensi eksternal, compiled native menggunakan official Resolume Wire Engine.
+3. **Ultra Ringan & Hemat GPU:** Modul hanya memproses shader saat aktif. Saat piano key dilepas, opacity langsung cut ke 0.0 (nol beban GPU).
+4. **Urutan Efek Dinamis:** Urutan render bebas diatur (misal: *Stroke* di atas video, lalu di-*Push* bersamaan dengan *Wiper*).
 
 ---
 
-## 📦 Struktur Folder & Daftar File (`C:\ANDREAS\ip26-zzfx`)
+## 📐 Fleksibilitas Resolusi & Fleksibilitas Penempatan
 
-Repository terbagi menjadi 2 folder utama agar rapi dan mudah digunakan:
-* **`cwired/`** ➔ Berisi 5 plugin biner siap pakai untuk **Resolume Arena**.
-* **`wire/`** ➔ Berisi 5 file project/source patch untuk **Resolume Wire**.
+### 1. Dynamic Resolution (100% Fleksibel)
+- Seluruh 5 plugin dibangun menggunakan sistem koordinat **Relative Texture & Procedural Canvas (`resolution-relative: [1, 1]`)**.
+- **Hasil:**
+  - ✅ **1920x1080 (FHD / Monitor Preview):** Tampilan proporsional dan tajam.
+  - ✅ **2400x720 (Novastar LED Wall Auditorium UNNES):** Otomatis menyesuaikan aspek rasio ultrawide panggung tanpa distorsi.
+  - ✅ **4K / Custom Resolution:** 100% adaptif mengikuti resolusi video buffer tanpa perlu setting ulang.
+
+### 2. Penempatan: Composition vs Layer vs Clip
+- **Di Composition (Global Master FX):**
+  - **Sangat Aman!** Semua efek akan memengaruhi keseluruhan output visual (Video Background + Kamera + Lowerthird/Lirik). Sangat direkomendasikan untuk *Pusher* dan *Strobe* saat drop musik/reff lagu.
+- **Di Layer (Specific Track FX):**
+  - Efek hanya memengaruhi layer tersebut (misalnya hanya di Layer Background Motion Graphics, sementara Layer Lirik tetap bersih).
+- **Di Clip (Individual Video FX):**
+  - Efek melekat langsung pada video clip tertentu saat di-trigger.
+
+---
+
+## 📦 Struktur Folder & File (`C:\ANDREAS\ip26-zzfx`)
+
+Repository terbagi menjadi 2 folder utama:
+* **[`cwired/`](file:///C:/ANDREAS/ip26-zzfx/cwired)** ➔ Berisi 5 plugin biner siap pakai untuk **Resolume Arena**.
+* **[`wire/`](file:///C:/ANDREAS/ip26-zzfx/wire)** ➔ Berisi 5 source patch untuk **Resolume Wire**.
 
 ### 1. Folder `cwired/` (Siap Pakai di Resolume Arena)
-| File | Ukuran | Jenis | Deskripsi & Fungsi |
+| File | Ukuran | Jenis | Deskripsi & Fitur Utama |
 | :--- | :--- | :--- | :--- |
-| **`cwired/zz_pusher.cwired`** | 8.1 KB | Modular | **Elastic Zoom Kick / Bumper.** Pembesaran hentakan beat drum dengan parameter *Push Amount* & *Push Decay*. |
-| **`cwired/zz_chaser.cwired`** | 39.1 KB | Modular | **7-Direction Dedicated Chaser.** 7 trigger saklar terpisah (1-7), Grid Slices (1-10), Snap to Grid, Speed, Color, Intensity. |
-| **`cwired/zz_strobe.cwired`** | 8.2 KB | Modular | **High-Speed Flash Strobe.** Flash kilatan putih/warna dengan frekuensi 2–30 Hz dan kontrol intensitas. |
-| **`cwired/zz_outliner.cwired`** | 7.6 KB | Modular | **Neon Sobel Edge Glow.** Deteksi garis kontur siluet kamera/lirik dengan palet warna neon dan wet/dry mix. |
-| **`cwired/zz_wiper.cwired`** | 18.2 KB | Modular | **Curtain & Scanner Wipe.** Bilah sapuan cahaya (4 arah: L->R, R->L, Up->Down, Down->Up) dengan ketebalan bar dinamis. |
+| **[`cwired/zz_pusher.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_pusher.cwired)** | 15.2 KB | Modular | **Efek Kejut (Beat Zoom Kick + Solid Flash).** Dilengkapi tombol klik `Punch!` di inspector & piano toggle, zoom membesar seketika lalu pudar halus bersama kilatan solid. |
+| **[`cwired/zz_chaser.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_chaser.cwired)** | 25.0 KB | Modular | **1-Screen Precision Grid Runner.** Tanpa perlu slice screen / Advanced Output! Custom Grid 1–10 (default 5 panel), Snap to Grid, 6 arah gerakan, opsi Bounce (ping-pong vs looping). |
+| **[`cwired/zz_wiper.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_wiper.cwired)** | 21.4 KB | Modular | **Smooth Continuous Scanner Curtain Wipe.** Bilah sapuan cahaya continuous (tanpa grid), 6 arah gerakan, opsi Bounce, kontrol Bar Width & Speed. |
+| **[`cwired/zz_strobe.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_strobe.cwired)** | 10.3 KB | Modular | **High-Speed Flash Strobe.** Model stock Resolume Strobe dengan Piano hold, frekuensi 2–30 Hz, kontrol warna dan intensitas kilatan. |
+| **[`cwired/zz_stroke.cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired/zz_stroke.cwired)** | 18.4 KB | Modular | **Perimeter Snake Border Glow.** Efek ular cahaya berlari mengelilingi bingkai tepi layar LED dengan ekor memudar halus (*smooth gradient tail*), arah CW/CCW, dan ketebalan garis. |
 
-### 2. Folder `wire/` (Source Patch Resolume Wire)
-| File | Deskripsi |
-| :--- | :--- |
-| **`wire/zz_pusher.wire`** | Source node patch untuk modul Pusher. |
-| **`wire/zz_chaser.wire`** | Source node patch untuk modul Chaser 7-arah. |
-| **`wire/zz_strobe.wire`** | Source node patch untuk modul Strobe flash. |
-| **`wire/zz_outliner.wire`** | Source node patch untuk modul Outliner neon. |
-| **`wire/zz_wiper.wire`** | Source node patch untuk modul Wiper curtain/scanner. |
+---
 
-### 3. Builder Script
-| File | Deskripsi |
-| :--- | :--- |
-| `build_suite.py` | Python script otomatis untuk men-generate 5 project ke `wire/` dan mengompilasinya ke `cwired/` via Wire CLI. |
+## 🎛️ Panduan Parameter & Cara Pakai Setiap Modul
+
+### 1. `zz-pusher` (Efek Kejut / Beat Punch Zoom)
+* **`Punch!` (Click Trigger Button):** Tombol klik langsung di inspector untuk memicu efek hentakan seketika tanpa harus mapping piano manual.
+* **`Push` (Toggle / Piano):** Saklar aktivasi untuk shortcut keyboard / MIDI.
+* **`Push Amount` (0.0 – 1.0, default: `0.35`):** Besaran zoom hentakan kejut.
+* **`Push Decay` (0.02 – 1.0s, default: `0.15s`):** Kecepatan pudar halus (*smooth exponential release*).
+* **`Flash Intensity` (0.0 – 1.0, default: `0.40`):** Kecerahan kilatan solid yang muncul bersama hentakan dan pudar bersamaan.
+* **`Flash Color` (Color Picker):** Warna kilatan kejut (default: Putih).
+* **`Bypass` (Toggle):** Mem-bypass efek seketika.
+
+### 2. `zz-chaser` (1-Screen Precision Grid Runner)
+* **`Chase (Hold)` (Piano Hold):** Tahan untuk mengaktifkan chaser, lepas untuk instant cut.
+* **`Direction` (0 – 5):**
+  - `0`: Left $\rightarrow$ Right
+  - `1`: Right $\rightarrow$ Left
+  - `2`: Up $\rightarrow$ Down
+  - `3`: Down $\rightarrow$ Up
+  - `4`: Center $\rightarrow$ Out
+  - `5`: Out $\rightarrow$ Center
+* **`Bounce` (Toggle, default: OFF):**
+  - `OFF`: Runner meluncur satu arah lalu melompat looping langsung dari awal.
+  - `ON`: Runner bergerak bolak-balik terus menerus (*ping-pong*).
+* **`Grid Slices X` (Int 1 – 10, default: `5`):** Pembagi kolom presisi. Set `5` untuk 5 panel LED Auditorium UNNES.
+* **`Grid Slices Y` (Int 1 – 10, default: `1`):** Pembagi baris presisi horizontal.
+* **`Snap to Grid` (Toggle, default: ON):**
+  - `ON`: Melompat presisi per panel LED.
+  - `OFF`: Bergerak meluncur mulus continuous melintasi grid.
+* **`Chase Speed` (0.1 – 8.0 Hz, default: `1.5 Hz`):** Kecepatan lari chaser.
+* **`Chase Color` (Color Picker):** Warna bilah chaser (default: Amber Gold).
+* **`Chase Intensity` (0.0 – 1.0):** Kecerahan bilah chaser.
+
+### 3. `zz-wiper` (Continuous Scanner Curtain Wipe)
+* **`Wiper (Hold)` (Piano Hold):** Tahan untuk memicu sapuan cahaya.
+* **`Direction` (0 – 5):** L->R, R->L, Up->Down, Down->Up, Center->Out, Out->Center.
+* **`Bounce` (Toggle):** Sapuan satu arah atau bolak-balik (*ping-pong*).
+* **`Wipe Speed` (0.1 – 6.0 Hz):** Kecepatan siklus sapuan tirai.
+* **`Bar Width` (0.02 – 1.0, default: `0.35`):** Lebar bilah sapuan cahaya.
+* **`Bar Color` (Color Picker):** Warna tirai scanner.
+* **`Wipe Intensity` (0.0 – 1.0):** Opacity bilah sapuan.
+
+### 4. `zz-strobe` (High-Speed Multi-Rate Flash)
+* **`Strobe (Hold)` (Piano Hold):** Tahan tombol untuk memicu flash cepat.
+* **`Strobe Rate` (2.0 – 30.0 Hz, default: `14.0 Hz`):** Kecepatan kedipan per detik.
+* **`Strobe Color` (Color Picker):** Warna kilatan (default: Putih).
+* **`Strobe Intensity` (0.0 – 1.0):** Kecerahan kilatan.
+
+### 5. `zz-stroke` (Animated Snake Perimeter Border)
+* **`Stroke (Hold)` (Piano Hold):** Tahan tombol untuk memunculkan ular bingkai neon.
+* **`Stroke Width` (0.005 – 0.08, default: `0.025`):** Ketebalan garis tepi layar LED.
+* **`Snake Speed` (0.1 – 4.0 Hz, default: `1.0 Hz`):** Kecepatan lari ular mengitari pinggir layar.
+* **`Direction` (0 = Clockwise, 1 = Counter-Clockwise):** Arah putaran ular cahaya.
+* **`Stroke Color` (Color Picker):** Warna neon ular (default: Cyan Glow).
+* **`Stroke Intensity` (0.0 – 1.0):** Kecerahan efek stroke.
 
 ---
 
 ## 🚀 Cara Instalasi ke Resolume Arena
 
 1. Buka folder [`C:\ANDREAS\ip26-zzfx\cwired`](file:///C:/ANDREAS/ip26-zzfx/cwired).
-2. **Double-click** file `.cwired` yang ingin digunakan (`zz_pusher.cwired`, `zz_chaser.cwired`, `zz_strobe.cwired`, `zz_outliner.cwired`, `zz_wiper.cwired`).  
-   *(Resolume Arena akan otomatis mendaftarkannya ke panel Effects).*
-3. *Alternatif folder effect Resolume:* Buka Resolume Arena $\rightarrow$ **Preferences** $\rightarrow$ **Effects** $\rightarrow$ Tambahkan path folder `C:\ANDREAS\ip26-zzfx\cwired`.
-4. Seluruh plugin siap digunakan di panel **Effects**!
+2. **Double-click** masing-masing file `.cwired` untuk mendaftarkannya langsung ke database Resolume Arena.
+3. *Atau daftarkan folder secara permanen:*
+   - Buka Resolume Arena $\rightarrow$ **Preferences** $\rightarrow$ **Effects**.
+   - Klik **Add Directory** $\rightarrow$ Arahkan ke `C:\ANDREAS\ip26-zzfx\cwired`.
+4. Seluruh plugin akan langsung muncul di panel **Effects** Resolume Arena!
 
 ---
 
-## 🎛️ Panduan Parameter Setiap Modul
+## 🎹 Panduan Setting Mode Piano di Resolume Arena
 
-### 1. `zz-pusher` (Zoom Beat Punch)
-* **`Push (Toggle / Piano)`:** Saklar zoom punch. Cocok di-bind ke tombol keyboard untuk ketukan kick drum.
-* **`Push Amount (Slider 0.0 – 1.0)`:** Kekuatan zoom hentakan (default: `0.35`).
-* **`Push Decay (Slider 0.0 – 1.0s)`:** Waktu kembali elastis (default: `0.12s`; set `0.0s` untuk snap instan).
+Untuk performa VJ live yang responsif saat ibadah/konser:
 
-### 2. `zz-chaser` (7-Direction Slices Runner)
-Tersedia **7 saklar trigger independen**:
-* **`Chase 1: Left -> Right`:** Sapuan bar vertikal dari kiri ke kanan.
-* **`Chase 2: Right -> Left`:** Sapuan bar vertikal dari kanan ke kiri.
-* **`Chase 3: Center -> Out`:** Bar mekar dari tengah layar ke kedua sisi luar bersamaan.
-* **`Chase 4: Out -> Center`:** Bar kuncup dari sisi luar menuju tengah layar.
-* **`Chase 5: Up -> Down`:** Sapuan bar horizontal dari atas ke bawah.
-* **`Chase 6: Down -> Up`:** Sapuan bar horizontal dari bawah ke atas.
-* **`Chase 7: Bounce`:** Bar bolak-balik terus menerus (*ping-pong*).
-* **`Grid Slices (Int 1 – 10, default: 5)`:** Jumlah kolom/baris slice. Set `5` untuk layar Auditorium UNNES.
-* **`Snap to Grid (Toggle, default: ON)`:** ON = lompat per panel LED modular; OFF = sapuan mulus continuous.
-* **`Chase Speed (Slider 0.1 – 8.0 Hz)`:** Kecepatan lari bar cahaya.
-* **`Chase Color (Color Picker)`:** Warna bilah sinar (default: *Amber Gold*).
-* **`Chase Intensity (Slider 0.0 – 1.0)`:** Kecerahan bar saat melintasi layar.
-
-### 3. `zz-strobe` (High-Speed Multi-Rate Flash)
-* **`Strobe (Toggle / Piano)`:** Saklar flash putih.
-* **`Strobe Rate (Slider 2.0 – 30.0 Hz)`:** Frekuensi kedipan per detik (default: `14.0 Hz`).
-* **`Strobe Intensity (Slider 0.0 – 1.0)`:** Kecerahan kilatan flash.
-* **`Strobe Color (Color Picker)`:** Warna kilatan (default: Putih `1.0, 1.0, 1.0`).
-
-### 4. `zz-outliner` (Neon Sobel Edge Detection)
-* **`Outline (Toggle / Piano)`:** Saklar deteksi garis tepi neon.
-* **`Outline Strength (Slider 0.5 – 8.0)`:** Ketajaman & ketebalan deteksi tepi Sobel (default: `2.5`).
-* **`Outline Color (Color Picker)`:** Warna garis neon (default: *Neon Cyan*).
-* **`Outline Mix (Slider 0.0 – 1.0)`:** Opacity overlay garis neon di atas video.
-
-### 5. `zz-wiper` (Scanner Light Beam & Curtain Wipe)
-* **`Wiper (Toggle / Piano)`:** Saklar bilah tirai/scanner.
-* **`Wipe Direction (Dropdown / Int 0 – 3)`:**
-  - `0`: Kiri ke Kanan (*Left -> Right*)
-  - `1`: Kanan ke Kiri (*Right -> Left*)
-  - `2`: Atas ke Bawah (*Up -> Down*)
-  - `3`: Bawah ke Atas (*Down -> Up*)
-* **`Wipe Speed (Slider 0.1 – 6.0 Hz)`:** Kecepatan siklus sapuan beam.
-* **`Bar Width (Slider 0.05 – 1.0)`:** Ketebalan bilah sapuan (default: `0.35`).
-* **`Bar Color (Color Picker)`:** Warna sinar wiper.
-* **`Wipe Intensity (Slider 0.0 – 1.0)`:** Kecerahan sapuan wiper.
-
----
-
-## 🎹 Panduan Setting Mode Piano & Shortcut Keyboard di Resolume Arena
-
-Hanya butuh 1 menit untuk mengatur shortcut keyboard agar performa VJ maksimal:
-
-1. Drag modul yang diinginkan ke **Composition** (atau layer video).
+1. Drag plugin yang diinginkan ke **Composition** (atau layer video).
 2. Tekan **`Ctrl + Shift + K`** (*Shortcuts $\rightarrow$ Edit Keyboard*).
-3. Klik tombol parameter di inspector, lalu tekan tombol keyboard yang diinginkan:
-   * **`A`** ➔ `Push` *(pada zz-pusher)*
-   * **`B`** ➔ `Strobe` *(pada zz-strobe)*
-   * **`W`** ➔ `Wiper` *(pada zz-wiper)*
-   * **`O`** ➔ `Outline` *(pada zz-outliner)*
-   * **`1` s/d `7`** ➔ `Chase 1` s/d `Chase 7` *(pada zz-chaser)*
-4. **SET MODE PIANO (PENTING):**
-   * Klik shortcut yang baru dibuat pada tampilan Resolume.
-   * Di panel kanan bawah (**Shortcuts Inspector**), ubah dropdown **Mode** dari *Toggle* menjadi **`Piano`**.
-5. Tekan **`Esc`** untuk keluar dari mode edit shortcut.
+3. Klik parameter toggle efek (misal `Push`, `Chase (Hold)`, `Strobe (Hold)`), lalu tekan tombol keyboard yang diinginkan (misal `Space`, `A`, `S`, dll).
+4. Di panel kanan bawah (**Shortcuts Inspector**), ubah dropdown **Mode** dari *Toggle* menjadi **`Piano`**.
+5. Tekan **`Esc`** untuk keluar.
 6. **Hasil:**
-   - **Tahan tombol:** Efek langsung aktif dan bergerak mengikuti irama musik.
-   - **Lepas tombol:** Efek mati seketika (*instant cut*), opacity kembali ke 0.0, GPU nol beban.
+   - **Tahan tombol:** Efek langsung aktif dan bergerak sesuai tempo.
+   - **Lepas tombol:** Efek mati seketika (*instant cut*), opacity 0.0, nol beban GPU!
 
 ---
 
 ## 🔨 Cara Compile Ulang Source Patch
 
-Jika melakukan perubahan node logic di `build_suite.py`, jalankan command:
+Jika melakukan penyesuaian parameter di [`build_suite.py`](file:///C:/ANDREAS/ip26-zzfx/build_suite.py), jalankan:
 
 ```powershell
 python build_suite.py
 ```
 
-Script akan men-generate seluruh file `.wire` ke folder `wire/` dan otomatis mengompilasinya menjadi file `.cwired` ke folder `cwired/` menggunakan Resolume Wire CLI.
+Script akan men-generate source `.wire` dan mengompilasinya otomatis menjadi file `.cwired` menggunakan Resolume Wire CLI.
 
 ---
 

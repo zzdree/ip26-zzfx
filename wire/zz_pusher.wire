@@ -12,27 +12,27 @@
           "output"
         ],
         "to": [
-          15,
-          "input0"
+          20,
+          "trigger"
         ]
       },
       {
         "from": [
-          12,
+          13,
           "output"
         ],
         "to": [
-          15,
-          "input1"
+          20,
+          "release-time"
         ]
       },
       {
         "from": [
-          15,
-          "output0"
+          11,
+          "output"
         ],
         "to": [
-          14,
+          21,
           "input0"
         ]
       },
@@ -42,47 +42,87 @@
           "output"
         ],
         "to": [
-          14,
+          21,
           "duration"
         ]
       },
       {
         "from": [
-          16,
+          20,
           "output"
         ],
         "to": [
-          17,
+          22,
           "input0"
         ]
       },
       {
         "from": [
-          14,
+          21,
           "output0"
         ],
         "to": [
-          17,
+          22,
           "input1"
         ]
       },
       {
         "from": [
-          17,
+          22,
           "output0"
         ],
         "to": [
-          19,
+          23,
+          "value"
+        ]
+      },
+      {
+        "from": [
+          23,
+          "output"
+        ],
+        "to": [
+          24,
           "input0"
         ]
       },
       {
         "from": [
-          17,
+          12,
+          "output"
+        ],
+        "to": [
+          24,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          24,
           "output0"
         ],
         "to": [
-          19,
+          25,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          25,
+          "output0"
+        ],
+        "to": [
+          26,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          25,
+          "output0"
+        ],
+        "to": [
+          26,
           "input1"
         ]
       },
@@ -92,24 +132,114 @@
           "output"
         ],
         "to": [
-          18,
+          27,
           "input"
         ]
       },
       {
         "from": [
-          19,
+          26,
           "output"
         ],
         "to": [
-          18,
+          27,
           "scale"
         ]
       },
       {
         "from": [
-          18,
+          15,
+          "output"
+        ],
+        "to": [
+          28,
+          "color"
+        ]
+      },
+      {
+        "from": [
+          23,
+          "output"
+        ],
+        "to": [
+          29,
+          "input0"
+        ]
+      },
+      {
+        "from": [
+          14,
+          "output"
+        ],
+        "to": [
+          29,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          27,
           "output0"
+        ],
+        "to": [
+          30,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          28,
+          "output"
+        ],
+        "to": [
+          30,
+          "input2"
+        ]
+      },
+      {
+        "from": [
+          29,
+          "output0"
+        ],
+        "to": [
+          30,
+          "opacity2"
+        ]
+      },
+      {
+        "from": [
+          30,
+          "output"
+        ],
+        "to": [
+          31,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          0,
+          "output"
+        ],
+        "to": [
+          31,
+          "input2"
+        ]
+      },
+      {
+        "from": [
+          16,
+          "output"
+        ],
+        "to": [
+          31,
+          "opacity2"
+        ]
+      },
+      {
+        "from": [
+          31,
+          "output"
         ],
         "to": [
           1,
@@ -120,13 +250,17 @@
     "inputOrder": [
       0,
       10,
+      11,
       12,
-      13
+      13,
+      14,
+      15,
+      16
     ],
     "meta": {
       "author": "Andreas - IP26 Production",
       "category": "effect",
-      "description": "IP26 Modular Suite: Elastic Zoom Kick & Beat Punch Rack (Piano Mode).",
+      "description": "IP26 Modular Suite: Elastic Zoom Kick & Solid Flash Kejut (Click Trigger & Piano Mode).",
       "displayName": "zz-pusher",
       "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e210",
       "license": "MIT",
@@ -138,6 +272,7 @@
         "bumper",
         "zoom",
         "punch",
+        "kejut",
         "worship"
       ],
       "type": "effect",
@@ -145,7 +280,7 @@
       "vendor": "IP26 Production",
       "version": "1.0.0"
     },
-    "nextNodeId": 200,
+    "nextNodeId": 300,
     "nodes": {
       "0": {
         "attributes": {
@@ -181,6 +316,43 @@
       },
       "10": {
         "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "event"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": -600,
+          "y": 100
+        },
+        "class": {
+          "id": "77697265-e61f-42c0-862a-0dca04e14569",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input": {
+            "type": "trigger",
+            "value": null
+          }
+        },
+        "hidden": [
+          "input",
+          "instances",
+          "flow"
+        ],
+        "name": "Punch!",
+        "thumbnail_visible": true
+      },
+      "11": {
+        "attributes": {
           "bool-view": {
             "type": "integer",
             "value": 0
@@ -198,7 +370,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 150
+          "y": 200
         },
         "class": {
           "id": "77697265-999C-4F8B-8B9D-3646DC68AA69",
@@ -264,7 +436,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 250
+          "y": 300
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -317,6 +489,78 @@
           },
           "min": {
             "type": "float",
+            "value": 0.02
+          },
+          "options-count": {
+            "type": "integer",
+            "value": 0
+          },
+          "unit": {
+            "type": "integer",
+            "value": 0
+          },
+          "widget": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 140,
+          "x": -600,
+          "y": 400
+        },
+        "class": {
+          "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ff20c7bb",
+        "constants": {
+          "input": {
+            "type": "float",
+            "value": 0.15
+          }
+        },
+        "hidden": [
+          "input",
+          "instances",
+          "flow",
+          "has-min",
+          "min",
+          "has-max",
+          "max",
+          "options-count",
+          "widget",
+          "unit"
+        ],
+        "name": "Push Decay",
+        "thumbnail_visible": true
+      },
+      "14": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "event"
+          },
+          "has-max": {
+            "type": "bool",
+            "value": true
+          },
+          "has-min": {
+            "type": "bool",
+            "value": true
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "max": {
+            "type": "float",
+            "value": 1.0
+          },
+          "min": {
+            "type": "float",
             "value": 0.0
           },
           "options-count": {
@@ -336,7 +580,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 350
+          "y": 500
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -347,7 +591,7 @@
         "constants": {
           "input": {
             "type": "float",
-            "value": 0.12
+            "value": 0.4
           }
         },
         "hidden": [
@@ -362,10 +606,331 @@
           "widget",
           "unit"
         ],
-        "name": "Push Decay",
+        "name": "Flash Intensity",
         "thumbnail_visible": true
       },
       "15": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "options-count": {
+            "type": "integer",
+            "value": 0
+          },
+          "widget": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 140,
+          "x": -600,
+          "y": 600
+        },
+        "class": {
+          "id": "77697265-4C9E-4F75-B4F0-5415B713EA1B",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ffea1f48",
+        "constants": {
+          "input": {
+            "type": "color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "hidden": [
+          "input",
+          "instances",
+          "flow",
+          "options-count",
+          "widget"
+        ],
+        "name": "Flash Color",
+        "thumbnail_visible": true
+      },
+      "16": {
+        "attributes": {
+          "bool-view": {
+            "type": "integer",
+            "value": 0
+          },
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 140,
+          "x": -600,
+          "y": 700
+        },
+        "class": {
+          "id": "77697265-999C-4F8B-8B9D-3646DC68AA69",
+          "version": 2
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input": {
+            "type": "bool",
+            "value": false
+          }
+        },
+        "hidden": [
+          "input",
+          "instances",
+          "flow",
+          "bool-view"
+        ],
+        "name": "Bypass",
+        "thumbnail_visible": true
+      },
+      "20": {
+        "attributes": {
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 130,
+          "width": 195,
+          "x": -350,
+          "y": 100
+        },
+        "class": {
+          "id": "77697265-D980-43B3-9237-6683B154A5B0",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "fff26eb5",
+        "constants": {
+          "attack-time": {
+            "type": "float",
+            "value": 0.0
+          },
+          "linear": {
+            "type": "bool",
+            "value": false
+          },
+          "release": {
+            "type": "trigger",
+            "value": null
+          },
+          "release-time": {
+            "type": "float",
+            "value": 0.15
+          },
+          "reset": {
+            "type": "trigger",
+            "value": null
+          },
+          "restart-at-zero": {
+            "type": "bool",
+            "value": false
+          },
+          "trigger": {
+            "type": "trigger",
+            "value": null
+          }
+        },
+        "name": "Punch Envelope",
+        "thumbnail_visible": true,
+        "hidden": [
+          "restart-at-zero",
+          "linear",
+          "instances",
+          "is-done"
+        ]
+      },
+      "21": {
+        "attributes": {
+          "input0-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          }
+        },
+        "bounds": {
+          "height": 58,
+          "width": 195,
+          "x": -350,
+          "y": 250
+        },
+        "class": {
+          "id": "77697265-86ce-4e85-a02d-34f915fca74e",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ff20c7bb",
+        "constants": {
+          "duration": {
+            "type": "float",
+            "value": 0.15
+          },
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Push Smooth",
+        "thumbnail_visible": true,
+        "hidden": [
+          "input0-type",
+          "instances"
+        ]
+      },
+      "22": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": -100,
+          "y": 150
+        },
+        "class": {
+          "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Total Env Add",
+        "thumbnail_visible": true,
+        "hidden": [
+          "size",
+          "input0-dimensions",
+          "input1-dimensions",
+          "type0",
+          "type1",
+          "flow"
+        ]
+      },
+      "23": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "max-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "max-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "min-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "min-type": {
+            "type": "type",
+            "value": "float"
+          },
+          "value-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "value-type": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 80,
+          "y": 150
+        },
+        "class": {
+          "id": "77697265-7557-4053-ABEC-73E2A9786804",
+          "version": 2
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "max": {
+            "type": "float",
+            "value": 1.0
+          },
+          "min": {
+            "type": "float",
+            "value": 0.0
+          },
+          "value": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Clamp Env",
+        "thumbnail_visible": true,
+        "hidden": [
+          "value-type",
+          "min-type",
+          "max-type",
+          "flow",
+          "value-dimensions",
+          "min-dimensions",
+          "max-dimensions"
+        ]
+      },
+      "24": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -395,8 +960,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": -350,
-          "y": 200
+          "x": 260,
+          "y": 150
         },
         "class": {
           "id": "77697265-A0D8-429A-A558-69BC58D0D425",
@@ -414,7 +979,7 @@
             "value": 0.0
           }
         },
-        "name": "Target Zoom",
+        "name": "Zoom Scale",
         "thumbnail_visible": true,
         "hidden": [
           "size",
@@ -425,111 +990,7 @@
           "flow"
         ]
       },
-      "14": {
-        "attributes": {
-          "input0-type": {
-            "type": "type",
-            "value": "float"
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          }
-        },
-        "bounds": {
-          "height": 58,
-          "width": 195,
-          "x": -150,
-          "y": 200
-        },
-        "class": {
-          "id": "77697265-86ce-4e85-a02d-34f915fca74e",
-          "version": 1
-        },
-        "clock": "video",
-        "color": "ff20c7bb",
-        "constants": {
-          "duration": {
-            "type": "float",
-            "value": 0.12
-          },
-          "input0": {
-            "type": "float",
-            "value": 0.0
-          }
-        },
-        "name": "Push Smooth",
-        "thumbnail_visible": true,
-        "hidden": [
-          "input0-type",
-          "instances"
-        ]
-      },
-      "16": {
-        "attributes": {
-          "flow": {
-            "type": "flow",
-            "value": "signal"
-          },
-          "has-max": {
-            "type": "bool",
-            "value": false
-          },
-          "has-min": {
-            "type": "bool",
-            "value": false
-          },
-          "instances": {
-            "type": "integer",
-            "value": 1
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "unit": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
-          }
-        },
-        "bounds": {
-          "height": 58,
-          "width": 100,
-          "x": -150,
-          "y": 350
-        },
-        "class": {
-          "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
-          "version": 3
-        },
-        "clock": "video",
-        "color": "ff20c7bb",
-        "constants": {
-          "input": {
-            "type": "float",
-            "value": 1.0
-          }
-        },
-        "name": "Base Scale 1.0",
-        "thumbnail_visible": false,
-        "hidden": [
-          "input",
-          "instances",
-          "flow",
-          "has-min",
-          "min",
-          "has-max",
-          "max",
-          "options-count",
-          "widget",
-          "unit"
-        ]
-      },
-      "17": {
+      "25": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -559,8 +1020,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 100,
-          "y": 250
+          "x": 440,
+          "y": 150
         },
         "class": {
           "id": "77697265-A9AF-4CB4-B10F-3968B36BB63B",
@@ -589,7 +1050,7 @@
           "flow"
         ]
       },
-      "19": {
+      "26": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -603,8 +1064,8 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 280,
-          "y": 250
+          "x": 620,
+          "y": 150
         },
         "class": {
           "id": "77697265-E7EF-4944-8FC2-D808EE0433CB",
@@ -625,7 +1086,7 @@
         "name": "Scale Vec2",
         "thumbnail_visible": true
       },
-      "18": {
+      "27": {
         "attributes": {
           "anchor-type": {
             "type": "type",
@@ -659,7 +1120,7 @@
         "bounds": {
           "height": 130,
           "width": 195,
-          "x": 450,
+          "x": 800,
           "y": 0
         },
         "class": {
@@ -699,6 +1160,8 @@
             ]
           }
         },
+        "name": "Push Zoom",
+        "thumbnail_visible": true,
         "hidden": [
           "flow",
           "input-type",
@@ -707,8 +1170,299 @@
           "scale-type",
           "anchor-type",
           "instances"
+        ]
+      },
+      "28": {
+        "attributes": {
+          "bitdepth": {
+            "type": "integer",
+            "value": 0
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "resolution-absolute": {
+            "type": "float2",
+            "value": [
+              1920,
+              1080
+            ]
+          },
+          "resolution-mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "resolution-relative": {
+            "type": "float2",
+            "value": [
+              1,
+              1
+            ]
+          }
+        },
+        "bounds": {
+          "height": 58,
+          "width": 195,
+          "x": 800,
+          "y": 350
+        },
+        "class": {
+          "id": "77697265-E8EC-4F1B-901A-CFFC104D3B07",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "bypass": {
+            "type": "bool",
+            "value": false
+          },
+          "color": {
+            "type": "color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "name": "Flash Source",
+        "thumbnail_visible": true,
+        "hidden": [
+          "instances",
+          "bypass",
+          "bitdepth",
+          "resolution-absolute",
+          "resolution-relative",
+          "resolution-mode"
+        ]
+      },
+      "29": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "input0-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "input1-dimensions": {
+            "type": "integer",
+            "value": 1
+          },
+          "size": {
+            "type": "integer",
+            "value": 2
+          },
+          "type0": {
+            "type": "type",
+            "value": "float"
+          },
+          "type1": {
+            "type": "type",
+            "value": "float"
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 130,
+          "x": 620,
+          "y": 350
+        },
+        "class": {
+          "id": "77697265-A0D8-429A-A558-69BC58D0D425",
+          "version": 1
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "input0": {
+            "type": "float",
+            "value": 0.0
+          },
+          "input1": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "name": "Flash Opacity Calc",
+        "thumbnail_visible": true,
+        "hidden": [
+          "size",
+          "input0-dimensions",
+          "input1-dimensions",
+          "type0",
+          "type1",
+          "flow"
+        ]
+      },
+      "30": {
+        "attributes": {
+          "bitdepth": {
+            "type": "integer",
+            "value": 0
+          },
+          "input-count": {
+            "type": "integer",
+            "value": 2
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "resolution-absolute": {
+            "type": "float2",
+            "value": [
+              1920,
+              1080
+            ]
+          },
+          "resolution-mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "resolution-relative": {
+            "type": "float2",
+            "value": [
+              1,
+              1
+            ]
+          }
+        },
+        "bounds": {
+          "height": 154,
+          "width": 195,
+          "x": 1050,
+          "y": 0
+        },
+        "class": {
+          "id": "77697265-A270-4D60-911C-A88B1BE6369A",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "bypass": {
+            "type": "bool",
+            "value": false
+          },
+          "input1": {
+            "type": "texture2d",
+            "value": null
+          },
+          "input2": {
+            "type": "texture2d",
+            "value": null
+          },
+          "mode": {
+            "type": "integer",
+            "value": 11
+          },
+          "opacity1": {
+            "type": "float",
+            "value": 1.0
+          },
+          "opacity2": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "bypass",
+          "input-count",
+          "bitdepth",
+          "resolution-absolute",
+          "resolution-relative",
+          "resolution-mode",
+          "instances"
         ],
-        "name": "Push Zoom",
+        "name": "Video Mixer",
+        "thumbnail_visible": true
+      },
+      "31": {
+        "attributes": {
+          "bitdepth": {
+            "type": "integer",
+            "value": 0
+          },
+          "input-count": {
+            "type": "integer",
+            "value": 2
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "resolution-absolute": {
+            "type": "float2",
+            "value": [
+              1920,
+              1080
+            ]
+          },
+          "resolution-mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "resolution-relative": {
+            "type": "float2",
+            "value": [
+              1,
+              1
+            ]
+          }
+        },
+        "bounds": {
+          "height": 154,
+          "width": 195,
+          "x": 1300,
+          "y": 0
+        },
+        "class": {
+          "id": "77697265-A270-4D60-911C-A88B1BE6369A",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "bypass": {
+            "type": "bool",
+            "value": false
+          },
+          "input1": {
+            "type": "texture2d",
+            "value": null
+          },
+          "input2": {
+            "type": "texture2d",
+            "value": null
+          },
+          "mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "opacity1": {
+            "type": "float",
+            "value": 1.0
+          },
+          "opacity2": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "bypass",
+          "input-count",
+          "bitdepth",
+          "resolution-absolute",
+          "resolution-relative",
+          "resolution-mode",
+          "instances"
+        ],
+        "name": "Video Mixer",
         "thumbnail_visible": true
       },
       "1": {
@@ -721,7 +1475,7 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": 750,
+          "x": 1550,
           "y": 0
         },
         "class": {

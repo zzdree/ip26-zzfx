@@ -12,7 +12,7 @@
           "output"
         ],
         "to": [
-          15,
+          20,
           "frequency"
         ]
       },
@@ -22,37 +22,37 @@
           "output"
         ],
         "to": [
-          16,
+          21,
           "input0"
         ]
       },
       {
         "from": [
-          15,
+          20,
           "output"
         ],
         "to": [
-          16,
+          21,
           "input1"
         ]
       },
       {
         "from": [
-          16,
+          21,
           "output0"
         ],
         "to": [
-          17,
+          22,
           "input0"
         ]
       },
       {
         "from": [
-          12,
+          14,
           "output"
         ],
         "to": [
-          17,
+          22,
           "input1"
         ]
       },
@@ -62,7 +62,7 @@
           "output"
         ],
         "to": [
-          18,
+          23,
           "color"
         ]
       },
@@ -72,33 +72,63 @@
           "output"
         ],
         "to": [
-          20,
+          24,
           "input1"
         ]
       },
       {
         "from": [
-          18,
+          23,
           "output"
         ],
         "to": [
-          20,
+          24,
           "input2"
         ]
       },
       {
         "from": [
-          17,
+          22,
           "output0"
         ],
         "to": [
-          20,
+          24,
           "opacity2"
         ]
       },
       {
         "from": [
-          20,
+          24,
+          "output"
+        ],
+        "to": [
+          25,
+          "input1"
+        ]
+      },
+      {
+        "from": [
+          0,
+          "output"
+        ],
+        "to": [
+          25,
+          "input2"
+        ]
+      },
+      {
+        "from": [
+          15,
+          "output"
+        ],
+        "to": [
+          25,
+          "opacity2"
+        ]
+      },
+      {
+        "from": [
+          25,
           "output"
         ],
         "to": [
@@ -112,12 +142,14 @@
       10,
       11,
       12,
-      13
+      13,
+      14,
+      15
     ],
     "meta": {
       "author": "Andreas - IP26 Production",
       "category": "effect",
-      "description": "IP26 Modular Suite: High-Speed Multi-Rate Flash Strobe (Piano Mode).",
+      "description": "IP26 Modular Suite: High-Speed Multi-Rate Flash Strobe (Piano Hold & Modes).",
       "displayName": "zz-strobe",
       "identifier": "b8f047e1-884c-47bc-9fb5-6eb7f2d5e230",
       "license": "MIT",
@@ -129,6 +161,7 @@
         "flash",
         "speed",
         "pulse",
+        "blackout",
         "worship"
       ],
       "type": "effect",
@@ -136,7 +169,7 @@
       "vendor": "IP26 Production",
       "version": "1.0.0"
     },
-    "nextNodeId": 200,
+    "nextNodeId": 300,
     "nodes": {
       "0": {
         "attributes": {
@@ -209,7 +242,7 @@
           "flow",
           "bool-view"
         ],
-        "name": "Strobe",
+        "name": "Strobe (Hold)",
         "thumbnail_visible": true
       },
       "11": {
@@ -288,6 +321,130 @@
         "attributes": {
           "flow": {
             "type": "flow",
+            "value": "signal"
+          },
+          "has-max": {
+            "type": "bool",
+            "value": true
+          },
+          "has-min": {
+            "type": "bool",
+            "value": true
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "max": {
+            "type": "integer",
+            "value": 2
+          },
+          "min": {
+            "type": "integer",
+            "value": 0
+          },
+          "options-count": {
+            "type": "integer",
+            "value": 0
+          },
+          "unit": {
+            "type": "integer",
+            "value": 0
+          },
+          "widget": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 140,
+          "x": -600,
+          "y": 350
+        },
+        "class": {
+          "id": "77697265-2649-4abb-b38f-4e1005183415",
+          "version": 2
+        },
+        "clock": "video",
+        "color": "ff20c7bb",
+        "constants": {
+          "input": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "hidden": [
+          "input",
+          "instances",
+          "flow",
+          "has-min",
+          "min",
+          "has-max",
+          "max",
+          "options-count",
+          "widget",
+          "unit"
+        ],
+        "name": "Strobe Mode",
+        "thumbnail_visible": true
+      },
+      "13": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
+            "value": "signal"
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "options-count": {
+            "type": "integer",
+            "value": 0
+          },
+          "widget": {
+            "type": "integer",
+            "value": 0
+          }
+        },
+        "bounds": {
+          "height": 82,
+          "width": 140,
+          "x": -600,
+          "y": 450
+        },
+        "class": {
+          "id": "77697265-4C9E-4F75-B4F0-5415B713EA1B",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ffea1f48",
+        "constants": {
+          "input": {
+            "type": "color",
+            "value": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          }
+        },
+        "hidden": [
+          "input",
+          "instances",
+          "flow",
+          "options-count",
+          "widget"
+        ],
+        "name": "Strobe Color",
+        "thumbnail_visible": true
+      },
+      "14": {
+        "attributes": {
+          "flow": {
+            "type": "flow",
             "value": "event"
           },
           "has-max": {
@@ -327,7 +484,7 @@
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 350
+          "y": 550
         },
         "class": {
           "id": "77697265-D235-4A6A-B661-02ABE55C72FF",
@@ -356,59 +513,49 @@
         "name": "Strobe Intensity",
         "thumbnail_visible": true
       },
-      "13": {
+      "15": {
         "attributes": {
+          "bool-view": {
+            "type": "integer",
+            "value": 0
+          },
           "flow": {
             "type": "flow",
-            "value": "event"
+            "value": "signal"
           },
           "instances": {
             "type": "integer",
             "value": 1
-          },
-          "options-count": {
-            "type": "integer",
-            "value": 0
-          },
-          "widget": {
-            "type": "integer",
-            "value": 0
           }
         },
         "bounds": {
           "height": 82,
           "width": 140,
           "x": -600,
-          "y": 450
+          "y": 650
         },
         "class": {
-          "id": "77697265-4C9E-4F75-B4F0-5415B713EA1B",
-          "version": 3
+          "id": "77697265-999C-4F8B-8B9D-3646DC68AA69",
+          "version": 2
         },
         "clock": "video",
         "color": "ffff6a00",
         "constants": {
           "input": {
-            "type": "color",
-            "value": [
-              1.0,
-              1.0,
-              1.0,
-              1.0
-            ]
+            "type": "bool",
+            "value": false
           }
         },
         "hidden": [
           "input",
           "instances",
           "flow",
-          "options-count",
-          "widget"
+          "bool-view"
         ],
-        "name": "Strobe Color",
+        "name": "Bypass",
         "thumbnail_visible": true
       },
-      "15": {
+      "20": {
         "attributes": {
           "anti-alias": {
             "type": "bool",
@@ -426,7 +573,7 @@
         "bounds": {
           "height": 130,
           "width": 195,
-          "x": -250,
+          "x": -350,
           "y": 200
         },
         "class": {
@@ -461,7 +608,7 @@
             "value": null
           }
         },
-        "name": "Strobe Pulse Clock",
+        "name": "Pulse Clock",
         "thumbnail_visible": true,
         "hidden": [
           "instances",
@@ -474,7 +621,7 @@
           "pulse-width"
         ]
       },
-      "16": {
+      "21": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -504,7 +651,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 0,
+          "x": -100,
           "y": 150
         },
         "class": {
@@ -523,7 +670,7 @@
             "value": 0.0
           }
         },
-        "name": "Gate Flash",
+        "name": "Gate Pulse",
         "thumbnail_visible": true,
         "hidden": [
           "size",
@@ -534,7 +681,7 @@
           "flow"
         ]
       },
-      "17": {
+      "22": {
         "attributes": {
           "flow": {
             "type": "flow",
@@ -564,7 +711,7 @@
         "bounds": {
           "height": 82,
           "width": 130,
-          "x": 180,
+          "x": 100,
           "y": 250
         },
         "class": {
@@ -583,7 +730,7 @@
             "value": 0.0
           }
         },
-        "name": "Final Flash Opacity",
+        "name": "Final Strobe Opacity",
         "thumbnail_visible": true,
         "hidden": [
           "size",
@@ -594,7 +741,7 @@
           "flow"
         ]
       },
-      "18": {
+      "23": {
         "attributes": {
           "bitdepth": {
             "type": "integer",
@@ -607,8 +754,8 @@
           "resolution-absolute": {
             "type": "float2",
             "value": [
-              2400,
-              720
+              1920,
+              1080
             ]
           },
           "resolution-mode": {
@@ -626,7 +773,7 @@
         "bounds": {
           "height": 58,
           "width": 195,
-          "x": 180,
+          "x": 100,
           "y": 400
         },
         "class": {
@@ -650,7 +797,7 @@
             ]
           }
         },
-        "name": "White Flash Source",
+        "name": "Strobe Color Source",
         "thumbnail_visible": true,
         "hidden": [
           "instances",
@@ -661,7 +808,7 @@
           "resolution-mode"
         ]
       },
-      "20": {
+      "24": {
         "attributes": {
           "bitdepth": {
             "type": "integer",
@@ -678,8 +825,8 @@
           "resolution-absolute": {
             "type": "float2",
             "value": [
-              2400,
-              720
+              1920,
+              1080
             ]
           },
           "resolution-mode": {
@@ -697,7 +844,7 @@
         "bounds": {
           "height": 154,
           "width": 195,
-          "x": 450,
+          "x": 350,
           "y": 0
         },
         "class": {
@@ -733,12 +880,96 @@
           }
         },
         "hidden": [
-          "instances",
           "bypass",
+          "input-count",
           "bitdepth",
           "resolution-absolute",
           "resolution-relative",
-          "resolution-mode"
+          "resolution-mode",
+          "instances"
+        ],
+        "name": "Video Mixer",
+        "thumbnail_visible": true
+      },
+      "25": {
+        "attributes": {
+          "bitdepth": {
+            "type": "integer",
+            "value": 0
+          },
+          "input-count": {
+            "type": "integer",
+            "value": 2
+          },
+          "instances": {
+            "type": "integer",
+            "value": 1
+          },
+          "resolution-absolute": {
+            "type": "float2",
+            "value": [
+              1920,
+              1080
+            ]
+          },
+          "resolution-mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "resolution-relative": {
+            "type": "float2",
+            "value": [
+              1,
+              1
+            ]
+          }
+        },
+        "bounds": {
+          "height": 154,
+          "width": 195,
+          "x": 600,
+          "y": 0
+        },
+        "class": {
+          "id": "77697265-A270-4D60-911C-A88B1BE6369A",
+          "version": 3
+        },
+        "clock": "video",
+        "color": "ffff6a00",
+        "constants": {
+          "bypass": {
+            "type": "bool",
+            "value": false
+          },
+          "input1": {
+            "type": "texture2d",
+            "value": null
+          },
+          "input2": {
+            "type": "texture2d",
+            "value": null
+          },
+          "mode": {
+            "type": "integer",
+            "value": 0
+          },
+          "opacity1": {
+            "type": "float",
+            "value": 1.0
+          },
+          "opacity2": {
+            "type": "float",
+            "value": 0.0
+          }
+        },
+        "hidden": [
+          "bypass",
+          "input-count",
+          "bitdepth",
+          "resolution-absolute",
+          "resolution-relative",
+          "resolution-mode",
+          "instances"
         ],
         "name": "Video Mixer",
         "thumbnail_visible": true
@@ -753,7 +984,7 @@
         "bounds": {
           "height": 82,
           "width": 195,
-          "x": 700,
+          "x": 850,
           "y": 0
         },
         "class": {
