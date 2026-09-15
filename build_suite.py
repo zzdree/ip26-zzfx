@@ -441,7 +441,7 @@ def build_zz_chaser():
         connections.append({"from": [int(f_id), str(f_port)], "to": [int(t_id), str(t_port)]})
 
     nodes["0"] = node_texture_in(0)
-    nodes["10"] = node_bool_in(10, "Chase (Hold)", False, -600, 100)
+    nodes["10"] = node_bool_in(10, "Chase (Hold)", True, -600, 100)
     nodes["11"] = node_int_in(11, "Direction", 0, 5, 0, -600, 200) # 0: L->R, 1: R->L, 2: U->D, 3: D->U, 4: Center->Out, 5: Out->Center
     nodes["12"] = node_bool_in(12, "Bounce", False, -600, 300)
     nodes["13"] = node_int_in(13, "Grid Slices X", 1, 10, 5, -600, 400)
@@ -842,7 +842,7 @@ def build_zz_wiper():
         connections.append({"from": [int(f_id), str(f_port)], "to": [int(t_id), str(t_port)]})
 
     nodes["0"] = node_texture_in(0)
-    nodes["10"] = node_bool_in(10, "Wiper (Hold)", False, -600, 150)
+    nodes["10"] = node_bool_in(10, "Wiper (Hold)", True, -600, 150)
     nodes["11"] = node_int_in(11, "Direction", 0, 5, 0, -600, 250) # 0: L->R, 1: R->L, 2: U->D, 3: D->U, 4: Center->Out, 5: Out->Center
     nodes["12"] = node_bool_in(12, "Bounce", False, -600, 350)
     nodes["13"] = node_float_in(13, "Wipe Speed", 0.1, 6.0, 1.2, -600, 450)
@@ -1206,7 +1206,7 @@ def build_zz_stroke():
         connections.append({"from": [int(f_id), str(f_port)], "to": [int(t_id), str(t_port)]})
 
     nodes["0"] = node_texture_in(0)
-    nodes["10"] = node_bool_in(10, "Stroke (Hold)", False, -600, 100)
+    nodes["10"] = node_bool_in(10, "Stroke (Hold)", True, -600, 100)
     nodes["11"] = node_float_in(11, "Stroke Width", 0.005, 0.08, 0.025, -600, 200)
     nodes["12"] = node_float_in(12, "Corner Radius", 0.0, 0.5, 0.0, -600, 300)
     nodes["13"] = node_float_in(13, "Border Inset", 0.0, 0.2, 0.0, -600, 400)
